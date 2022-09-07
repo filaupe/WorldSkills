@@ -232,7 +232,7 @@
 
 ##### Frameworks de front-end Java-script (serão executados e testados no navegador Chrome da mesma versão fornecida na VM):
 
-- View.js
+- Vue.js
 - React
 - Angular
 - jQuery/Bootstrap
