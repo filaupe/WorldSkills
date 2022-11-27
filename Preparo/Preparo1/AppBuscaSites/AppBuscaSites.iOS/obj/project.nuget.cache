@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "6FIqWEfyjOhvqTfTv7q3qT3pMclENE8g1OkbrkF656OTyY83opSVp7ElH6eEEJokuj8Ct8w+qpgJlKwYfxUVnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Preparo\\Preparo1\\AppBuscaSites\\AppBuscaSites.iOS\\AppBuscaSites.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
