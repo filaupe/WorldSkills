@@ -34,15 +34,16 @@
             this.HourLbl = new System.Windows.Forms.Label();
             this.Vacancies = new System.Windows.Forms.Label();
             this.WatingListLbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.WaitingListComboBox = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.addImageBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RegisterBtn = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,25 +95,25 @@
             // WatingListLbl
             // 
             this.WatingListLbl.AutoSize = true;
-            this.WatingListLbl.Location = new System.Drawing.Point(35, 364);
+            this.WatingListLbl.Location = new System.Drawing.Point(38, 357);
             this.WatingListLbl.Name = "WatingListLbl";
             this.WatingListLbl.Size = new System.Drawing.Size(84, 15);
             this.WatingListLbl.TabIndex = 5;
             this.WatingListLbl.Text = "Lista de Espera";
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 23);
-            this.textBox1.TabIndex = 6;
+            this.NameTextBox.Location = new System.Drawing.Point(128, 31);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(261, 23);
+            this.NameTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // LoginTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 23);
-            this.textBox2.TabIndex = 7;
+            this.LoginTextBox.Location = new System.Drawing.Point(128, 66);
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.Size = new System.Drawing.Size(261, 23);
+            this.LoginTextBox.TabIndex = 7;
             // 
             // textBox3
             // 
@@ -128,16 +129,15 @@
             this.textBox4.Size = new System.Drawing.Size(261, 23);
             this.textBox4.TabIndex = 9;
             // 
-            // comboBox1
+            // WaitingListComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.WaitingListComboBox.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.comboBox1.Location = new System.Drawing.Point(128, 361);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(51, 23);
-            this.comboBox1.TabIndex = 10;
+            this.WaitingListComboBox.Location = new System.Drawing.Point(128, 354);
+            this.WaitingListComboBox.Name = "WaitingListComboBox";
+            this.WaitingListComboBox.Size = new System.Drawing.Size(51, 23);
+            this.WaitingListComboBox.TabIndex = 10;
             // 
             // button2
             // 
@@ -148,44 +148,60 @@
             this.button2.Text = "Adicionar ao Dia Selecionado";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addImageBtn
             // 
-            this.button3.Location = new System.Drawing.Point(395, 393);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 34);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Adicioanr Imagem...";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(35, 101);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 13;
+            this.addImageBtn.Location = new System.Drawing.Point(395, 393);
+            this.addImageBtn.Name = "addImageBtn";
+            this.addImageBtn.Size = new System.Drawing.Size(142, 34);
+            this.addImageBtn.TabIndex = 12;
+            this.addImageBtn.Text = "Adicioanr Imagem...";
+            this.addImageBtn.UseVisualStyleBackColor = true;
+            this.addImageBtn.Click += new System.EventHandler(this.addImageBtn_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(274, 101);
+            this.dataGridView1.Location = new System.Drawing.Point(220, 101);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(115, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(169, 162);
             this.dataGridView1.TabIndex = 14;
+            // 
+            // RegisterBtn
+            // 
+            this.RegisterBtn.Location = new System.Drawing.Point(713, 399);
+            this.RegisterBtn.Name = "RegisterBtn";
+            this.RegisterBtn.Size = new System.Drawing.Size(75, 23);
+            this.RegisterBtn.TabIndex = 15;
+            this.RegisterBtn.Text = "Cadastrar";
+            this.RegisterBtn.UseVisualStyleBackColor = true;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(38, 101);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 23);
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.RegisterBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.addImageBtn);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.WaitingListComboBox);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LoginTextBox);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.WatingListLbl);
             this.Controls.Add(this.Vacancies);
             this.Controls.Add(this.HourLbl);
@@ -194,6 +210,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Empresa";
             this.Text = "CadastrarEmpresa";
+            this.Load += new System.EventHandler(this.Empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,14 +225,16 @@
         private Label HourLbl;
         private Label Vacancies;
         private Label WatingListLbl;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox NameTextBox;
+        private TextBox LoginTextBox;
         private TextBox textBox3;
         private TextBox textBox4;
-        private ComboBox comboBox1;
+        private ComboBox WaitingListComboBox;
         private Button button2;
-        private Button button3;
-        private MonthCalendar monthCalendar1;
+        private Button addImageBtn;
         private DataGridView dataGridView1;
+        private DataGridView ImageGalleryGridView;
+        private Button RegisterBtn;
+        private DateTimePicker dateTimePicker1;
     }
 }

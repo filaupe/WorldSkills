@@ -7,36 +7,34 @@ namespace MeetTheStartup;
 public partial class Login : Form
 {
     private Thread _t1 = null!;
-    private MeetTheStatup.ClassLibrary.Models.User.UserModelPrincipal _user = null!;
-    private readonly List<MeetTheStatup.ClassLibrary.Models.User.UserModelPrincipal> _users;
+    private UserModelPrincipal _user = null!;
+    private readonly List<UserModelPrincipal> _users;
 
-    public Login()
+    public Login(List<UserModelPrincipal> users = null!)
     {
         InitializeComponent();
 
-        _users = new();
+        _users = users ?? new(); 
 
-        this.AddDefaultUsers();
+        if(_users.Count == 0)
+            this.AddDefaultUsers();
     }
 
     protected void AddDefaultUsers()
     {
-        UserModelPrincipal empressUser = new("Empresa de Filaupe", "FilaupeCorp", "123", EUserType.EMPRESS);
-        UserModelPrincipal user = new("Usuário Filaupe", "Filaupe", "123", EUserType.USER);
+        UserModelPrincipal empressUser = new("Empresa de Filaupe", "FilaupeCorp", "123", EUserType.EMPRESS, new());
+        UserModelPrincipal user = new("Usuário Filaupe", "Filaupe", "123", EUserType.USER, new());
         _users.Add(empressUser);
         _users.Add(user);
     }
 
-    private void ShowForm(Form form) => form.Show();
-
-    private void OpenForm(Form form) 
+    private void OpenForm(Form form)
     {
-        this.Close();
-
         _t1 = new Thread(() => Application.Run(form));
         _t1.SetApartmentState(ApartmentState.STA);
         _t1.Start();
-    } 
+        this.Close();
+    }
 
     private void cancelBtn_Click(object sender, EventArgs e) => this.Close();
 
@@ -68,7 +66,7 @@ public partial class Login : Form
         }
     }
 
-    private void registerEmpressLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.ShowForm(new Empresa());
+    private void registerEmpressLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.OpenForm(new Empresa(_users));
 
-    private void registerUserLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.ShowForm(new CadastrarUsuario());
+    private void registerUserLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.OpenForm(new CadastrarUsuario(_users));
 }
