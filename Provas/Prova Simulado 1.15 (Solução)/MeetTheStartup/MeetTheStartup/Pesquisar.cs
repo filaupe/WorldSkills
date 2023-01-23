@@ -5,10 +5,10 @@ namespace MeetTheStartup;
 
 public partial class Pesquisar : Form
 {
-    private readonly List<UserModel> _users;
+    private readonly List<UserModelPrincipal> _users;
     private readonly EUserType _type;
 
-    public Pesquisar(List<UserModel> users, EUserType type)
+    public Pesquisar(List<UserModelPrincipal> users, EUserType type)
     {
         InitializeComponent();
 

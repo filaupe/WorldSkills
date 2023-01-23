@@ -7,8 +7,8 @@ namespace MeetTheStartup;
 public partial class Login : Form
 {
     private Thread _t1 = null!;
-    private MeetTheStatup.ClassLibrary.Models.User.UserModel _user = null!;
-    private readonly List<MeetTheStatup.ClassLibrary.Models.User.UserModel> _users;
+    private MeetTheStatup.ClassLibrary.Models.User.UserModelPrincipal _user = null!;
+    private readonly List<MeetTheStatup.ClassLibrary.Models.User.UserModelPrincipal> _users;
 
     public Login()
     {
@@ -21,8 +21,8 @@ public partial class Login : Form
 
     protected void AddDefaultUsers()
     {
-        UserModel empressUser = new("Empresa de Filaupe", "FilaupeCorp", "123", EUserType.EMPRESS);
-        UserModel user = new("Usuário Filaupe", "Filaupe", "123", EUserType.USER);
+        UserModelPrincipal empressUser = new("Empresa de Filaupe", "FilaupeCorp", "123", EUserType.EMPRESS);
+        UserModelPrincipal user = new("Usuário Filaupe", "Filaupe", "123", EUserType.USER);
         _users.Add(empressUser);
         _users.Add(user);
     }
@@ -68,7 +68,7 @@ public partial class Login : Form
         }
     }
 
-    private void registerEmpressLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.ShowForm(new CadastrarEmpresa());
+    private void registerEmpressLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.ShowForm(new Empresa());
 
     private void registerUserLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => this.ShowForm(new CadastrarUsuario());
 }

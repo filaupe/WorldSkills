@@ -2,9 +2,9 @@
 
 namespace MeetTheStatup.ClassLibrary.Models.User;
 
-public class UserModel
+public class UserModelPrincipal
 {
-    public UserModel(string name, string login, string password, EUserType type)
+    public UserModelPrincipal(string name, string login, string password, EUserType type)
     {
         this.Name = name;
         this.Login = login;

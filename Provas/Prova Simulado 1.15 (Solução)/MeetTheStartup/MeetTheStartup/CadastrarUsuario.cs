@@ -4,9 +4,9 @@ namespace MeetTheStartup;
 
 public partial class CadastrarUsuario : Form
 {
-    private readonly UserModel? _user;
+    private readonly UserModelPrincipal? _user;
 
-    public CadastrarUsuario(UserModel? user = null)
+    public CadastrarUsuario(UserModelPrincipal? user = null)
     {
         InitializeComponent();
 

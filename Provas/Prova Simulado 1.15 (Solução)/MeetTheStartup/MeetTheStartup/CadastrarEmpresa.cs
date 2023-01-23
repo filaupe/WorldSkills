@@ -2,11 +2,11 @@
 
 namespace MeetTheStartup;
 
-public partial class CadastrarEmpresa : Form
+public partial class Empresa : Form
 {
-    private readonly UserModel? _user;
+    private readonly UserModelPrincipal? _user;
 
-    public CadastrarEmpresa(UserModel? user = null)
+    public Empresa(UserModelPrincipal? user = null)
     {
         InitializeComponent();
 

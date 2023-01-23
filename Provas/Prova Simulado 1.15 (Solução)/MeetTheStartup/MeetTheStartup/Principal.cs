@@ -6,10 +6,10 @@ namespace MeetTheStartup;
 public partial class Principal : Form
 {
     private Thread _t1 = null!;
-    private readonly List<UserModel> _users;
-    private readonly UserModel _user;
+    private readonly List<UserModelPrincipal> _users;
+    private readonly UserModelPrincipal _user;
 
-    public Principal(List<UserModel> users, UserModel user)
+    public Principal(List<UserModelPrincipal> users, UserModelPrincipal user)
     {
         InitializeComponent();
 
