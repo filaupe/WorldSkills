@@ -1,6 +1,6 @@
 ﻿namespace MeetTheStartup.ClassLib;
 
-public static class Methods
+public static class FormMethods
 {
     private static Thread _t1 = null!;
 
@@ -13,8 +13,6 @@ public static class Methods
         thisForm.Close();
     }
 
-    public static void ShowForm(Form form)
-    {
-
-    }
+    public static void ShowForm(Form form) => form.Show();
+    public static void CloseForm(this Form form) => form.Close();
 }

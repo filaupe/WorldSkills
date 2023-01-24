@@ -32,27 +32,27 @@
             this.ImageGalleryGroupBox = new System.Windows.Forms.GroupBox();
             this.galleryPanel = new System.Windows.Forms.Panel();
             this.tableLayoutImagePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.registerBtn = new System.Windows.Forms.Button();
+            this.addAtSelectDayBtn = new System.Windows.Forms.Button();
+            this.waitingListLbl = new System.Windows.Forms.Label();
+            this.waitingListOptions = new System.Windows.Forms.ComboBox();
+            this.vacancyLbl = new System.Windows.Forms.Label();
+            this.hourLbl = new System.Windows.Forms.Label();
+            this.hourTextBox = new System.Windows.Forms.TextBox();
+            this.vacancyTextBox = new System.Windows.Forms.TextBox();
+            this.dataTimeGridView = new System.Windows.Forms.DataGridView();
             this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vagas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.passwordLbl = new System.Windows.Forms.Label();
+            this.fanstasyNameLbl = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.fantasyNameTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ImageGalleryGroupBox.SuspendLayout();
             this.galleryPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTimeGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // addImageBtn
@@ -99,91 +99,92 @@
             this.tableLayoutImagePanel.Size = new System.Drawing.Size(348, 160);
             this.tableLayoutImagePanel.TabIndex = 0;
             // 
-            // button1
+            // registerBtn
             // 
-            this.button1.Location = new System.Drawing.Point(608, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerBtn.Location = new System.Drawing.Point(623, 388);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(117, 33);
+            this.registerBtn.TabIndex = 2;
+            this.registerBtn.Text = "Cadastrar";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
-            // button2
+            // addAtSelectDayBtn
             // 
-            this.button2.Location = new System.Drawing.Point(25, 388);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 33);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Adicionar ao dia selecionado";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addAtSelectDayBtn.Location = new System.Drawing.Point(25, 388);
+            this.addAtSelectDayBtn.Name = "addAtSelectDayBtn";
+            this.addAtSelectDayBtn.Size = new System.Drawing.Size(244, 33);
+            this.addAtSelectDayBtn.TabIndex = 3;
+            this.addAtSelectDayBtn.Text = "Adicionar ao dia selecionado";
+            this.addAtSelectDayBtn.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // waitingListLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 343);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Lista de Espera";
+            this.waitingListLbl.AutoSize = true;
+            this.waitingListLbl.Location = new System.Drawing.Point(25, 343);
+            this.waitingListLbl.Name = "waitingListLbl";
+            this.waitingListLbl.Size = new System.Drawing.Size(84, 15);
+            this.waitingListLbl.TabIndex = 4;
+            this.waitingListLbl.Text = "Lista de Espera";
             // 
-            // comboBox1
+            // waitingListOptions
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.waitingListOptions.FormattingEnabled = true;
+            this.waitingListOptions.Items.AddRange(new object[] {
             "Sim",
             "Não"});
-            this.comboBox1.Location = new System.Drawing.Point(128, 340);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(55, 23);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Sim";
+            this.waitingListOptions.Location = new System.Drawing.Point(128, 340);
+            this.waitingListOptions.Name = "waitingListOptions";
+            this.waitingListOptions.Size = new System.Drawing.Size(55, 23);
+            this.waitingListOptions.TabIndex = 5;
+            this.waitingListOptions.Text = "Sim";
             // 
-            // label2
+            // vacancyLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 294);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Vagas";
+            this.vacancyLbl.AutoSize = true;
+            this.vacancyLbl.Location = new System.Drawing.Point(25, 294);
+            this.vacancyLbl.Name = "vacancyLbl";
+            this.vacancyLbl.Size = new System.Drawing.Size(37, 15);
+            this.vacancyLbl.TabIndex = 6;
+            this.vacancyLbl.Text = "Vagas";
             // 
-            // label3
+            // hourLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 260);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Horário";
+            this.hourLbl.AutoSize = true;
+            this.hourLbl.Location = new System.Drawing.Point(25, 260);
+            this.hourLbl.Name = "hourLbl";
+            this.hourLbl.Size = new System.Drawing.Size(47, 15);
+            this.hourLbl.TabIndex = 7;
+            this.hourLbl.Text = "Horário";
             // 
-            // textBox1
+            // hourTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 257);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 23);
-            this.textBox1.TabIndex = 8;
+            this.hourTextBox.Location = new System.Drawing.Point(128, 257);
+            this.hourTextBox.Name = "hourTextBox";
+            this.hourTextBox.Size = new System.Drawing.Size(210, 23);
+            this.hourTextBox.TabIndex = 8;
             // 
-            // textBox2
+            // vacancyTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 291);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 23);
-            this.textBox2.TabIndex = 9;
+            this.vacancyTextBox.Location = new System.Drawing.Point(128, 291);
+            this.vacancyTextBox.Name = "vacancyTextBox";
+            this.vacancyTextBox.Size = new System.Drawing.Size(210, 23);
+            this.vacancyTextBox.TabIndex = 9;
             // 
-            // dataGridView1
+            // dataTimeGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataTimeGridView.AllowUserToAddRows = false;
+            this.dataTimeGridView.AllowUserToDeleteRows = false;
+            this.dataTimeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataTimeGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Horario,
             this.Vagas});
-            this.dataGridView1.Location = new System.Drawing.Point(175, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(163, 115);
-            this.dataGridView1.TabIndex = 10;
+            this.dataTimeGridView.Location = new System.Drawing.Point(175, 136);
+            this.dataTimeGridView.Name = "dataTimeGridView";
+            this.dataTimeGridView.ReadOnly = true;
+            this.dataTimeGridView.RowTemplate.Height = 25;
+            this.dataTimeGridView.Size = new System.Drawing.Size(163, 115);
+            this.dataTimeGridView.TabIndex = 10;
             // 
             // Horario
             // 
@@ -201,60 +202,60 @@
             this.Vagas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Vagas.Width = 60;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 136);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 23);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker.Location = new System.Drawing.Point(25, 136);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(112, 23);
+            this.dateTimePicker.TabIndex = 11;
             // 
-            // label4
+            // passwordLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 15);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Senha";
+            this.passwordLbl.AutoSize = true;
+            this.passwordLbl.Location = new System.Drawing.Point(23, 99);
+            this.passwordLbl.Name = "passwordLbl";
+            this.passwordLbl.Size = new System.Drawing.Size(39, 15);
+            this.passwordLbl.TabIndex = 12;
+            this.passwordLbl.Text = "Senha";
             // 
-            // label5
+            // fanstasyNameLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 15);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Nome Fantasia";
+            this.fanstasyNameLbl.AutoSize = true;
+            this.fanstasyNameLbl.Location = new System.Drawing.Point(23, 65);
+            this.fanstasyNameLbl.Name = "fanstasyNameLbl";
+            this.fanstasyNameLbl.Size = new System.Drawing.Size(86, 15);
+            this.fanstasyNameLbl.TabIndex = 13;
+            this.fanstasyNameLbl.Text = "Nome Fantasia";
             // 
-            // label6
+            // nameLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 15);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Nome";
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Location = new System.Drawing.Point(25, 34);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(40, 15);
+            this.nameLbl.TabIndex = 14;
+            this.nameLbl.Text = "Nome";
             // 
-            // textBox3
+            // passwordTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 23);
-            this.textBox3.TabIndex = 15;
+            this.passwordTextBox.Location = new System.Drawing.Point(128, 96);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(210, 23);
+            this.passwordTextBox.TabIndex = 15;
             // 
-            // textBox4
+            // fantasyNameTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 23);
-            this.textBox4.TabIndex = 16;
+            this.fantasyNameTextBox.Location = new System.Drawing.Point(128, 62);
+            this.fantasyNameTextBox.Name = "fantasyNameTextBox";
+            this.fantasyNameTextBox.Size = new System.Drawing.Size(210, 23);
+            this.fantasyNameTextBox.TabIndex = 16;
             // 
-            // textBox5
+            // nameTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(210, 23);
-            this.textBox5.TabIndex = 17;
+            this.nameTextBox.Location = new System.Drawing.Point(128, 31);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(210, 23);
+            this.nameTextBox.TabIndex = 17;
             // 
             // CadastroEmpresa
             // 
@@ -262,29 +263,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(755, 450);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.fantasyNameTextBox);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.nameLbl);
+            this.Controls.Add(this.fanstasyNameLbl);
+            this.Controls.Add(this.passwordLbl);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.dataTimeGridView);
+            this.Controls.Add(this.vacancyTextBox);
+            this.Controls.Add(this.hourTextBox);
+            this.Controls.Add(this.hourLbl);
+            this.Controls.Add(this.vacancyLbl);
+            this.Controls.Add(this.waitingListOptions);
+            this.Controls.Add(this.waitingListLbl);
+            this.Controls.Add(this.addAtSelectDayBtn);
+            this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.ImageGalleryGroupBox);
             this.Controls.Add(this.addImageBtn);
             this.Name = "CadastroEmpresa";
             this.Text = "Empresas";
             this.ImageGalleryGroupBox.ResumeLayout(false);
             this.galleryPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTimeGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,24 +296,24 @@
         private Button addImageBtn;
         private GroupBox ImageGalleryGroupBox;
         private TableLayoutPanel tableLayoutImagePanel;
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private ComboBox comboBox1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private DataGridView dataGridView1;
+        private Button registerBtn;
+        private Button addAtSelectDayBtn;
+        private Label waitingListLbl;
+        private ComboBox waitingListOptions;
+        private Label vacancyLbl;
+        private Label hourLbl;
+        private TextBox hourTextBox;
+        private TextBox vacancyTextBox;
+        private DataGridView dataTimeGridView;
         private DataGridViewTextBoxColumn Horario;
         private DataGridViewTextBoxColumn Vagas;
-        private DateTimePicker dateTimePicker1;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private DateTimePicker dateTimePicker;
+        private Label passwordLbl;
+        private Label fanstasyNameLbl;
+        private Label nameLbl;
+        private TextBox passwordTextBox;
+        private TextBox fantasyNameTextBox;
+        private TextBox nameTextBox;
         private Panel galleryPanel;
     }
 }

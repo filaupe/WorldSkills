@@ -27,6 +27,7 @@ public partial class CadastroEmpresa : Form
             btn.Size = new Size(75, 23);
             btn.UseVisualStyleBackColor = true;
             btn.Text = "Excluir";
+            btn.Click += Btn_Click;
             btn.Location = new Point((imageControlPanel.Width / 2) - btn.Width, (imageControlPanel.Height + 20));
         
             imageControlPanel.Controls.Add(btn);
@@ -50,8 +51,18 @@ public partial class CadastroEmpresa : Form
         }
     }
 
+    private void Btn_Click(object? sender, EventArgs e)
+    {
+        
+    }
+
     private void addImageBtn_Click(object sender, EventArgs e)
     {
         this.ImageGallery();
+    }
+
+    private void registerBtn_Click(object sender, EventArgs e)
+    {
+
     }
 }

@@ -16,6 +16,9 @@
     <Compile Update="PerfilUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pesquisar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Principal.cs">
       <SubType>Form</SubType>
     </Compile>

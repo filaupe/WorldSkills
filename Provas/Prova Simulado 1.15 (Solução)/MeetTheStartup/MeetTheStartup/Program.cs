@@ -1,3 +1,5 @@
+using MeetTheStartup.ClassLib.enums;
+
 namespace MeetTheStartup
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace MeetTheStartup
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CadastroEmpresa());
+            Application.Run(new Login());
         }
     }
 }
