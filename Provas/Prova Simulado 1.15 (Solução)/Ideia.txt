@@ -1,0 +1,2 @@
+Deixar o indice vazio no array das imagens, assim os botões ainda limpariam o array específico
+Mas, quando fosse adicionar, procuraria o array vazio e colocaria lá, e quando fossse adicionar as imagens para o usuário, escolheria apenas os arrays com imagem

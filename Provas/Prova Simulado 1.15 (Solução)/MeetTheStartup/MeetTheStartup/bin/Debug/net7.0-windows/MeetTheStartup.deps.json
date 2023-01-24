@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v7.0": {
       "MeetTheStartup/1.0.0": {
         "dependencies": {
-          "MeetTheStatup.ClassLibrary": "1.0.0"
+          "MeetTheStartup.ClassLib": "1.0.0"
         },
         "runtime": {
           "MeetTheStartup.dll": {}
         }
       },
-      "MeetTheStatup.ClassLibrary/1.0.0": {
+      "MeetTheStartup.ClassLib/1.0.0": {
         "runtime": {
-          "MeetTheStatup.ClassLibrary.dll": {}
+          "MeetTheStartup.ClassLib.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MeetTheStatup.ClassLibrary/1.0.0": {
+    "MeetTheStartup.ClassLib/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
