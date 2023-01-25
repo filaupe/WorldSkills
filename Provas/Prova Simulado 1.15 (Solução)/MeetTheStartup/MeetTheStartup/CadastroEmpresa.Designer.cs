@@ -117,6 +117,7 @@
             this.addAtSelectDayBtn.TabIndex = 3;
             this.addAtSelectDayBtn.Text = "Adicionar ao dia selecionado";
             this.addAtSelectDayBtn.UseVisualStyleBackColor = true;
+            this.addAtSelectDayBtn.Click += new System.EventHandler(this.addAtSelectDayBtn_Click);
             // 
             // waitingListLbl
             // 

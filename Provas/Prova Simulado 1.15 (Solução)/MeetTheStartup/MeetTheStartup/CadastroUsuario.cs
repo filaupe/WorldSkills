@@ -45,7 +45,7 @@ public partial class CadastroUsuario : Form
             btn.Size = new Size(75, 23);
             btn.UseVisualStyleBackColor = true;
             btn.Text = "Excluir";
-            btn.Click += Btn_Click;
+            btn.Click += click;
             btn.Location = new Point((imageControlPanel.Width / 2) - btn.Width, (imageControlPanel.Height + 20));
 
             imageControlPanel.Controls.Add(btn);
@@ -67,6 +67,11 @@ public partial class CadastroUsuario : Form
 
             this.tableLayoutImagePanel.Controls.Add(imageControlPanel);
         }
+    }
+
+    public void click(object? o, EventArgs e)
+    {
+        MessageBox.Show("clicou");
     }
 
     private void LoadImageGallery()
@@ -101,11 +106,6 @@ public partial class CadastroUsuario : Form
 
             this.tableLayoutImagePanel.Controls.Add(imageControlPanel);
         }
-    }
-
-    private void Btn_Click(object? sender, EventArgs e)
-    {
-
     }
 
     private void addImageBtn_Click(object sender, EventArgs e)

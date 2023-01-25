@@ -53,7 +53,7 @@ public partial class Login : Form
         }
     }
 
-    private void empressRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => FormMethods.OpenForm(this, new CadastroEmpresa());
+    private void empressRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => FormMethods.OpenForm(this, new CadastroEmpresa(_users, _empresses, null));
 
     private void userRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => FormMethods.OpenForm(this, new CadastroUsuario(_users, _empresses, null));
 }
