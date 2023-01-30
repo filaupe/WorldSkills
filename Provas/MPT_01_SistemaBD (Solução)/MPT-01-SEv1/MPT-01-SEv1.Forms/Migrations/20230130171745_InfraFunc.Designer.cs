@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MPT01SEv1.Forms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230130083334_alterinfra")]
-    partial class alterinfra
+    [Migration("20230130171745_InfraFunc")]
+    partial class InfraFunc
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,11 @@ namespace MPT01SEv1.Forms.Migrations
 
             modelBuilder.Entity("MPT_01_SEv1.Forms.Models.Employees.Employee", b =>
                 {
-                    b.Property<double>("empid")
+                    b.Property<int>("empid")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("float");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("empid"));
 
                     b.Property<DateTime>("admissionDate")
                         .HasColumnType("datetime2");
@@ -37,11 +39,11 @@ namespace MPT01SEv1.Forms.Migrations
                     b.Property<DateTime>("bornDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("depid")
-                        .HasColumnType("float");
+                    b.Property<int>("depid")
+                        .HasColumnType("int");
 
-                    b.Property<double?>("deptmgrid")
-                        .HasColumnType("float");
+                    b.Property<int?>("deptmgrid")
+                        .HasColumnType("int");
 
                     b.Property<string>("deptname")
                         .IsRequired()
@@ -54,8 +56,8 @@ namespace MPT01SEv1.Forms.Migrations
                     b.Property<int>("loginCount")
                         .HasColumnType("int");
 
-                    b.Property<double?>("mgrid")
-                        .HasColumnType("float");
+                    b.Property<int?>("mgrid")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("salary")
                         .HasColumnType("decimal(18,2)");

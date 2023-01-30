@@ -30,9 +30,12 @@
         {
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSalary = new System.Windows.Forms.TextBox();
-            this.textBoxBorn = new System.Windows.Forms.TextBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxDay = new System.Windows.Forms.TextBox();
+            this.textBoxMouth = new System.Windows.Forms.TextBox();
+            this.textBoxYear = new System.Windows.Forms.TextBox();
+            this.comboBoxGerenteDoFuncionario = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -48,13 +51,6 @@
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(100, 23);
             this.textBoxSalary.TabIndex = 1;
-            // 
-            // textBoxBorn
-            // 
-            this.textBoxBorn.Location = new System.Drawing.Point(33, 98);
-            this.textBoxBorn.Name = "textBoxBorn";
-            this.textBoxBorn.Size = new System.Drawing.Size(100, 23);
-            this.textBoxBorn.TabIndex = 2;
             // 
             // buttonOk
             // 
@@ -76,14 +72,46 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // textBoxDay
+            // 
+            this.textBoxDay.Location = new System.Drawing.Point(32, 98);
+            this.textBoxDay.Name = "textBoxDay";
+            this.textBoxDay.Size = new System.Drawing.Size(30, 23);
+            this.textBoxDay.TabIndex = 5;
+            // 
+            // textBoxMouth
+            // 
+            this.textBoxMouth.Location = new System.Drawing.Point(68, 98);
+            this.textBoxMouth.Name = "textBoxMouth";
+            this.textBoxMouth.Size = new System.Drawing.Size(30, 23);
+            this.textBoxMouth.TabIndex = 6;
+            // 
+            // textBoxYear
+            // 
+            this.textBoxYear.Location = new System.Drawing.Point(104, 98);
+            this.textBoxYear.Name = "textBoxYear";
+            this.textBoxYear.Size = new System.Drawing.Size(55, 23);
+            this.textBoxYear.TabIndex = 7;
+            // 
+            // comboBoxGerenteDoFuncionario
+            // 
+            this.comboBoxGerenteDoFuncionario.FormattingEnabled = true;
+            this.comboBoxGerenteDoFuncionario.Location = new System.Drawing.Point(180, 40);
+            this.comboBoxGerenteDoFuncionario.Name = "comboBoxGerenteDoFuncionario";
+            this.comboBoxGerenteDoFuncionario.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxGerenteDoFuncionario.TabIndex = 8;
+            // 
             // CrudFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 278);
+            this.Controls.Add(this.comboBoxGerenteDoFuncionario);
+            this.Controls.Add(this.textBoxYear);
+            this.Controls.Add(this.textBoxMouth);
+            this.Controls.Add(this.textBoxDay);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.textBoxBorn);
             this.Controls.Add(this.textBoxSalary);
             this.Controls.Add(this.textBoxName);
             this.Name = "CrudFuncionario";
@@ -98,6 +126,9 @@
         private Button buttonCancel;
         public TextBox textBoxName;
         public TextBox textBoxSalary;
-        public TextBox textBoxBorn;
+        public TextBox textBoxDay;
+        public TextBox textBoxMouth;
+        public TextBox textBoxYear;
+        public ComboBox comboBoxGerenteDoFuncionario;
     }
 }

@@ -89,21 +89,6 @@ public partial class Principal : Form
             Dock = DockStyle.Fill
         };
         this.tableLayoutPanelWindows.Controls.Add(form);
-        foreach (var emp in list)
-        {
-            int? gerenteId;
-            try
-            {
-                gerenteId = (int)emp.mgrid!;
-            }
-            catch (Exception)
-            {
-                gerenteId = null;
-            }
-
-            Employee? gerente = list.FirstOrDefault(x => x.empid == gerenteId);
-            form.dataGridViewEmployees.Rows.Add(emp.empid, emp.empname, gerente?.empname, emp.salary);
-            }
             
         form.Show();
         MessageBox.Show("Uma aba de funcionário foi aberta");

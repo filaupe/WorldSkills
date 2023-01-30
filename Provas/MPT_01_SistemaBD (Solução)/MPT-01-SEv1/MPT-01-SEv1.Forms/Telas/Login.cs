@@ -21,6 +21,54 @@ public partial class Login : Form
 
         _t = new Thread(() => Application.Run(new Principal(_user!)));
         _t.SetApartmentState(ApartmentState.STA);
+
+        this.addDefaultUsers();
+    }
+
+    private async void addDefaultUsers()
+    {
+        Employee janet = new()
+        {
+            mgrid = null,
+            empname = "Janet",
+            salary = 40.000M,
+            depid = 1,
+            deptname = "RH",
+            deptmgrid = 1,
+            bornDate = new DateTime(2000, 12, 12),
+            admissionDate = DateTime.Now,
+            loginCount = 0
+        };
+        Employee laura = new()
+        {
+            mgrid = 1,
+            empname = "Laura",
+            salary = 40.000M,
+            depid = 1,
+            deptname = "RH",
+            deptmgrid = 1,
+            bornDate = new DateTime(1986, 8, 12),
+            admissionDate = DateTime.Now,
+            loginCount = 0
+        };
+        Employee andrew = new()
+        {
+            mgrid = null,
+            empname = "Andrew",
+            salary = 40.000M,
+            depid = 2,
+            deptname = "TI",
+            deptmgrid = null,
+            bornDate = new DateTime(2001, 1, 12),
+            admissionDate = DateTime.Now,
+            loginCount = 0
+        };
+        
+        if (!await _context.Employees.AnyAsync(c => c.empname == "Andrew"))
+        {
+            _context.AddRange(janet, laura, andrew);
+            _context.SaveChanges();
+        }
     }
 
     private async void login()
