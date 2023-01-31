@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonAlter = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -37,6 +37,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gerente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonViewGerent = new System.Windows.Forms.Button();
+            this.comboBoxDepartments = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,8 +73,8 @@
             // 
             this.dataGridViewDepartments.AllowUserToAddRows = false;
             this.dataGridViewDepartments.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            this.dataGridViewDepartments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            this.dataGridViewDepartments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDepartments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ordem,
@@ -114,12 +115,21 @@
             this.buttonViewGerent.UseVisualStyleBackColor = true;
             this.buttonViewGerent.Click += new System.EventHandler(this.buttonViewGerent_Click);
             // 
+            // comboBoxDepartments
+            // 
+            this.comboBoxDepartments.FormattingEnabled = true;
+            this.comboBoxDepartments.Location = new System.Drawing.Point(30, 50);
+            this.comboBoxDepartments.Name = "comboBoxDepartments";
+            this.comboBoxDepartments.Size = new System.Drawing.Size(104, 23);
+            this.comboBoxDepartments.TabIndex = 5;
+            // 
             // Departamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(776, 337);
+            this.Controls.Add(this.comboBoxDepartments);
             this.Controls.Add(this.buttonViewGerent);
             this.Controls.Add(this.dataGridViewDepartments);
             this.Controls.Add(this.buttonDelete);
@@ -128,6 +138,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Departamento";
             this.Text = "Departamento";
+            this.Load += new System.EventHandler(this.Departamento_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Departamento_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDepartments)).EndInit();
             this.ResumeLayout(false);
@@ -144,5 +155,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn gerente;
         private Button buttonViewGerent;
+        private ComboBox comboBoxDepartments;
     }
 }

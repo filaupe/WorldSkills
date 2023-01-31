@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MPT_01_SEv1.Forms.Models.Departments;
 using MPT_01_SEv1.Forms.Models.Employees;
 using MPT_01_SEv1.Forms.Telas.Dialogos;
 
@@ -24,7 +25,10 @@ public partial class Departamento : Form
 
     private void resetTableAndComboBox()
     {
-        
+        using ApplicationDbContext context = new();
+        this.comboBoxDepartments.DataSource = context.Departments.ToList();
+        this.comboBoxDepartments.DisplayMember = "deptname";
+        this.comboBoxDepartments.ValueMember = "depid";
     }
 
     private void loadTable()
@@ -58,7 +62,10 @@ public partial class Departamento : Form
         using var form = new CrudDepartamento();
         form.Text = "Adição de departamento";
 
-        form.loadCombo();
+        var employees = context.Employees;
+        form.comboBoxGerents.DataSource = context.Employees.Where(c => employees.Any(o => c.empid == o.mgrid)).ToList();
+        form.comboBoxGerents.DisplayMember = "empname";
+        form.comboBoxGerents.ValueMember = "empid";
 
         if (form.ShowDialog() == DialogResult.OK)
         {
@@ -66,6 +73,15 @@ public partial class Departamento : Form
             {
                 int? mgrid = (form.comboBoxGerents.SelectedItem as Employee)?.mgrid;
                 if (mgrid == null) throw new Exception();
+                Department department = new() 
+                {
+                    deptname = form.textBoxDepartmentName.Text,
+                    deptmgrid = mgrid.Value,
+                };
+                context.Departments.Add(department);
+                context.SaveChanges();
+                MessageBox.Show("Departamento criado com sucesso!");
+                resetTableAndComboBox();
             }
             catch (Exception)
             {
@@ -82,7 +98,12 @@ public partial class Departamento : Form
 
         if (form.ShowDialog() == DialogResult.OK)
         {
-
+            
         }
+    }
+
+    private void Departamento_Load(object sender, EventArgs e)
+    {
+        resetTableAndComboBox();
     }
 }

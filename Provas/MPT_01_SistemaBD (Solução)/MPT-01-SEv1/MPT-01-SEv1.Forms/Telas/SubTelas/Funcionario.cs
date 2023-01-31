@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MPT_01_SEv1.Forms.Models.Employees;
 using MPT_01_SEv1.Forms.Telas.Dialogos;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace MPT_01_SEv1.Forms.Telas.SubTelas;
 
