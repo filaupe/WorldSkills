@@ -51,6 +51,7 @@
             this.buttonLastPage = new System.Windows.Forms.Button();
             this.buttonNextPage = new System.Windows.Forms.Button();
             this.buttonPreviousPage = new System.Windows.Forms.Button();
+            this.checkBoxGerents = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -248,6 +249,17 @@
             this.buttonPreviousPage.UseVisualStyleBackColor = true;
             this.buttonPreviousPage.Click += new System.EventHandler(this.buttonPreviousPage_Click);
             // 
+            // checkBoxGerents
+            // 
+            this.checkBoxGerents.AutoSize = true;
+            this.checkBoxGerents.Location = new System.Drawing.Point(178, 149);
+            this.checkBoxGerents.Name = "checkBoxGerents";
+            this.checkBoxGerents.Size = new System.Drawing.Size(117, 19);
+            this.checkBoxGerents.TabIndex = 16;
+            this.checkBoxGerents.Text = "Exibir só gerentes";
+            this.checkBoxGerents.UseVisualStyleBackColor = true;
+            this.checkBoxGerents.CheckedChanged += new System.EventHandler(this.checkBoxGerents_CheckedChanged);
+            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -256,6 +268,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(776, 337);
+            this.Controls.Add(this.checkBoxGerents);
             this.Controls.Add(this.buttonPreviousPage);
             this.Controls.Add(this.buttonNextPage);
             this.Controls.Add(this.buttonLastPage);
@@ -306,5 +319,6 @@
         private Button buttonLastPage;
         private Button buttonNextPage;
         private Button buttonPreviousPage;
+        private CheckBox checkBoxGerents;
     }
 }

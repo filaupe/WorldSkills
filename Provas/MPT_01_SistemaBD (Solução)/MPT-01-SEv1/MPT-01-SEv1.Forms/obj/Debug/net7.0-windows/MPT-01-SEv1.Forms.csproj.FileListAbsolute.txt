@@ -124,3 +124,4 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\obj\Debug\net7.0-windows\MPT-01-SEv1.Forms.pdb
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\obj\Debug\net7.0-windows\MPT-01-SEv1.Forms.genruntimeconfig.cache
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\obj\Debug\net7.0-windows\ref\MPT-01-SEv1.Forms.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\obj\Debug\net7.0-windows\MPT_01_SEv1.Forms.Telas.Dialogos.CrudDepartamento.resources

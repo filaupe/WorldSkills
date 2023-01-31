@@ -68,7 +68,7 @@ public partial class Principal : Form
 
     private void buttonDepartment_Click(object sender, EventArgs e)
     {
-        Departamento form = new()
+        Departamento form = new(_user)
         {
             TopLevel = false,
             Visible = true,

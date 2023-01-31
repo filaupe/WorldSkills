@@ -87,14 +87,17 @@ public partial class Funcionario : Form
         }
     }
 
-    private void resetTableAndComboBox()
+    private void resetTable()
     {
-        using ApplicationDbContext context = new();
-        this.comboBoxFuncionarios.DataSource = context.Employees.ToList();
-        this.comboBoxFuncionarios.DisplayMember = "empname";
-        this.comboBoxFuncionarios.ValueMember = "empid";
         this.dataGridViewEmployees.Rows.Clear();
-        foreach (var emp in context.Employees.AsNoTracking().Skip(_skip*_take).Take(_take).ToList())
+        using ApplicationDbContext context = new();
+        IQueryable<Employee> employeess;
+        var employees = context.Employees;
+        var list = employees;
+        if (this.checkBoxGerents.Checked)
+            employeess = employees.Where(c => list.Any(o => c.empid == o.mgrid));
+        employeess = employees.AsNoTracking().OrderBy(c => c.empname).Skip(_skip * _take).Take(_take);
+        foreach (var emp in employeess.ToList())
         {
             int? gerenteId;
             try
@@ -109,6 +112,15 @@ public partial class Funcionario : Form
             Employee? gerente = context.Employees.FirstOrDefault(x => x.empid == gerenteId);
             this.dataGridViewEmployees.Rows.Add(emp.empid, emp.empname, gerente?.empname, emp.salary);
         }
+    }
+
+    private void resetTableAndComboBox()
+    {
+        using ApplicationDbContext context = new();
+        this.comboBoxFuncionarios.DataSource = context.Employees.ToList();
+        this.comboBoxFuncionarios.DisplayMember = "empname";
+        this.comboBoxFuncionarios.ValueMember = "empid";
+        resetTable();
     }
 
     private void buttonEdit_Click(object sender, EventArgs e)
@@ -424,5 +436,17 @@ public partial class Funcionario : Form
         cell.Style.BackColor = Color.Red;
         Task.Delay(500);
         cell.Style.BackColor = color;
+    }
+
+    private void checkBoxGerents_CheckedChanged(object sender, EventArgs e)
+    {
+        if (this.checkBoxGerents.Checked)
+        {
+            resetTable();
+        }
+        else
+        {
+            resetTable();
+        }
     }
 }
