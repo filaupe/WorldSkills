@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj": {}
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj": {
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj",
+        "projectUniqueName": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj",
         "projectName": "MPT-01-SEv1.Forms",
-        "projectPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj",
-        "packagesPath": "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\obj\\",
+        "projectPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\MPT-01-SEv1.Forms.csproj",
+        "packagesPath": "C:\\Users\\android\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\MPT_01_SistemaBD (Solução)\\MPT-01-SEv1\\MPT-01-SEv1.Forms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Arquivos de Programas (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MulinhaGPlays\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\android\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +45,28 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
