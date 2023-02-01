@@ -1,6 +1,3 @@
-using MPT_01_SEv1.Forms.Telas;
-using MPT_01_SEv1.Forms.Telas.SubTelas;
-
 namespace MPT_01_SEv1.Forms
 {
     internal static class Program
@@ -14,7 +11,7 @@ namespace MPT_01_SEv1.Forms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new Form1());
         }
     }
 }
