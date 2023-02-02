@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MPT-01-SEv1.Forms</id>
+    <version>1.0.0</version>
+    <authors>MPT-01-SEv1.Forms</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net7.0-windows7.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="7.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="7.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net7.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\bin\Debug\net7.0-windows\MPT-01-SEv1.Forms.runtimeconfig.json" target="lib\net7.0-windows7.0\MPT-01-SEv1.Forms.runtimeconfig.json" />
+    <file src="C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv1\MPT-01-SEv1.Forms\bin\Debug\net7.0-windows\MPT-01-SEv1.Forms.dll" target="lib\net7.0-windows7.0\MPT-01-SEv1.Forms.dll" />
+  </files>
+</package>

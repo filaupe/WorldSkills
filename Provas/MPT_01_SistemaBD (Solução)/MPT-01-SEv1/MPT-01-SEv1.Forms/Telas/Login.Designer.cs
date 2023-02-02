@@ -52,6 +52,8 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(322, 33);
             this.textBoxName.TabIndex = 1;
+            this.textBoxName.Enter += new System.EventHandler(this.textBoxName_Enter);
+            this.textBoxName.Leave += new System.EventHandler(this.textBoxName_Leave);
             // 
             // buttonLogin
             // 
@@ -85,6 +87,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

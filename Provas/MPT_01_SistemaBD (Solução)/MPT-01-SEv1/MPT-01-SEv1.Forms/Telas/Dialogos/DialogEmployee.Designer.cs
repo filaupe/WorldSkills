@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDialog = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.comboBoxEmployees = new System.Windows.Forms.ComboBox();
@@ -36,15 +36,15 @@
             this.textBoxSalary = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonDialog
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(12, 201);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonDialog.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonDialog.Location = new System.Drawing.Point(12, 201);
+            this.buttonDialog.Name = "buttonDialog";
+            this.buttonDialog.Size = new System.Drawing.Size(75, 23);
+            this.buttonDialog.TabIndex = 0;
+            this.buttonDialog.Text = "Adicionar";
+            this.buttonDialog.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -62,6 +62,8 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 23);
             this.textBoxName.TabIndex = 2;
+            this.textBoxName.Enter += new System.EventHandler(this.textBoxName_Enter);
+            this.textBoxName.Leave += new System.EventHandler(this.textBoxName_Leave);
             // 
             // comboBoxEmployees
             // 
@@ -84,6 +86,8 @@
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(100, 23);
             this.textBoxSalary.TabIndex = 5;
+            this.textBoxSalary.Enter += new System.EventHandler(this.textBoxSalary_Enter);
+            this.textBoxSalary.Leave += new System.EventHandler(this.textBoxSalary_Leave);
             // 
             // DialogEmployee
             // 
@@ -95,7 +99,7 @@
             this.Controls.Add(this.comboBoxEmployees);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDialog);
             this.Name = "DialogEmployee";
             this.Text = "DialogEmployee";
             this.ResumeLayout(false);
@@ -104,12 +108,11 @@
         }
 
         #endregion
-
-        private Button button1;
         private Button button2;
         public TextBox textBoxName;
         public ComboBox comboBoxEmployees;
         public DateTimePicker dateTimePicker;
         public TextBox textBoxSalary;
+        public Button buttonDialog;
     }
 }

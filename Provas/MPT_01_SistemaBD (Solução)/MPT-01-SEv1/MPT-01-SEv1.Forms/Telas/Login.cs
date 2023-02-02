@@ -44,4 +44,19 @@ public partial class Login : Form
             MessageBox.Show($"Login incorreto, você tem mais {3 - _counter} tentativas.");
         }
     }
+
+    private void textBoxName_Enter(object sender, EventArgs e)
+    {
+        this.textBoxName.BackColor = Color.LightCoral;
+    }
+
+    private void textBoxName_Leave(object sender, EventArgs e)
+    {
+        this.textBoxName.BackColor = Color.White;
+    }
+
+    private void Login_Load(object sender, EventArgs e)
+    {
+
+    }
 }

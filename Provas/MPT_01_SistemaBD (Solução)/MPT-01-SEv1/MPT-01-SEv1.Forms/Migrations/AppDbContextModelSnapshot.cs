@@ -22,6 +22,26 @@ namespace MPT01SEv1.Forms.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MPT_01_SEv1.Forms.Models.Department", b =>
+                {
+                    b.Property<int>("depid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("depid"));
+
+                    b.Property<int>("deptmgrid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("deptname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("depid");
+
+                    b.ToTable("Departments");
+                });
+
             modelBuilder.Entity("MPT_01_SEv1.Forms.Models.Employee", b =>
                 {
                     b.Property<int>("empid")
