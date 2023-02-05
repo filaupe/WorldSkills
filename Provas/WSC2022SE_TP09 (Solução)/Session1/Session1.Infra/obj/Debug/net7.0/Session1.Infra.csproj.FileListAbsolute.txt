@@ -12,3 +12,17 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.pdb
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.genruntimeconfig.cache
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\ref\Session1.Infra.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\bin\Debug\net7.0\Session1.Infra.deps.json
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\bin\Debug\net7.0\Session1.Infra.runtimeconfig.json
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\bin\Debug\net7.0\Session1.Infra.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\bin\Debug\net7.0\Session1.Infra.pdb
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.csproj.AssemblyReference.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.AssemblyInfoInputs.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.AssemblyInfo.cs
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.csproj.CoreCompileInputs.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\refint\Session1.Infra.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.pdb
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\Session1.Infra.genruntimeconfig.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Infra\obj\Debug\net7.0\ref\Session1.Infra.dll
