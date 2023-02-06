@@ -16,35 +16,17 @@ public partial class SeoulStayLogin : Form
         this.Visible = false;
     }
 
-    private void buttonExit_Click(object? seder, EventArgs e) => Application.Exit();
-    private async void buttonLogin_Click(object? seder, EventArgs e)
+    private async void login(string employeeTxt, string userTxt, string passwordTxt)
     {
-        string employeeTxt = this.textBoxEmployee.Text;
-        string passwordTxt = this.textBoxPassword.Text;
-        string userTxt = this.textBoxUser.Text;
-
         if (!String.IsNullOrWhiteSpace(employeeTxt))
-        { 
+        {
             User? employee = await _context.Users.FirstOrDefaultAsync(x => x.Username == employeeTxt && x.Password == passwordTxt);
             User? user = await _context.Users.FirstOrDefaultAsync(x => x.Username == userTxt);
             if (employee != null)
             {
                 if (user != null)
                 {
-                    if (this.checkBoxKeepSigned.Checked)
-                    {
-                        Properties.RememberMe.Default.Employee = employeeTxt;
-                        Properties.RememberMe.Default.User = userTxt;
-                        Properties.RememberMe.Default.Password = passwordTxt;
-                        Properties.RememberMe.Default.Save();
-                    }
-                    else
-                    {
-                        Properties.RememberMe.Default.Employee = "";
-                        Properties.RememberMe.Default.User = "";
-                        Properties.RememberMe.Default.Password = "";
-                        Properties.RememberMe.Default.Save();
-                    }
+                    this.RememberMe();
 
                     var openManagement = new Thread(() => Application.Run(new SeoulStayManagement()));
                     openManagement.SetApartmentState(ApartmentState.STA);
@@ -61,18 +43,7 @@ public partial class SeoulStayLogin : Form
             User? user = await _context.Users.FirstOrDefaultAsync(x => x.Username == userTxt && x.Password == passwordTxt);
             if (user != null)
             {
-                if (this.checkBoxKeepSigned.Checked)
-                {
-                    Properties.RememberMe.Default.User = userTxt;
-                    Properties.RememberMe.Default.Password = passwordTxt;
-                    Properties.RememberMe.Default.Save();
-                }
-                else
-                {
-                    Properties.RememberMe.Default.User = "";
-                    Properties.RememberMe.Default.Password = "";
-                    Properties.RememberMe.Default.Save();
-                }
+                this.RememberMe();
 
                 var openManagement = new Thread(() => Application.Run(new SeoulStayManagement()));
                 openManagement.SetApartmentState(ApartmentState.STA);
@@ -82,6 +53,52 @@ public partial class SeoulStayLogin : Form
             }
             else MessageBox.Show("User not found.");
         }
+    }
+
+    private void RememberMe()
+    {
+        if (!String.IsNullOrWhiteSpace(this.textBoxEmployee.Text))
+        {
+            if (this.checkBoxKeepSigned.Checked)
+            {
+                Properties.RememberMe.Default.Employee = this.textBoxEmployee.Text;
+                Properties.RememberMe.Default.User = this.textBoxUser.Text;
+                Properties.RememberMe.Default.Password = this.textBoxPassword.Text;
+                Properties.RememberMe.Default.Save();
+            }
+            else
+            {
+                Properties.RememberMe.Default.Employee = "";
+                Properties.RememberMe.Default.User = "";
+                Properties.RememberMe.Default.Password = "";
+                Properties.RememberMe.Default.Save();
+            }
+        }
+        else
+        {
+            if (this.checkBoxKeepSigned.Checked)
+            {
+                Properties.RememberMe.Default.User = this.textBoxUser.Text;
+                Properties.RememberMe.Default.Password = this.textBoxPassword.Text;
+                Properties.RememberMe.Default.Save();
+            }
+            else
+            {
+                Properties.RememberMe.Default.User = "";
+                Properties.RememberMe.Default.Password = "";
+                Properties.RememberMe.Default.Save();
+            }
+        }
+    }
+
+    private void buttonExit_Click(object? seder, EventArgs e) => Application.Exit();
+    private void buttonLogin_Click(object? seder, EventArgs e)
+    {
+        string employeeTxt = this.textBoxEmployee.Text;
+        string userTxt = this.textBoxUser.Text;
+        string passwordTxt = this.textBoxPassword.Text;
+
+        this.login(employeeTxt, userTxt, passwordTxt);
     }
     private void checkBoxShowPassword_CheckedChanged(object? seder, EventArgs e)
         => this.textBoxPassword.UseSystemPasswordChar = !this.checkBoxShowPassword.Checked;
