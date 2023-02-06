@@ -18,7 +18,7 @@ namespace Session1.Infra.Models
         [Key]
         public long ID { get; set; }
         public Guid GUID { get; set; }
-        public long UserTypeID { get; set; }
+        public long UserTypeID { get; set; } = 1;
         [Required]
         [StringLength(50)]
         [Unicode(false)]

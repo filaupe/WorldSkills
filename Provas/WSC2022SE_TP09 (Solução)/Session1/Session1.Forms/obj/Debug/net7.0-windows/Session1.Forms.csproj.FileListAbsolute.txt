@@ -46,7 +46,6 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\bin\Debug\net7.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\bin\Debug\net7.0-windows\Session1.Infra.dll
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\bin\Debug\net7.0-windows\Session1.Infra.pdb
-C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Telas.Principal.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.csproj.GenerateResource.cache
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.dll
@@ -113,3 +112,10 @@ C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solu�
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayLogin.resources
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayManagement.resources
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\bin\Debug\net7.0-windows\Session1.Forms.dll.config
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\bin\Debug\net7.0-windows\Session1.Forms.dll.config
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Properties.Resources.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayLogin.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayManagement.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Properties.Terms.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayCreateAccount.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.Dialogs.ShowTerms.resources

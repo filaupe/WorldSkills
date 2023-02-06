@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj": {}
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj": {
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj",
         "projectName": "Session1.Infra",
-        "projectPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj",
-        "packagesPath": "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\obj\\",
+        "projectPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\Session1.Infra.csproj",
+        "packagesPath": "C:\\Users\\android\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session1\\Session1.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Arquivos de Programas (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MulinhaGPlays\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\android\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
