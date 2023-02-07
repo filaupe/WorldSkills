@@ -63,6 +63,16 @@ namespace Session1.Forms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _267_plus {
+            get {
+                object obj = ResourceManager.GetObject("267-plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _276_enter {
             get {
                 object obj = ResourceManager.GetObject("276-enter", resourceCulture);

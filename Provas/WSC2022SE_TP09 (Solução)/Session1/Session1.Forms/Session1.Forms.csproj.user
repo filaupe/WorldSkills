@@ -4,6 +4,9 @@
     <Compile Update="Windows\Dialogs\ShowTerms.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Windows\SeoulStayAddOrEditListing.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Windows\SeoulStayCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
