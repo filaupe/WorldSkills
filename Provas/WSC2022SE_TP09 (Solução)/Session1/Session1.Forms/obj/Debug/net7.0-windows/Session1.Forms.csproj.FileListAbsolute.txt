@@ -122,3 +122,4 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Properties.Terms.resources
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.Dialogs.ShowTerms.resources
 C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayCreateAccount.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session1\Session1.Forms\obj\Debug\net7.0-windows\Session1.Forms.Windows.SeoulStayAddOrEditListing.resources

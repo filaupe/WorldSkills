@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session1.Infra", "Session1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session1.Forms", "Session1.Forms\Session1.Forms.csproj", "{79227ACF-4999-4C7D-81EF-C92BD670E4F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session1.UnitTest", "Session1.UnitTest\Session1.UnitTest.csproj", "{13B8B121-709F-4DC3-84CC-BC3C901EEB43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{79227ACF-4999-4C7D-81EF-C92BD670E4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79227ACF-4999-4C7D-81EF-C92BD670E4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79227ACF-4999-4C7D-81EF-C92BD670E4F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B8B121-709F-4DC3-84CC-BC3C901EEB43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B8B121-709F-4DC3-84CC-BC3C901EEB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B8B121-709F-4DC3-84CC-BC3C901EEB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B8B121-709F-4DC3-84CC-BC3C901EEB43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
