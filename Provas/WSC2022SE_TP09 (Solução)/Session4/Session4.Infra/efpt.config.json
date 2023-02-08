@@ -1,0 +1,121 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "Session4Context",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Session4.Infra",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Amenities]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Areas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Attractions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BookingDetails]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Bookings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CancellationPolicies]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CancellationRefundFees]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Coupons]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DimDates]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemAmenities]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemAttractions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemPictures]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemPrices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Items]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemScores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ItemTypes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Scores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Transactions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TransactionTypes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserTypes]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-D8IN6VK\\FILAUPE.Session4",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
