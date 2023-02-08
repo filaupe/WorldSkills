@@ -60,7 +60,7 @@ public partial class Session4Context : DbContext
     public virtual DbSet<UserType> UserTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=.\\FILAUPE;Initial Catalog=Session4;Persist Security Info=True;User ID=sa;Password=filaupe.123");
+        => optionsBuilder.UseSqlServer(@"Data Source=.\WORLDSKILLSP1;Initial Catalog=Session4;Integrated Security=True;Encrypt=False;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

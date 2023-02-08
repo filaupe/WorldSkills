@@ -1,0 +1,12 @@
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\bin\Debug\net7.0\Session4.Infra.deps.json
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\bin\Debug\net7.0\Session4.Infra.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\bin\Debug\net7.0\Session4.Infra.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.AssemblyInfoInputs.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.AssemblyInfo.cs
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.csproj.CoreCompileInputs.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\refint\Session4.Infra.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\Session4.Infra.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\WSC2022SE_TP09 (Solução)\Session4\Session4.Infra\obj\Debug\net7.0\ref\Session4.Infra.dll
