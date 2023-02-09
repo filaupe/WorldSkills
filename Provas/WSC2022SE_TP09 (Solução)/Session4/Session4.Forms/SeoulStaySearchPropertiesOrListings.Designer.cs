@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +57,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -64,7 +65,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -73,7 +73,7 @@
             this.groupBox1.Size = new System.Drawing.Size(579, 109);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Simple Search";
             // 
             // button2
             // 
@@ -81,7 +81,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
+            this.button2.Text = "Advanced Search ";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -89,9 +89,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(353, 67);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.label5.Text = "people";
             // 
             // textBox3
             // 
@@ -103,20 +103,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(272, 67);
+            this.label4.Location = new System.Drawing.Point(274, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(27, 15);
             this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.label4.Text = "and";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(228, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.label3.Text = "nights";
             // 
             // textBox2
             // 
@@ -128,20 +128,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 67);
+            this.label2.Location = new System.Drawing.Point(163, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(22, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(50, 64);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(91, 23);
-            this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.label2.Text = "for";
             // 
             // label1
             // 
@@ -150,7 +141,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "From:";
             // 
             // button1
             // 
@@ -158,7 +149,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Search propeties";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -244,6 +235,13 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(50, 63);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(107, 23);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
             // SeoulStaySearchPropertiesOrListings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -276,7 +274,6 @@
         private Label label3;
         private TextBox textBox2;
         private Label label2;
-        private MaskedTextBox maskedTextBox1;
         private Label label1;
         private Button button1;
         private TextBox textBox1;
@@ -289,5 +286,6 @@
         private DataGridViewTextBoxColumn Column5;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private DateTimePicker dateTimePicker1;
     }
 }
