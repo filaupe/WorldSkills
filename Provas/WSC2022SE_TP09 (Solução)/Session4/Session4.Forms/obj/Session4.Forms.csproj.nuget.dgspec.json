@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj": {}
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj": {
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj",
+        "projectUniqueName": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj",
         "projectName": "Session4.Forms",
-        "projectPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj",
-        "packagesPath": "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\obj\\",
+        "projectPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\Session4.Forms.csproj",
+        "packagesPath": "C:\\Users\\android\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Forms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Arquivos de Programas (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MulinhaGPlays\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\android\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +34,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj": {
-                "projectPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj"
+              "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj": {
+                "projectPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj"
               }
             }
           }
@@ -71,20 +72,21 @@
         }
       }
     },
-    "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj": {
+    "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj",
         "projectName": "Session4.Infra",
-        "projectPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj",
-        "packagesPath": "C:\\Users\\MulinhaGPlays\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MulinhaGPlays\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\obj\\",
+        "projectPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\Session4.Infra.csproj",
+        "packagesPath": "C:\\Users\\android\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\android\\Documents\\GitHub\\WorldSkills\\Provas\\WSC2022SE_TP09 (Solução)\\Session4\\Session4.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Arquivos de Programas (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MulinhaGPlays\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\android\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

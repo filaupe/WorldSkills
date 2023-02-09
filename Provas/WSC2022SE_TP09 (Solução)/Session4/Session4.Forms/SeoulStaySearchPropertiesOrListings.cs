@@ -5,13 +5,16 @@ namespace Session4.Forms;
 public partial class SeoulStaySearchPropertiesOrListings : Form
 {
     private readonly Session4Context _context;
-    private List<SearchingViewModel> _list = null!;
+    private readonly List<SearchingViewModel> _list;
+    private readonly AutoCompleteStringCollection _autoComplete;
 
     public SeoulStaySearchPropertiesOrListings()
     {
         InitializeComponent();
 
         _context = new();
+        _list = new();
+        _autoComplete = new();
     }
 
     private void LoadList()
@@ -58,15 +61,27 @@ public partial class SeoulStaySearchPropertiesOrListings : Form
 
     private void SeoulStaySearchPropertiesOrListings_Load(object sender, EventArgs e)
     {
-        _list = new();
         foreach (var item in _context.Items.ToList())
-            _list.Add(new SearchingViewModel(_context, item));
+        {
+            var model = new SearchingViewModel(_context, item);
+            _list.Add(model);
+            _autoComplete.Add(model.Item.Title);
+            _autoComplete.Add(model.Area.Name);
+            _autoComplete.Add(model.ItemType.Name);
+            _autoComplete.AddRange(model.Attractions.Select(x => x.Name).ToArray());
+            _autoComplete.AddRange(model.Amenities.Select(x => x.Name).ToArray());
+        }
+
+        textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+        textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        textBox1.AutoCompleteCustomSource = _autoComplete;
 
         this.LoadList();
+        this.toolStripStatusLabel1.Text = $"Displaying {this.dataGridView1.RowCount} options";
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
+    private void button1_Click(object sender, EventArgs e) // melhorar
+    { 
         this.dataGridView1.Rows.Clear();
         var txt = this.textBox1.Text;
         var date = this.dateTimePicker1.Value;
@@ -94,6 +109,17 @@ public partial class SeoulStaySearchPropertiesOrListings : Form
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
+        }
+        this.toolStripStatusLabel1.Text = $"Displaying {this.dataGridView1.RowCount} options";
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        using AdvancedSearchDiaolog dialog = new(_context);
+
+        if (dialog.ShowDialog() == DialogResult.OK)
+        {
+            
         }
     }
 }

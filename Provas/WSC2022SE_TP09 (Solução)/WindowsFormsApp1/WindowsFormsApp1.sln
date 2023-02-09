@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALMadeira", "DALMadeira\DALMadeira.csproj", "{08CE8064-0040-4BC0-B133-4363B96FC386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL2", "DAL2\DAL2.csproj", "{7677999D-2C31-463C-8D18-73423BBBE1FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp2", "WinFormsApp2\WinFormsApp2.csproj", "{84083220-7C56-4ABE-98EB-0818C03A9789}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08CE8064-0040-4BC0-B133-4363B96FC386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CE8064-0040-4BC0-B133-4363B96FC386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CE8064-0040-4BC0-B133-4363B96FC386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CE8064-0040-4BC0-B133-4363B96FC386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7677999D-2C31-463C-8D18-73423BBBE1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7677999D-2C31-463C-8D18-73423BBBE1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7677999D-2C31-463C-8D18-73423BBBE1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7677999D-2C31-463C-8D18-73423BBBE1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84083220-7C56-4ABE-98EB-0818C03A9789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84083220-7C56-4ABE-98EB-0818C03A9789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84083220-7C56-4ABE-98EB-0818C03A9789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84083220-7C56-4ABE-98EB-0818C03A9789}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B58F1648-CC87-4EB4-9294-C4AF889E6922}
+	EndGlobalSection
+EndGlobal
