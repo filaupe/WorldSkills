@@ -142,6 +142,45 @@ namespace Session6.Forms
                 this.label27.Text = coupon.CouponCode;
             }
             else this.label27.Text = "Non coupon used";
+
+            var bookings = _context.Bookings;
+            var bookingsCoupons = bookings.Where(x => x.CouponID != null && x.UserID == hostId);
+            var coupons2 = new List<Coupon>();
+            foreach (var booking in bookingsCoupons)
+                coupons2.Add(_context.Coupons.Find(booking.CouponID));
+            var amounts = new List<decimal?>();
+            for (int i = 0; i < bookingsCoupons.Count(); i++)
+                amounts.Add(bookingsCoupons.ToArray()[i].AmountPaid * (coupons2[i].DiscountPercent/100));
+            this.label28.Text = $"R$ {amounts.Sum()}";
+
+            this.label29.Text = $"R$ {bookings.Sum(x => x.AmountPaid)}";
+
+            var Users = _context.Users.ToList();
+            var Transactions = _context.Transactions.ToList();
+            var userName = Users.First(c => c.ID == Transactions.First(x => x.Amount == _context.Transactions.Max(p => p.Amount)).UserID).FullName;
+            this.label30.Text = $"{userName}";
+
+            var bookingDetails = _context.BookingDetails.ToList();
+            foreach (var bookingDetail in bookingDetails)
+            {
+                bookingDetail.Booking = _context.Bookings.Find(bookingDetail.BookingID);
+                bookingDetail.ItemPrice = _context.ItemPrices.Find(bookingDetail.ItemPriceID);
+            }
+            decimal total = 0;
+            foreach (var bookingDetail in bookingDetails.Where(x => x.RefundCancellationPoliciyID != null))
+                total += bookingDetail.ItemPrice.Price * ((_context.CancellationPolicies.Find(bookingDetail.RefundCancellationPoliciyID)).Commission/100);
+            this.label31.Text = $"R$ {total}";
+
+            this.label32.Text = _context.Services.Count().ToString();
+
+            this.label33.Text = $"R$ {_context.Services.Sum(x => x.Price)}";
+
+            var services = _context.Services.ToList();
+            this.label34.Text = services.First(x => x.BookingCap == _context.Services.Max(c => c.BookingCap)).Name;
+
+            this.label41.Text = _context.BookingDetails.Count(x => x.RefundCancellationPoliciyID != null).ToString();
+
+            this.label37.Text = _context.BookingDetails.Count(x => x.RefundCancellationPoliciyID != null).ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
