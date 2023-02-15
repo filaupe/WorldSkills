@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PT2023SE_02_Investimento.Forms", "PT2023SE_02_Investimento.Forms\PT2023SE_02_Investimento.Forms.csproj", "{2753E9A0-4F2D-42E5-91CF-9906BF791BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PT2023SE_02_Investimento.Tests", "PT2023SE_02_Investimento.Tests\PT2023SE_02_Investimento.Tests.csproj", "{D6D63A8C-D238-4ED9-A27C-1F5FA976F26E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2753E9A0-4F2D-42E5-91CF-9906BF791BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2753E9A0-4F2D-42E5-91CF-9906BF791BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2753E9A0-4F2D-42E5-91CF-9906BF791BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2753E9A0-4F2D-42E5-91CF-9906BF791BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6D63A8C-D238-4ED9-A27C-1F5FA976F26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D63A8C-D238-4ED9-A27C-1F5FA976F26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D63A8C-D238-4ED9-A27C-1F5FA976F26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D63A8C-D238-4ED9-A27C-1F5FA976F26E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA8CC40F-C69C-49AA-ADA4-889B9107874B}
+	EndGlobalSection
+EndGlobal

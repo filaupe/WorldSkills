@@ -1,0 +1,11 @@
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\bin\Debug\PT2023SE_02_Investimento.Forms.exe.config
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\bin\Debug\PT2023SE_02_Investimento.Forms.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\bin\Debug\PT2023SE_02_Investimento.Forms.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.Form1.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.Properties.Resources.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.csproj.GenerateResource.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.csproj.CoreCompileInputs.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT2023SE_02_Investimento (Solução)\PT2023SE_02_Investimento\PT2023SE_02_Investimento.Forms\obj\Debug\PT2023SE_02_Investimento.Forms.pdb
