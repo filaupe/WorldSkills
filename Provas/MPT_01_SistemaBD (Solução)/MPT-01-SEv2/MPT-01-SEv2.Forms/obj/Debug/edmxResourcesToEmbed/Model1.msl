@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities">
+    <EntitySetMapping Name="Entity1">
+      <EntityTypeMapping TypeName="IsTypeOf(bdBrasilResortModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity2">
+      <EntityTypeMapping TypeName="IsTypeOf(bdBrasilResortModel.Entity2)">
+        <MappingFragment StoreEntitySet="Entity2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity3">
+      <EntityTypeMapping TypeName="IsTypeOf(bdBrasilResortModel.Entity3)">
+        <MappingFragment StoreEntitySet="Entity3">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity4">
+      <EntityTypeMapping TypeName="IsTypeOf(bdBrasilResortModel.Entity4)">
+        <MappingFragment StoreEntitySet="Entity4">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

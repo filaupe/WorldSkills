@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdBrasilResortModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="bdBrasilResortEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Funcionarios" EntityType="bdBrasilResortModel.Funcionario" />
+    <EntitySet Name="nascimento_" EntityType="bdBrasilResortModel.nascimento_" />
+  </EntityContainer>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empid" Type="Double" />
+    <Property Name="mgrid" Type="Double" />
+    <Property Name="empname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="depid" Type="Double" Nullable="false" />
+    <Property Name="deptname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deptmgrid" Type="Double" />
+  </EntityType>
+  <EntityType Name="nascimento_">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empid" Type="Double" />
+    <Property Name="date" Type="DateTime" Precision="3" />
+    <Property Name="hiredate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

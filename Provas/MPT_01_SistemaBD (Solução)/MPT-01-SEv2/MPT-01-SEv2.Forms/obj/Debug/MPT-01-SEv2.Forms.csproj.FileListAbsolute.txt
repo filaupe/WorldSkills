@@ -1,0 +1,17 @@
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\MPT-01-SEv2.Forms.exe.config
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\MPT-01-SEv2.Forms.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\MPT-01-SEv2.Forms.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\EntityFramework.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\EntityFramework.xml
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Properties.Resources.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.csproj.GenerateResource.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.csproj.CoreCompileInputs.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.csproj.CopyComplete
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT-01-SEv2.Forms.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.BR_Principal.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.SubTelas.BR_Funcionario.resources

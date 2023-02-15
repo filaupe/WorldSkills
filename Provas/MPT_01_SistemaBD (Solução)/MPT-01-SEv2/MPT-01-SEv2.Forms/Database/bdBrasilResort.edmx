@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="bdBrasilResortModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Funcionarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empid" Type="float" />
+          <Property Name="mgrid" Type="float" />
+          <Property Name="empname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="salary" Type="money" Nullable="false" />
+          <Property Name="depid" Type="float" Nullable="false" />
+          <Property Name="deptname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="deptmgrid" Type="float" />
+        </EntityType>
+        <EntityType Name="nascimento$">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empid" Type="float" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="hiredate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="bdBrasilResortModelStoreContainer">
+          <EntitySet Name="Funcionarios" EntityType="Self.Funcionarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nascimento$" EntityType="Self.nascimento$" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdBrasilResortModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="bdBrasilResortEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Funcionarios" EntityType="bdBrasilResortModel.Funcionario" />
+          <EntitySet Name="nascimento_" EntityType="bdBrasilResortModel.nascimento_" />
+        </EntityContainer>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empid" Type="Double" />
+          <Property Name="mgrid" Type="Double" />
+          <Property Name="empname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="depid" Type="Double" Nullable="false" />
+          <Property Name="deptname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="deptmgrid" Type="Double" />
+        </EntityType>
+        <EntityType Name="nascimento_">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empid" Type="Double" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="hiredate" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities" >
+          <EntitySetMapping Name="Funcionarios">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionario">
+              <MappingFragment StoreEntitySet="Funcionarios">
+                <ScalarProperty Name="deptmgrid" ColumnName="deptmgrid" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+                <ScalarProperty Name="depid" ColumnName="depid" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="empname" ColumnName="empname" />
+                <ScalarProperty Name="mgrid" ColumnName="mgrid" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nascimento_">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.nascimento_">
+              <MappingFragment StoreEntitySet="nascimento$">
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

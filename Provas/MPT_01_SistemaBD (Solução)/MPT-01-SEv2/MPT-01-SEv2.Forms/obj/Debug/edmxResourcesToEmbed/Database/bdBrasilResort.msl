@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities">
+    <EntitySetMapping Name="Funcionarios">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionario">
+        <MappingFragment StoreEntitySet="Funcionarios">
+          <ScalarProperty Name="deptmgrid" ColumnName="deptmgrid" />
+          <ScalarProperty Name="deptname" ColumnName="deptname" />
+          <ScalarProperty Name="depid" ColumnName="depid" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="mgrid" ColumnName="mgrid" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nascimento_">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.nascimento_">
+        <MappingFragment StoreEntitySet="nascimento$">
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
