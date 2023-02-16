@@ -33,15 +33,15 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFuncionarios = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonPrimeiraPagina = new System.Windows.Forms.Button();
+            this.buttonPaginaAnterior = new System.Windows.Forms.Button();
+            this.buttonProximaPagina = new System.Windows.Forms.Button();
+            this.buttonUltimaPagina = new System.Windows.Forms.Button();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -66,10 +66,10 @@
             this.Column3,
             this.Column4});
             this.dataGridViewFuncionarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridViewFuncionarios.Location = new System.Drawing.Point(12, 129);
+            this.dataGridViewFuncionarios.Location = new System.Drawing.Point(12, 90);
             this.dataGridViewFuncionarios.Name = "dataGridViewFuncionarios";
             this.dataGridViewFuncionarios.ReadOnly = true;
-            this.dataGridViewFuncionarios.Size = new System.Drawing.Size(558, 227);
+            this.dataGridViewFuncionarios.Size = new System.Drawing.Size(558, 106);
             this.dataGridViewFuncionarios.TabIndex = 1;
             // 
             // Column1
@@ -99,15 +99,15 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 115;
             // 
-            // comboBox1
+            // comboBoxFuncionarios
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxFuncionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.comboBoxFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxFuncionarios.FormattingEnabled = true;
+            this.comboBoxFuncionarios.Location = new System.Drawing.Point(12, 12);
+            this.comboBoxFuncionarios.Name = "comboBoxFuncionarios";
+            this.comboBoxFuncionarios.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFuncionarios.TabIndex = 2;
             // 
             // button1
             // 
@@ -145,69 +145,70 @@
             this.button3.Text = "Deletar";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonPrimeiraPagina
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 102);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 21);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonPrimeiraPagina.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonPrimeiraPagina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonPrimeiraPagina.ForeColor = System.Drawing.Color.White;
+            this.buttonPrimeiraPagina.Location = new System.Drawing.Point(12, 63);
+            this.buttonPrimeiraPagina.Name = "buttonPrimeiraPagina";
+            this.buttonPrimeiraPagina.Size = new System.Drawing.Size(50, 21);
+            this.buttonPrimeiraPagina.TabIndex = 6;
+            this.buttonPrimeiraPagina.Text = "<<";
+            this.buttonPrimeiraPagina.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonPaginaAnterior
             // 
-            this.button5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(68, 102);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 21);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "<";
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonPaginaAnterior.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonPaginaAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonPaginaAnterior.ForeColor = System.Drawing.Color.White;
+            this.buttonPaginaAnterior.Location = new System.Drawing.Point(68, 63);
+            this.buttonPaginaAnterior.Name = "buttonPaginaAnterior";
+            this.buttonPaginaAnterior.Size = new System.Drawing.Size(28, 21);
+            this.buttonPaginaAnterior.TabIndex = 7;
+            this.buttonPaginaAnterior.Text = "<";
+            this.buttonPaginaAnterior.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // buttonProximaPagina
             // 
-            this.button6.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(139, 102);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 21);
-            this.button6.TabIndex = 8;
-            this.button6.Text = ">";
-            this.button6.UseVisualStyleBackColor = false;
+            this.buttonProximaPagina.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonProximaPagina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonProximaPagina.ForeColor = System.Drawing.Color.White;
+            this.buttonProximaPagina.Location = new System.Drawing.Point(139, 63);
+            this.buttonProximaPagina.Name = "buttonProximaPagina";
+            this.buttonProximaPagina.Size = new System.Drawing.Size(28, 21);
+            this.buttonProximaPagina.TabIndex = 8;
+            this.buttonProximaPagina.Text = ">";
+            this.buttonProximaPagina.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // buttonUltimaPagina
             // 
-            this.button7.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(173, 102);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 21);
-            this.button7.TabIndex = 9;
-            this.button7.Text = ">>";
-            this.button7.UseVisualStyleBackColor = false;
+            this.buttonUltimaPagina.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonUltimaPagina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUltimaPagina.ForeColor = System.Drawing.Color.White;
+            this.buttonUltimaPagina.Location = new System.Drawing.Point(173, 63);
+            this.buttonUltimaPagina.Name = "buttonUltimaPagina";
+            this.buttonUltimaPagina.Size = new System.Drawing.Size(50, 21);
+            this.buttonUltimaPagina.TabIndex = 9;
+            this.buttonUltimaPagina.Text = ">>";
+            this.buttonUltimaPagina.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // textBoxPrice
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(266, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.textBoxPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPrice.Location = new System.Drawing.Point(266, 63);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 10;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxPrice_TextChanged);
             // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.DodgerBlue;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(372, 102);
+            this.button8.Location = new System.Drawing.Point(372, 63);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(28, 21);
             this.button8.TabIndex = 11;
@@ -219,7 +220,7 @@
             this.button9.BackColor = System.Drawing.Color.DodgerBlue;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(406, 102);
+            this.button9.Location = new System.Drawing.Point(406, 63);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(28, 21);
             this.button9.TabIndex = 12;
@@ -231,7 +232,7 @@
             this.button10.BackColor = System.Drawing.Color.DodgerBlue;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(440, 102);
+            this.button10.Location = new System.Drawing.Point(440, 63);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(28, 21);
             this.button10.TabIndex = 13;
@@ -243,7 +244,7 @@
             this.button11.BackColor = System.Drawing.Color.DodgerBlue;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(474, 102);
+            this.button11.Location = new System.Drawing.Point(474, 63);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 21);
             this.button11.TabIndex = 14;
@@ -255,7 +256,7 @@
             this.button12.BackColor = System.Drawing.Color.DodgerBlue;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(508, 102);
+            this.button12.Location = new System.Drawing.Point(508, 63);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(28, 21);
             this.button12.TabIndex = 15;
@@ -267,7 +268,7 @@
             this.button13.BackColor = System.Drawing.Color.DodgerBlue;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(542, 102);
+            this.button13.Location = new System.Drawing.Point(542, 63);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(28, 21);
             this.button13.TabIndex = 16;
@@ -279,24 +280,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(582, 368);
+            this.ClientSize = new System.Drawing.Size(582, 208);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.buttonUltimaPagina);
+            this.Controls.Add(this.buttonProximaPagina);
+            this.Controls.Add(this.buttonPaginaAnterior);
+            this.Controls.Add(this.buttonPrimeiraPagina);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxFuncionarios);
             this.Controls.Add(this.dataGridViewFuncionarios);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Name = "BR_Funcionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -315,20 +315,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        public System.Windows.Forms.ComboBox comboBoxFuncionarios;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button buttonPrimeiraPagina;
+        public System.Windows.Forms.Button buttonPaginaAnterior;
+        public System.Windows.Forms.Button buttonProximaPagina;
+        public System.Windows.Forms.Button buttonUltimaPagina;
+        public System.Windows.Forms.TextBox textBoxPrice;
+        public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Button button9;
+        public System.Windows.Forms.Button button10;
+        public System.Windows.Forms.Button button11;
+        public System.Windows.Forms.Button button12;
+        public System.Windows.Forms.Button button13;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MPT_01_SEv2.Forms.Telas.SubTelas
 {
@@ -13,6 +14,20 @@ namespace MPT_01_SEv2.Forms.Telas.SubTelas
         {
             if (e.KeyCode == Keys.F4)
                 this.Close();
+        }
+
+        private void textBoxPrice_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string txtbox = this.textBoxPrice.Text;
+                if (!String.IsNullOrEmpty(txtbox))
+                    decimal.Parse(txtbox);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -30,18 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelLoginCounter = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.toolStripStatusLabelLoginCounter = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.toolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -52,7 +51,6 @@
             this.statusStrip.BackColor = System.Drawing.Color.Yellow;
             this.statusStrip.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar,
             this.toolStripStatusLabelLoginCounter,
             this.toolStripStatusLabelDateTime});
             this.statusStrip.Location = new System.Drawing.Point(0, 428);
@@ -63,12 +61,24 @@
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip";
             // 
+            // toolStripStatusLabelLoginCounter
+            // 
+            this.toolStripStatusLabelLoginCounter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabelLoginCounter.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabelLoginCounter.Name = "toolStripStatusLabelLoginCounter";
+            this.toolStripStatusLabelLoginCounter.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.toolStripStatusLabelLoginCounter.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabelLoginCounter.Size = new System.Drawing.Size(392, 17);
+            this.toolStripStatusLabelLoginCounter.Spring = true;
+            this.toolStripStatusLabelLoginCounter.Text = "Vezes logado : 0";
+            this.toolStripStatusLabelLoginCounter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // toolStripStatusLabelDateTime
             // 
             this.toolStripStatusLabelDateTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabelDateTime.ForeColor = System.Drawing.Color.Green;
             this.toolStripStatusLabelDateTime.Name = "toolStripStatusLabelDateTime";
-            this.toolStripStatusLabelDateTime.Size = new System.Drawing.Size(341, 17);
+            this.toolStripStatusLabelDateTime.Size = new System.Drawing.Size(392, 17);
             this.toolStripStatusLabelDateTime.Spring = true;
             this.toolStripStatusLabelDateTime.Text = "Data Atual";
             this.toolStripStatusLabelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -77,18 +87,6 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // toolStripStatusLabelLoginCounter
-            // 
-            this.toolStripStatusLabelLoginCounter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabelLoginCounter.ForeColor = System.Drawing.Color.Green;
-            this.toolStripStatusLabelLoginCounter.Name = "toolStripStatusLabelLoginCounter";
-            this.toolStripStatusLabelLoginCounter.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.toolStripStatusLabelLoginCounter.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabelLoginCounter.Size = new System.Drawing.Size(326, 17);
-            this.toolStripStatusLabelLoginCounter.Spring = true;
-            this.toolStripStatusLabelLoginCounter.Text = "Vezes logado : 0";
-            this.toolStripStatusLabelLoginCounter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuStrip
             // 
@@ -105,6 +103,34 @@
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "menuStrip";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Green;
+            this.toolStripMenuItem1.Image = global::MPT_01_SEv2.Forms.Properties.Resources._001_home;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 21);
+            this.toolStripMenuItem1.Text = "Bem-Vindo(a)";
+            // 
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.funcionárioToolStripMenuItem.ForeColor = System.Drawing.Color.Green;
+            this.funcionárioToolStripMenuItem.Image = global::MPT_01_SEv2.Forms.Properties.Resources._114_user;
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(114, 21);
+            this.funcionárioToolStripMenuItem.Text = "Funcionário";
+            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
+            // 
+            // departamentoToolStripMenuItem
+            // 
+            this.departamentoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departamentoToolStripMenuItem.ForeColor = System.Drawing.Color.Green;
+            this.departamentoToolStripMenuItem.Image = global::MPT_01_SEv2.Forms.Properties.Resources._004_office;
+            this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
+            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(125, 21);
+            this.departamentoToolStripMenuItem.Text = "Departamento";
+            // 
             // toolStripComboBox
             // 
             this.toolStripComboBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -119,7 +145,7 @@
             this.toolStripComboBox.Name = "toolStripComboBox";
             this.toolStripComboBox.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.toolStripComboBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripComboBox.Size = new System.Drawing.Size(160, 21);
+            this.toolStripComboBox.Size = new System.Drawing.Size(140, 21);
             this.toolStripComboBox.Text = "Selecione...";
             this.toolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox_SelectedIndexChanged);
             // 
@@ -136,12 +162,6 @@
             this.toolStripTextBox.Size = new System.Drawing.Size(100, 21);
             this.toolStripTextBox.Text = "Organizar:";
             this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // toolStripProgressBar
-            // 
-            this.toolStripProgressBar.BackColor = System.Drawing.Color.Yellow;
-            this.toolStripProgressBar.Name = "toolStripProgressBar";
-            this.toolStripProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // toolStrip1
             // 
@@ -167,34 +187,6 @@
             this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripButton1.Size = new System.Drawing.Size(115, 61);
             this.toolStripButton1.Text = "toolStripButton";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Green;
-            this.toolStripMenuItem1.Image = global::MPT_01_SEv2.Forms.Properties.Resources._001_home;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 25);
-            this.toolStripMenuItem1.Text = "Bem-Vindo(a)";
-            // 
-            // funcionárioToolStripMenuItem
-            // 
-            this.funcionárioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.funcionárioToolStripMenuItem.ForeColor = System.Drawing.Color.Green;
-            this.funcionárioToolStripMenuItem.Image = global::MPT_01_SEv2.Forms.Properties.Resources._114_user;
-            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(114, 25);
-            this.funcionárioToolStripMenuItem.Text = "Funcionário";
-            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
-            // 
-            // departamentoToolStripMenuItem
-            // 
-            this.departamentoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departamentoToolStripMenuItem.ForeColor = System.Drawing.Color.Green;
-            this.departamentoToolStripMenuItem.Image = global::MPT_01_SEv2.Forms.Properties.Resources._004_office;
-            this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(125, 25);
-            this.departamentoToolStripMenuItem.Text = "Departamento";
             // 
             // BR_Principal
             // 
@@ -226,7 +218,6 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDateTime;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLoginCounter;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
