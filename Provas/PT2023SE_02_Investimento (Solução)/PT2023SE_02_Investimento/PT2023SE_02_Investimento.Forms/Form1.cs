@@ -146,8 +146,14 @@ namespace PT2023SE_02_Investimento.Forms
                     temArquivo = temArquivo,
                     openFileDialog = openFileDialog1
                 };
-                //document.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-                document.PrinterSettings.PrinterName = "OneNote (Desktop)";
+                try
+                {
+                    document.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                }
+                catch
+                {
+                    document.PrinterSettings.PrinterName = "OneNote (Desktop)";
+                }
                 document.Print();
             }
             catch (Exception ex)
