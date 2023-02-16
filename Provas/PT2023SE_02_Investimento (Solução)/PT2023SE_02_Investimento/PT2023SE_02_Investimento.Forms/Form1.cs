@@ -36,7 +36,7 @@ namespace PT2023SE_02_Investimento.Forms
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var file = File.CreateText(saveFileDialog.FileName);
+                    var file = File.CreateText($"{saveFileDialog.FileName}.txt");
                     var clientes = _clientes.Select(x => x.Cliente);
                     var strBuilder = new StringBuilder();
 
@@ -52,7 +52,7 @@ namespace PT2023SE_02_Investimento.Forms
                     });
                     strBuilder.AppendLine($"\n Ao todo eles acumularam {data.SomaTodosOsJuros()}");
                     file.Write(strBuilder.ToString());
-                    MessageBox.Show($"{strBuilder} \n O arquivo está em {saveFileDialog.FileName}");
+                    MessageBox.Show($"{strBuilder} \n O arquivo está em {saveFileDialog.FileName}.txt");
                     file.Close();
                 }
             }
@@ -141,17 +141,13 @@ namespace PT2023SE_02_Investimento.Forms
             {
                 if (!temArquivo)
                     throw new Exception("Selecione um arquivo");
-                PrintDocument document = new PrintDocument();
-                document.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-
-                PaperSize paperSize = new PaperSize("Test", 315, 300);
-
-                document.DefaultPageSettings.PaperSize = paperSize;
-                document.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
-
-                document.PrinterSettings.DefaultPageSettings.PaperSize = paperSize;
-                document.PrinterSettings.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
-
+                PDFDocument document = new PDFDocument()
+                {
+                    temArquivo = temArquivo,
+                    openFileDialog = openFileDialog1
+                };
+                //document.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                document.PrinterSettings.PrinterName = "OneNote (Desktop)";
                 document.Print();
             }
             catch (Exception ex)
@@ -160,37 +156,35 @@ namespace PT2023SE_02_Investimento.Forms
             }
         }
 
-        protected override void OnPrint(PaintEventArgs e)
-        {
-            if (temArquivo)
-            {
-                var strBuilder = new StringBuilder();
-                using (var file = File.OpenText(this.openFileDialog1.FileName))
-                    while (file.ReadLine() != null)
-                        strBuilder.AppendLine(file.ReadLine());
-
-                String drawString = strBuilder.ToString();
-
-                Font drawFont = new Font("Arial", 16);
-                SolidBrush drawBrush = new SolidBrush(Color.Black);
-
-                float x = 0;
-                float y = 0;
-
-                StringFormat drawFormat = new StringFormat();
-                drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
-
-                e.Graphics.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
-            }
-
-        }
-
         private void buttonSelectArchive_Click(object sender, EventArgs e)
         {
             this.openFileDialog1 = new OpenFileDialog();
             if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
                 textBox1.Text = this.openFileDialog1.FileName;
             temArquivo = true;
+        }
+    }
+
+    public class PDFDocument : PrintDocument
+    {
+        public bool temArquivo { get; set; }
+        public OpenFileDialog openFileDialog { get; set; }
+
+        protected override void OnPrintPage(PrintPageEventArgs e)
+        {
+            if (temArquivo)
+            {
+                var strBuilder = new StringBuilder();
+                string line;
+                using (var file = File.OpenText(openFileDialog.FileName))
+                    while ((line = file.ReadLine()) != null)
+                        strBuilder.AppendLine(line);
+
+                e.Graphics.DrawString(strBuilder.ToString(),
+                    new Font("Arial", 14),
+                    Brushes.Black,
+                    new PointF(0, 0));
+            }
         }
     }
 }
