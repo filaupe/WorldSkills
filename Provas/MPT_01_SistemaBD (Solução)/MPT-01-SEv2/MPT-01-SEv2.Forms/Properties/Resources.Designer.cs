@@ -83,6 +83,16 @@ namespace MPT_01_SEv2.Forms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _079_clock {
+            get {
+                object obj = ResourceManager.GetObject("079-clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _114_user {
             get {
                 object obj = ResourceManager.GetObject("114-user", resourceCulture);

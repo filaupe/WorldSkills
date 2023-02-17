@@ -4,90 +4,364 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="bdBrasilResortModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="bdBrasilResortModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+          <Property Name="GerenteId" Type="int" />
+        </EntityType>
         <EntityType Name="Funcionarios">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="empid" Type="float" />
-          <Property Name="mgrid" Type="float" />
-          <Property Name="empname" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="salary" Type="money" Nullable="false" />
-          <Property Name="depid" Type="float" Nullable="false" />
-          <Property Name="deptname" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="deptmgrid" Type="float" />
+          <Property Name="GerenteId" Type="int" />
+          <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+          <Property Name="Salario" Type="real" Nullable="false" />
         </EntityType>
-        <EntityType Name="nascimento$">
+        <EntityType Name="FuncionariosDepartamentos">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="empid" Type="float" />
-          <Property Name="date" Type="datetime" />
-          <Property Name="hiredate" Type="datetime" />
+          <Property Name="FuncionarioId" Type="int" Nullable="false" />
+          <Property Name="DepartamentoId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FuncionarioId" Type="int" Nullable="false" />
+          <Property Name="Quantidade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nascimentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="DataContrato" Type="date" Nullable="false" />
+          <Property Name="FuncionarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Departame__Geren__45F365D3">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Departamentos">
+              <PropertyRef Name="GerenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Depar__44FF419A">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionariosDepartamentos">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Funci__440B1D61">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionariosDepartamentos">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Geren__4222D4EF">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
+          <End Role="Funcionarios1" Type="Self.Funcionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Funcionarios1">
+              <PropertyRef Name="GerenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Logins__Funciona__4316F928">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Nasciment__Funci__412EB0B6">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="Nascimentos" Type="Self.Nascimentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nascimentos">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="bdBrasilResortModelStoreContainer">
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Funcionarios" EntityType="Self.Funcionarios" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="nascimento$" EntityType="Self.nascimento$" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuncionariosDepartamentos" EntityType="Self.FuncionariosDepartamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nascimentos" EntityType="Self.Nascimentos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Departame__Geren__45F365D3" Association="Self.FK__Departame__Geren__45F365D3">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Departamentos" EntitySet="Departamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Depar__44FF419A" Association="Self.FK__Funcionar__Depar__44FF419A">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Funci__440B1D61" Association="Self.FK__Funcionar__Funci__440B1D61">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Geren__4222D4EF" Association="Self.FK__Funcionar__Geren__4222D4EF">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Funcionarios1" EntitySet="Funcionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Logins__Funciona__4316F928" Association="Self.FK__Logins__Funciona__4316F928">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Nasciment__Funci__412EB0B6" Association="Self.FK__Nasciment__Funci__412EB0B6">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Nascimentos" EntitySet="Nascimentos" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bdBrasilResortModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="bdBrasilResortEntities" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Funcionarios" EntityType="bdBrasilResortModel.Funcionario" />
-          <EntitySet Name="nascimento_" EntityType="bdBrasilResortModel.nascimento_" />
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GerenteId" Type="Int32" />
+          <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Departame__Geren__45F365D3" FromRole="Departamentos" ToRole="Funcionarios" />
+          <NavigationProperty Name="FuncionariosDepartamentos" Relationship="Self.FK__Funcionar__Depar__44FF419A" FromRole="Departamentos" ToRole="FuncionariosDepartamentos" />
+        </EntityType>
+        <EntityType Name="Funcionarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GerenteId" Type="Int32" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salario" Type="Single" Nullable="false" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Departame__Geren__45F365D3" FromRole="Funcionarios" ToRole="Departamentos" />
+          <NavigationProperty Name="FuncionariosDepartamentos" Relationship="Self.FK__Funcionar__Funci__440B1D61" FromRole="Funcionarios" ToRole="FuncionariosDepartamentos" />
+          <NavigationProperty Name="Funcionarios1" Relationship="Self.FK__Funcionar__Geren__4222D4EF" FromRole="Funcionarios" ToRole="Funcionarios1" />
+          <NavigationProperty Name="Funcionarios2" Relationship="Self.FK__Funcionar__Geren__4222D4EF" FromRole="Funcionarios1" ToRole="Funcionarios" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK__Logins__Funciona__4316F928" FromRole="Funcionarios" ToRole="Logins" />
+          <NavigationProperty Name="Nascimentos" Relationship="Self.FK__Nasciment__Funci__412EB0B6" FromRole="Funcionarios" ToRole="Nascimentos" />
+        </EntityType>
+        <EntityType Name="FuncionariosDepartamentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FuncionarioId" Type="Int32" Nullable="false" />
+          <Property Name="DepartamentoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Funcionar__Depar__44FF419A" FromRole="FuncionariosDepartamentos" ToRole="Departamentos" />
+          <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Funcionar__Funci__440B1D61" FromRole="FuncionariosDepartamentos" ToRole="Funcionarios" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FuncionarioId" Type="Int32" Nullable="false" />
+          <Property Name="Quantidade" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Logins__Funciona__4316F928" FromRole="Logins" ToRole="Funcionarios" />
+        </EntityType>
+        <EntityType Name="Nascimentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DataContrato" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FuncionarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Nasciment__Funci__412EB0B6" FromRole="Nascimentos" ToRole="Funcionarios" />
+        </EntityType>
+        <Association Name="FK__Departame__Geren__45F365D3">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Departamentos">
+              <PropertyRef Name="GerenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Depar__44FF419A">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+          <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionariosDepartamentos">
+              <PropertyRef Name="DepartamentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Funci__440B1D61">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FuncionariosDepartamentos">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Funcionar__Geren__4222D4EF">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
+          <End Role="Funcionarios1" Type="Self.Funcionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Funcionarios1">
+              <PropertyRef Name="GerenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Logins__Funciona__4316F928">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Nasciment__Funci__412EB0B6">
+          <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+          <End Role="Nascimentos" Type="Self.Nascimentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Funcionarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Nascimentos">
+              <PropertyRef Name="FuncionarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdBrasilResortEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+          <EntitySet Name="Funcionarios" EntityType="Self.Funcionarios" />
+          <EntitySet Name="FuncionariosDepartamentos" EntityType="Self.FuncionariosDepartamentos" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" />
+          <EntitySet Name="Nascimentos" EntityType="Self.Nascimentos" />
+          <AssociationSet Name="FK__Departame__Geren__45F365D3" Association="Self.FK__Departame__Geren__45F365D3">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Departamentos" EntitySet="Departamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Depar__44FF419A" Association="Self.FK__Funcionar__Depar__44FF419A">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Funci__440B1D61" Association="Self.FK__Funcionar__Funci__440B1D61">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Funcionar__Geren__4222D4EF" Association="Self.FK__Funcionar__Geren__4222D4EF">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Funcionarios1" EntitySet="Funcionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Logins__Funciona__4316F928" Association="Self.FK__Logins__Funciona__4316F928">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Nasciment__Funci__412EB0B6" Association="Self.FK__Nasciment__Funci__412EB0B6">
+            <End Role="Funcionarios" EntitySet="Funcionarios" />
+            <End Role="Nascimentos" EntitySet="Nascimentos" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Funcionario">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="empid" Type="Double" />
-          <Property Name="mgrid" Type="Double" />
-          <Property Name="empname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="depid" Type="Double" Nullable="false" />
-          <Property Name="deptname" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="deptmgrid" Type="Double" />
-        </EntityType>
-        <EntityType Name="nascimento_">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="empid" Type="Double" />
-          <Property Name="date" Type="DateTime" Precision="3" />
-          <Property Name="hiredate" Type="DateTime" Precision="3" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities" >
-          <EntitySetMapping Name="Funcionarios">
-            <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionario">
-              <MappingFragment StoreEntitySet="Funcionarios">
-                <ScalarProperty Name="deptmgrid" ColumnName="deptmgrid" />
-                <ScalarProperty Name="deptname" ColumnName="deptname" />
-                <ScalarProperty Name="depid" ColumnName="depid" />
-                <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="empname" ColumnName="empname" />
-                <ScalarProperty Name="mgrid" ColumnName="mgrid" />
-                <ScalarProperty Name="empid" ColumnName="empid" />
+        <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities">
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="GerenteId" ColumnName="GerenteId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="nascimento_">
-            <EntityTypeMapping TypeName="bdBrasilResortModel.nascimento_">
-              <MappingFragment StoreEntitySet="nascimento$">
-                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="empid" ColumnName="empid" />
+          <EntitySetMapping Name="Funcionarios">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionarios">
+              <MappingFragment StoreEntitySet="Funcionarios">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GerenteId" ColumnName="GerenteId" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FuncionariosDepartamentos">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.FuncionariosDepartamentos">
+              <MappingFragment StoreEntitySet="FuncionariosDepartamentos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+                <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nascimentos">
+            <EntityTypeMapping TypeName="bdBrasilResortModel.Nascimentos">
+              <MappingFragment StoreEntitySet="Nascimentos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="DataContrato" ColumnName="DataContrato" />
+                <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -105,7 +379,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

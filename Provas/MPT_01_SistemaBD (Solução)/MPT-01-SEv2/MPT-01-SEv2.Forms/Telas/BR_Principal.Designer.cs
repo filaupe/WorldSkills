@@ -34,16 +34,15 @@
             this.toolStripStatusLabelDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemHome = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -77,11 +76,16 @@
             // 
             this.toolStripStatusLabelDateTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabelDateTime.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabelDateTime.Image = global::MPT_01_SEv2.Forms.Properties.Resources._079_clock;
+            this.toolStripStatusLabelDateTime.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.toolStripStatusLabelDateTime.Name = "toolStripStatusLabelDateTime";
+            this.toolStripStatusLabelDateTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabelDateTime.RightToLeftAutoMirrorImage = true;
             this.toolStripStatusLabelDateTime.Size = new System.Drawing.Size(392, 17);
             this.toolStripStatusLabelDateTime.Spring = true;
             this.toolStripStatusLabelDateTime.Text = "Data Atual";
-            this.toolStripStatusLabelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripStatusLabelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripStatusLabelDateTime.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // timer
             // 
@@ -92,25 +96,25 @@
             // 
             this.menuStrip.BackColor = System.Drawing.Color.Yellow;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.toolStripMenuItemHome,
             this.funcionárioToolStripMenuItem,
             this.departamentoToolStripMenuItem,
-            this.toolStripComboBox,
-            this.toolStripTextBox});
+            this.toolStripComboBox});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 25);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "menuStrip";
             // 
-            // toolStripMenuItem1
+            // toolStripMenuItemHome
             // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Green;
-            this.toolStripMenuItem1.Image = global::MPT_01_SEv2.Forms.Properties.Resources._001_home;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 21);
-            this.toolStripMenuItem1.Text = "Bem-Vindo(a)";
+            this.toolStripMenuItemHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItemHome.ForeColor = System.Drawing.Color.Green;
+            this.toolStripMenuItemHome.Image = global::MPT_01_SEv2.Forms.Properties.Resources._001_home;
+            this.toolStripMenuItemHome.Name = "toolStripMenuItemHome";
+            this.toolStripMenuItemHome.Size = new System.Drawing.Size(122, 21);
+            this.toolStripMenuItemHome.Text = "Bem-Vindo(a)";
+            this.toolStripMenuItemHome.Click += new System.EventHandler(this.toolStripMenuItemHome_Click);
             // 
             // funcionárioToolStripMenuItem
             // 
@@ -130,6 +134,7 @@
             this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
             this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(125, 21);
             this.departamentoToolStripMenuItem.Text = "Departamento";
+            this.departamentoToolStripMenuItem.Click += new System.EventHandler(this.departamentoToolStripMenuItem_Click);
             // 
             // toolStripComboBox
             // 
@@ -145,37 +150,23 @@
             this.toolStripComboBox.Name = "toolStripComboBox";
             this.toolStripComboBox.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.toolStripComboBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripComboBox.Size = new System.Drawing.Size(140, 21);
-            this.toolStripComboBox.Text = "Selecione...";
+            this.toolStripComboBox.Size = new System.Drawing.Size(210, 21);
+            this.toolStripComboBox.Text = "Selecione uma organização...";
             this.toolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox_SelectedIndexChanged);
             // 
-            // toolStripTextBox
+            // toolStrip
             // 
-            this.toolStripTextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox.BackColor = System.Drawing.Color.Yellow;
-            this.toolStripTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox.Enabled = false;
-            this.toolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox.ForeColor = System.Drawing.Color.Green;
-            this.toolStripTextBox.Name = "toolStripTextBox";
-            this.toolStripTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripTextBox.Size = new System.Drawing.Size(100, 21);
-            this.toolStripTextBox.Text = "Organizar:";
-            this.toolStripTextBox.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.Yellow;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.BackColor = System.Drawing.Color.Yellow;
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(118, 403);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip.Size = new System.Drawing.Size(118, 403);
+            this.toolStrip.TabIndex = 4;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // toolStripButton1
             // 
@@ -194,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -206,8 +197,8 @@
             this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,9 +214,8 @@
         private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHome;
     }
 }

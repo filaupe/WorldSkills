@@ -1,27 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities">
-    <EntitySetMapping Name="Funcionarios">
-      <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionario">
-        <MappingFragment StoreEntitySet="Funcionarios">
-          <ScalarProperty Name="deptmgrid" ColumnName="deptmgrid" />
-          <ScalarProperty Name="deptname" ColumnName="deptname" />
-          <ScalarProperty Name="depid" ColumnName="depid" />
-          <ScalarProperty Name="salary" ColumnName="salary" />
-          <ScalarProperty Name="empname" ColumnName="empname" />
-          <ScalarProperty Name="mgrid" ColumnName="mgrid" />
-          <ScalarProperty Name="empid" ColumnName="empid" />
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="GerenteId" ColumnName="GerenteId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="nascimento_">
-      <EntityTypeMapping TypeName="bdBrasilResortModel.nascimento_">
-        <MappingFragment StoreEntitySet="nascimento$">
-          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="empid" ColumnName="empid" />
+    <EntitySetMapping Name="Funcionarios">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.Funcionarios">
+        <MappingFragment StoreEntitySet="Funcionarios">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GerenteId" ColumnName="GerenteId" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionariosDepartamentos">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.FuncionariosDepartamentos">
+        <MappingFragment StoreEntitySet="FuncionariosDepartamentos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+          <ScalarProperty Name="DepartamentoId" ColumnName="DepartamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nascimentos">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.Nascimentos">
+        <MappingFragment StoreEntitySet="Nascimentos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="DataContrato" ColumnName="DataContrato" />
+          <ScalarProperty Name="FuncionarioId" ColumnName="FuncionarioId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

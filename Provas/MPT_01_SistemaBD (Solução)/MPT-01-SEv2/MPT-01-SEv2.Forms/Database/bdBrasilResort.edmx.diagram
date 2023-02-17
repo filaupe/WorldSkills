@@ -4,9 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a69a91a823594727a5aaa45769f198d7" Name="Diagram1" >
-        <EntityTypeShape EntityType="bdBrasilResortModel.Funcionario" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="bdBrasilResortModel.nascimento_" Width="1.5" PointX="2.75" PointY="0.75" />
+      <Diagram DiagramId="f236e3aebc6e43f5af210f37117901e8" Name="Diagram1">
+        <EntityTypeShape EntityType="bdBrasilResortModel.Departamentos" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdBrasilResortModel.Funcionarios" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdBrasilResortModel.FuncionariosDepartamentos" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdBrasilResortModel.Logins" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdBrasilResortModel.Nascimentos" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Departame__Geren__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Funcionar__Depar__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Funcionar__Funci__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Funcionar__Geren__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Logins__Funciona__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="bdBrasilResortModel.FK__Nasciment__Funci__412EB0B6" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

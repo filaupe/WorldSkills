@@ -25,7 +25,10 @@ namespace MPT_01_SEv2.Forms.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Funcionario> Funcionarios { get; set; }
-        public virtual DbSet<nascimento_> nascimento_ { get; set; }
+        public virtual DbSet<Departamentos> Departamentos { get; set; }
+        public virtual DbSet<Funcionarios> Funcionarios { get; set; }
+        public virtual DbSet<FuncionariosDepartamentos> FuncionariosDepartamentos { get; set; }
+        public virtual DbSet<Logins> Logins { get; set; }
+        public virtual DbSet<Nascimentos> Nascimentos { get; set; }
     }
 }

@@ -12,15 +12,12 @@ namespace MPT_01_SEv2.Forms.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Funcionario
+    public partial class Logins
     {
         public int Id { get; set; }
-        public Nullable<double> empid { get; set; }
-        public Nullable<double> mgrid { get; set; }
-        public string empname { get; set; }
-        public decimal salary { get; set; }
-        public double depid { get; set; }
-        public string deptname { get; set; }
-        public Nullable<double> deptmgrid { get; set; }
+        public int FuncionarioId { get; set; }
+        public int Quantidade { get; set; }
+    
+        public virtual Funcionarios Funcionarios { get; set; }
     }
 }

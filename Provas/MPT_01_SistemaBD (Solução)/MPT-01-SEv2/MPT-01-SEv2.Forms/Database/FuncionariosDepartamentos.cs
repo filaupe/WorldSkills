@@ -12,11 +12,13 @@ namespace MPT_01_SEv2.Forms.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class nascimento_
+    public partial class FuncionariosDepartamentos
     {
         public int Id { get; set; }
-        public Nullable<double> empid { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
-        public Nullable<System.DateTime> hiredate { get; set; }
+        public int FuncionarioId { get; set; }
+        public int DepartamentoId { get; set; }
+    
+        public virtual Departamentos Departamentos { get; set; }
+        public virtual Funcionarios Funcionarios { get; set; }
     }
 }

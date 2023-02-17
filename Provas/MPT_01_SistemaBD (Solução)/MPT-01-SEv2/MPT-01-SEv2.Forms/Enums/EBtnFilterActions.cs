@@ -1,6 +1,6 @@
 ﻿namespace MPT_01_SEv2.Forms.Enums
 {
-    public enum btnFilterActions
+    public enum EBtnFilterActions
     {
         LIMPAR,
         IGUAL_QUE,
