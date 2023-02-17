@@ -2,6 +2,7 @@
 using MPT_01_SEv2.Forms.Enums;
 using MPT_01_SEv2.Forms.Telas.SubTelas;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ namespace MPT_01_SEv2.Forms.Telas
 {
     public partial class BR_Principal : Form
     {
+        private List<Funcionario> _listaFiltroFuncionarios;
         private readonly bdBrasilResortEntities _context;
         private DateTime _dateTime = DateTime.Now;
         private DbSet<Funcionario> _funcionarios;
@@ -23,6 +25,7 @@ namespace MPT_01_SEv2.Forms.Telas
 
             _context = new bdBrasilResortEntities();
             _funcionarios = _context.Funcionarios;
+            _listaFiltroFuncionarios = null;
 
             _skip = 0;
             _take = 3;
@@ -81,7 +84,12 @@ namespace MPT_01_SEv2.Forms.Telas
         private void loadGridFuncionarios()
         {
             _telaFuncionario.dataGridViewFuncionarios.Rows.Clear();
-            foreach (var funcionario in _funcionarios.AsNoTracking().OrderBy(x => x.Id).Skip(_skip * _take).Take(_take).ToList())
+            foreach (var funcionario in _funcionarios
+                .AsNoTracking()
+                .OrderBy(x => x.Id)
+                .Skip(_skip * _take)
+                .Take(_take)
+                .ToList())
             {
                 Funcionario gerente = _funcionarios.FirstOrDefault(x => x.empid == funcionario.mgrid);
                 _telaFuncionario.dataGridViewFuncionarios.Rows.Add(funcionario.Id, funcionario.empname, gerente?.empname, funcionario.salary);
@@ -90,35 +98,98 @@ namespace MPT_01_SEv2.Forms.Telas
 
         private void setFuncionarioActions()
         {
+            //Paginação
             _telaFuncionario.buttonPaginaAnterior.Click += ButtonPaginaAnterior_Click;
             _telaFuncionario.buttonProximaPagina.Click += ButtonProximaPagina_Click;
             _telaFuncionario.buttonUltimaPagina.Click += ButtonUltimaPagina_Click;
             _telaFuncionario.buttonPrimeiraPagina.Click += ButtonPrimeiraPagina_Click;
+
+            //Filtros
+            _telaFuncionario.buttonIgual.Click += ButtonEquals_Click;
+            _telaFuncionario.buttonMaiorIgual.Click += ButtonMaiorIgual_Click;
+            _telaFuncionario.buttonMenorIgual.Click += ButtonMenorIgual_Click;
+            _telaFuncionario.buttonDiferente.Click += ButtonDiferente_Click;
+            _telaFuncionario.buttonMaiorQue.Click += ButtonMaiorQue_Click;
+            _telaFuncionario.buttonMenorQue.Click += ButtonMenorQue_Click;
         }
 
-        private void ButtonPrimeiraPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnActions.PRIMEIRO);
+        private void ButtonMenorQue_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-        private void ButtonUltimaPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnActions.ULTIMO);
+        private void ButtonMaiorQue_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-        private void ButtonPaginaAnterior_Click(object sender, EventArgs e) => this.btnPageAction(btnActions.ANTERIOR);
+        private void ButtonDiferente_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-        private void ButtonProximaPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnActions.PROXIMO);
+        private void ButtonMenorIgual_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-        private void btnPageAction(btnActions action)
+        private void ButtonMaiorIgual_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ButtonEquals_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ButtonPrimeiraPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnPageActions.PRIMEIRO);
+
+        private void ButtonUltimaPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnPageActions.ULTIMO);
+
+        private void ButtonPaginaAnterior_Click(object sender, EventArgs e) => this.btnPageAction(btnPageActions.ANTERIOR);
+
+        private void ButtonProximaPagina_Click(object sender, EventArgs e) => this.btnPageAction(btnPageActions.PROXIMO);
+
+        private void btnPageAction(btnPageActions action)
         {
             switch (action)
             {
-                case btnActions.PROXIMO:
+                case btnPageActions.PROXIMO:
                     _skip++;
                     break;
-                case btnActions.ANTERIOR:
+                case btnPageActions.ANTERIOR:
                     _skip--;
                     break;
-                case btnActions.PRIMEIRO:
+                case btnPageActions.PRIMEIRO:
                     _skip = 0;
                     break;
-                case btnActions.ULTIMO:
-                    _skip = (int)Math.Ceiling(1M * _funcionarios.Count() / _take);
+                case btnPageActions.ULTIMO:
+                    _skip = (int)Math.Ceiling(1M * _funcionarios.Count() / _take)-1;
+                    break;
+                default:
+                    break;
+            }
+            this.loadGridFuncionarios();
+        }
+
+        private void btnFilterAction(btnFilterActions action)
+        {
+            switch (action)
+            {
+                case btnFilterActions.LIMPAR:
+                    break;
+                case btnFilterActions.IGUAL_QUE:
+                    break;
+                case btnFilterActions.MAIOR_QUE:
+                    break;
+                case btnFilterActions.MENOR_QUE:
+                    break;
+                case btnFilterActions.DIFERENTE_QUE:
+                    break;
+                case btnFilterActions.MAIOR_IGUAL_QUE:
+                    break;
+                case btnFilterActions.MENOR_IGUAL_QUE:
                     break;
                 default:
                     break;

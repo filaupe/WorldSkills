@@ -77,7 +77,8 @@
     <Compile Include="Database\nascimento_.cs">
       <DependentUpon>bdBrasilResort.tt</DependentUpon>
     </Compile>
-    <Compile Include="Enums\btnActions.cs" />
+    <Compile Include="Enums\btnFilterActions.cs" />
+    <Compile Include="Enums\btnPageActions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telas\BR_Principal.cs">
