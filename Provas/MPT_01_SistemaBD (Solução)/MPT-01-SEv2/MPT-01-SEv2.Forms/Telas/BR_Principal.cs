@@ -4,7 +4,6 @@ using MPT_01_SEv2.Forms.Telas.Dialogos;
 using MPT_01_SEv2.Forms.Telas.SubTelas;
 using MPT_01_SEv2.Forms.Telas.TipoTela;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
@@ -23,15 +22,15 @@ namespace MPT_01_SEv2.Forms.Telas
         private readonly Nascimentos _usuarioNascimento;
         private readonly Logins _usuarioLogin;
 
-        public BR_Principal(Funcionarios usuario)
+        public BR_Principal()
         {
             InitializeComponent();
 
             _context = new bdBrasilResortEntities();
             _funcionarios = _context.Funcionarios;
-            _usuario = usuario;
-            _usuarioLogin = _context.Logins.FirstOrDefault(x => x.FuncionarioId == _usuario.Id);
-            _usuarioNascimento = _context.Nascimentos.FirstOrDefault(x => x.FuncionarioId == _usuario.Id);
+            //_usuario = usuario;
+            //_usuarioLogin = _context.Logins.FirstOrDefault(x => x.FuncionarioId == _usuario.Id);
+            //_usuarioNascimento = _context.Nascimentos.FirstOrDefault(x => x.FuncionarioId == _usuario.Id);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -43,9 +42,9 @@ namespace MPT_01_SEv2.Forms.Telas
         private void BR_Principal_Load(object sender, EventArgs e)
         {
             this.setDateTimeLabel();
-            this.toolStripStatusLabelLoginCounter.Text = $"Vezes logado: {_usuarioLogin.Quantidade}";
-            if (_usuarioNascimento.DataNascimento.Month == DateTime.Now.Month)
-                this.setBirthdateTheme();
+            //this.toolStripStatusLabelLoginCounter.Text = $"Vezes logado: {_usuarioLogin.Quantidade}";
+            //if (_usuarioNascimento.DataNascimento.Month == DateTime.Now.Month)
+                //this.setBirthdateTheme();
         }
 
         private void setBirthdateTheme()
@@ -84,7 +83,6 @@ namespace MPT_01_SEv2.Forms.Telas
             this.setTelaFuncionario();
             this.loadComboBoxFuncionarios();
             this.setFuncionarioActions();
-            this.loadGridFuncionarios();
 
             _telaFuncionario.Show();
         }
@@ -108,8 +106,9 @@ namespace MPT_01_SEv2.Forms.Telas
         private void setTelaFuncionario()
         {
             _telaFuncionario = new BR_Funcionario();
+            _telaFuncionario._list = _funcionarios;
+            _telaFuncionario._max = (int)Math.Ceiling(1M * _funcionarios.Count() / _telaFuncionario._take) - 1;
             _telaFuncionario.MdiParent = this;
-            this.VerificarPagina((int)Math.Ceiling(1M * _funcionarios.Count() / _telaFuncionario._take) - 1);
         }
 
         private void loadComboBoxFuncionarios()
@@ -118,30 +117,8 @@ namespace MPT_01_SEv2.Forms.Telas
             _telaFuncionario.comboBoxFuncionarios.ValueMember = "Id";
             _telaFuncionario.comboBoxFuncionarios.DisplayMember = "Nome";
         }
-
-        private void loadGridFuncionarios()
-        {
-            _telaFuncionario.dataGridViewFuncionarios.Rows.Clear();
-            foreach (var funcionario in _funcionarios
-                .AsNoTracking()
-                .OrderBy(x => x.Nome)
-                .Skip(_telaFuncionario._skip * _telaFuncionario._take)
-                .Take(_telaFuncionario._take)
-                .ToList())
-            {
-                Funcionarios gerente = _funcionarios.FirstOrDefault(x => x.Id == funcionario.GerenteId);
-                _telaFuncionario.dataGridViewFuncionarios.Rows.Add(funcionario.Id, funcionario.Nome, gerente?.Nome, funcionario.Salario);
-            }
-        }
-
         private void setFuncionarioActions()
         {
-            //Paginação
-            _telaFuncionario.buttonPaginaAnterior.Click += ButtonPaginaAnterior_Click;
-            _telaFuncionario.buttonProximaPagina.Click += ButtonProximaPagina_Click;
-            _telaFuncionario.buttonUltimaPagina.Click += ButtonUltimaPagina_Click;
-            _telaFuncionario.buttonPrimeiraPagina.Click += ButtonPrimeiraPagina_Click;
-
             //Filtros
             _telaFuncionario.buttonLimpar.Click += ButtonLimpar_Click;
             _telaFuncionario.buttonIgual.Click += ButtonIgual_Click;
@@ -163,7 +140,6 @@ namespace MPT_01_SEv2.Forms.Telas
             if (_telaFuncionario.checkBoxGerentes.Checked)
                 _funcionarios = _funcionarios.Where(x => _context.Funcionarios.Any(c => x.Id == c.GerenteId));
             else _funcionarios = _context.Funcionarios;
-            this.loadGridFuncionarios();
         }
 
         private void ButtonDeletar_Click(object sender, EventArgs e)
@@ -201,46 +177,13 @@ namespace MPT_01_SEv2.Forms.Telas
             }
         }
 
+        private void ButtonIgual_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.IGUAL_QUE);
         private void ButtonLimpar_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.LIMPAR);
         private void ButtonMenorQue_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.MENOR_QUE);
         private void ButtonMaiorQue_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.MAIOR_QUE);
         private void ButtonDiferente_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.DIFERENTE_QUE);
         private void ButtonMenorIgual_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.MENOR_IGUAL_QUE);
         private void ButtonMaiorIgual_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.MAIOR_IGUAL_QUE);
-        private void ButtonIgual_Click(object sender, EventArgs e) => this.btnFilterAction(EBtnFilterActions.IGUAL_QUE);
-       
-        private void ButtonPrimeiraPagina_Click(object sender, EventArgs e) 
-            => this.btnPageAction(_telaFuncionario, _funcionarios, EBtnPageActions.PRIMEIRO);
-        private void ButtonUltimaPagina_Click(object sender, EventArgs e) 
-            => this.btnPageAction(_telaFuncionario, _funcionarios, EBtnPageActions.ULTIMO);
-        private void ButtonPaginaAnterior_Click(object sender, EventArgs e)
-            => this.btnPageAction(_telaFuncionario, _funcionarios, EBtnPageActions.ANTERIOR);
-        private void ButtonProximaPagina_Click(object sender, EventArgs e) 
-            => this.btnPageAction(_telaFuncionario, _funcionarios, EBtnPageActions.PROXIMO);
-
-        private void btnPageAction(FormComPaginacao form, IQueryable<object> list, EBtnPageActions action)
-        {
-            var limite = (int)Math.Ceiling(1M * list.Count() / _telaFuncionario._take) - 1;
-            switch (action)
-            {
-                case EBtnPageActions.PROXIMO:
-                    form._skip = form._skip >= limite ? limite : form._skip + 1;
-                    break;
-                case EBtnPageActions.ANTERIOR:
-                    form._skip = form._skip <= 0 ? 0 : form._skip - 1;
-                    break;
-                case EBtnPageActions.PRIMEIRO:
-                    form._skip = 0;
-                    break;
-                case EBtnPageActions.ULTIMO:
-                    form._skip = limite;
-                    break;
-                default:
-                    break;
-            }
-            this.VerificarPagina(limite);
-            this.loadGridFuncionarios();
-        }
 
         private void btnFilterAction(EBtnFilterActions action)
         {
@@ -285,23 +228,11 @@ namespace MPT_01_SEv2.Forms.Telas
                         _funcionarios = _context.Funcionarios;
                         break;
                 }
-                this.loadGridFuncionarios();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void VerificarPagina(int limite)
-        {
-            bool min = _telaFuncionario._skip > 0;
-            bool max = _telaFuncionario._skip < limite;
-
-            _telaFuncionario.buttonPrimeiraPagina.Enabled = min;
-            _telaFuncionario.buttonPaginaAnterior.Enabled = min;
-
-            _telaFuncionario.buttonUltimaPagina.Enabled = max;
-            _telaFuncionario.buttonProximaPagina.Enabled = max;
         }
     }
 }

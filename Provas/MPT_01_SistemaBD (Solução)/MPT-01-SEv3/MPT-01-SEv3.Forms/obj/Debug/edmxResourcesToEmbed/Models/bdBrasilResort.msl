@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdBrasilResortModelStoreContainer" CdmEntityContainer="bdBrasilResortEntities">
+    <EntitySetMapping Name="departamentos_">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.departamentos_">
+        <MappingFragment StoreEntitySet="departamentos$">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="deptname" ColumnName="deptname" />
+          <ScalarProperty Name="deptmgrid" ColumnName="deptmgrid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="funcionarios_">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.funcionarios_">
+        <MappingFragment StoreEntitySet="funcionarios$">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="mgrid" ColumnName="mgrid" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="deptid" ColumnName="deptid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins_">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.logins_">
+        <MappingFragment StoreEntitySet="logins$">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="qtd" ColumnName="qtd" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nascimento_">
+      <EntityTypeMapping TypeName="bdBrasilResortModel.nascimento_">
+        <MappingFragment StoreEntitySet="nascimento$">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
