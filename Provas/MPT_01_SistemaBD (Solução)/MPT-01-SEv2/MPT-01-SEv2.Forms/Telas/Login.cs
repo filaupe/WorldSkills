@@ -47,7 +47,7 @@ namespace MPT_01_SEv2.Forms.Telas
                 _context.Logins.FirstOrDefault(x => x.FuncionarioId == usuario.Id).Quantidade++;
                 _context.SaveChanges();
 
-                Thread openPrincipal = new Thread(() => Application.Run(new BR_Principal(usuario)));
+                Thread openPrincipal = new Thread(() => Application.Run(new BR_Principal()));
                 openPrincipal.SetApartmentState(ApartmentState.STA);
                 openPrincipal.Start();
                 this.Close();

@@ -14,7 +14,7 @@ namespace MPT_01_SEv2.Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new BR_Principal());
         }
     }
 }

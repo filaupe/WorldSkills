@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bdBrasilResortModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bdBrasilResortModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Departamentos">
           <Key>
             <PropertyRef Name="Id" />
@@ -47,7 +47,7 @@
           <Property Name="DataContrato" Type="date" Nullable="false" />
           <Property Name="FuncionarioId" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Departame__Geren__45F365D3">
+        <Association Name="FK__Departame__Geren__46E78A0C">
           <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -59,7 +59,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Funcionar__Depar__44FF419A">
+        <Association Name="FK__Funcionar__Depar__45F365D3">
           <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
           <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -71,7 +71,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Funcionar__Funci__440B1D61">
+        <Association Name="FK__Funcionar__Funci__44FF419A">
           <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
           <End Role="FuncionariosDepartamentos" Type="Self.FuncionariosDepartamentos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -83,7 +83,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Funcionar__Geren__4222D4EF">
+        <Association Name="FK__Funcionar__Geren__4316F928">
           <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="0..1" />
           <End Role="Funcionarios1" Type="Self.Funcionarios" Multiplicity="*" />
           <ReferentialConstraint>
@@ -95,7 +95,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Logins__Funciona__4316F928">
+        <Association Name="FK__Logins__Funciona__440B1D61">
           <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
           <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,7 +107,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Nasciment__Funci__412EB0B6">
+        <Association Name="FK__Nasciment__Funci__4222D4EF">
           <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
           <End Role="Nascimentos" Type="Self.Nascimentos" Multiplicity="*" />
           <ReferentialConstraint>
@@ -125,33 +125,32 @@
           <EntitySet Name="FuncionariosDepartamentos" EntityType="Self.FuncionariosDepartamentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nascimentos" EntityType="Self.Nascimentos" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Departame__Geren__45F365D3" Association="Self.FK__Departame__Geren__45F365D3">
+          <AssociationSet Name="FK__Departame__Geren__46E78A0C" Association="Self.FK__Departame__Geren__46E78A0C">
             <End Role="Funcionarios" EntitySet="Funcionarios" />
             <End Role="Departamentos" EntitySet="Departamentos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Funcionar__Depar__44FF419A" Association="Self.FK__Funcionar__Depar__44FF419A">
+          <AssociationSet Name="FK__Funcionar__Depar__45F365D3" Association="Self.FK__Funcionar__Depar__45F365D3">
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Funcionar__Funci__440B1D61" Association="Self.FK__Funcionar__Funci__440B1D61">
+          <AssociationSet Name="FK__Funcionar__Funci__44FF419A" Association="Self.FK__Funcionar__Funci__44FF419A">
             <End Role="Funcionarios" EntitySet="Funcionarios" />
             <End Role="FuncionariosDepartamentos" EntitySet="FuncionariosDepartamentos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Funcionar__Geren__4222D4EF" Association="Self.FK__Funcionar__Geren__4222D4EF">
+          <AssociationSet Name="FK__Funcionar__Geren__4316F928" Association="Self.FK__Funcionar__Geren__4316F928">
             <End Role="Funcionarios" EntitySet="Funcionarios" />
             <End Role="Funcionarios1" EntitySet="Funcionarios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Logins__Funciona__4316F928" Association="Self.FK__Logins__Funciona__4316F928">
+          <AssociationSet Name="FK__Logins__Funciona__440B1D61" Association="Self.FK__Logins__Funciona__440B1D61">
             <End Role="Funcionarios" EntitySet="Funcionarios" />
             <End Role="Logins" EntitySet="Logins" />
           </AssociationSet>
-          <AssociationSet Name="FK__Nasciment__Funci__412EB0B6" Association="Self.FK__Nasciment__Funci__412EB0B6">
+          <AssociationSet Name="FK__Nasciment__Funci__4222D4EF" Association="Self.FK__Nasciment__Funci__4222D4EF">
             <End Role="Funcionarios" EntitySet="Funcionarios" />
             <End Role="Nascimentos" EntitySet="Nascimentos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bdBrasilResortModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

@@ -35,3 +35,6 @@ C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Sol
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Dialogos.CadastrarAlterarFuncionario.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Dialogos.Deletar.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Login.resources
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Dialogos.CadastrarAlterarFuncionario.resources
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Dialogos.Deletar.resources
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv2\MPT-01-SEv2.Forms\obj\Debug\MPT_01_SEv2.Forms.Telas.Login.resources

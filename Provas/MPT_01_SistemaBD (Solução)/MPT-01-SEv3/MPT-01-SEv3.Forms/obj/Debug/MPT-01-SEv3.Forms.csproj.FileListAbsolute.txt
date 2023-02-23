@@ -1,0 +1,16 @@
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\MPT-01-SEv3.Forms.exe.config
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\MPT-01-SEv3.Forms.exe
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\MPT-01-SEv3.Forms.pdb
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\EntityFramework.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\EntityFramework.xml
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.csproj.AssemblyReference.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT_01_SEv3.Forms.Properties.Resources.resources
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT_01_SEv3.Forms.Telas.Pais.Form1.resources
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.csproj.GenerateResource.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.csproj.CoreCompileInputs.cache
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.csproj.CopyComplete
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.exe
+C:\Users\MulinhaGPlays\Documents\GitHub\WorldSkills\Provas\MPT_01_SistemaBD (Solução)\MPT-01-SEv3\MPT-01-SEv3.Forms\obj\Debug\MPT-01-SEv3.Forms.pdb
