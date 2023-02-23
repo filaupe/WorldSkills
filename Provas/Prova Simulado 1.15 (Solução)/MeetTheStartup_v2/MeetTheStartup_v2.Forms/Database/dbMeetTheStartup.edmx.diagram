@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="000af774ec164535b0dee2e1b54aa21f" Name="Diagram1">
+        <EntityTypeShape EntityType="MeetTheStartupModel.Empresa" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeetTheStartupModel.GaleriaImagen" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeetTheStartupModel.ListaEspera" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeetTheStartupModel.ListaParticipante" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeetTheStartupModel.Usuario" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MeetTheStartupModel.Visita" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__Empresa__Galeria__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__Empresa__VisitaI__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__GaleriaIm__Empre__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__Visita__EmpresaI__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__GaleriaIm__Usuar__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__Usuario__Galeria__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__ListaEspe__Usuar__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__ListaEspe__Visit__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__Visita__ListaEsp__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__ListaPart__Usuar__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="MeetTheStartupModel.FK__ListaPart__Visit__37A5467C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

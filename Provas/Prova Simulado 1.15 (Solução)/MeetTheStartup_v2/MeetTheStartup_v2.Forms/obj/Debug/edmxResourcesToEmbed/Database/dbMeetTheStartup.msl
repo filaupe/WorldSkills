@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MeetTheStartupModelStoreContainer" CdmEntityContainer="MeetTheStartupEntities">
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="VisitaId" ColumnName="VisitaId" />
+          <ScalarProperty Name="GaleriaId" ColumnName="GaleriaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GaleriaImagens">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.GaleriaImagen">
+        <MappingFragment StoreEntitySet="GaleriaImagens">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaEsperas">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.ListaEspera">
+        <MappingFragment StoreEntitySet="ListaEspera">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VisitaId" ColumnName="VisitaId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaParticipantes">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.ListaParticipante">
+        <MappingFragment StoreEntitySet="ListaParticipantes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VisitaId" ColumnName="VisitaId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="NomeLogin" ColumnName="NomeLogin" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="GaleriaId" ColumnName="GaleriaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitas">
+      <EntityTypeMapping TypeName="MeetTheStartupModel.Visita">
+        <MappingFragment StoreEntitySet="Visita">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DiaHora" ColumnName="DiaHora" />
+          <ScalarProperty Name="Vagas" ColumnName="Vagas" />
+          <ScalarProperty Name="ListaEspera" ColumnName="ListaEspera" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="ListaEsperaId" ColumnName="ListaEsperaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

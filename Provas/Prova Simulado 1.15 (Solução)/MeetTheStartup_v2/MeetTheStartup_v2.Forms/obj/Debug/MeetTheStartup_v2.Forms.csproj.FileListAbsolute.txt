@@ -1,0 +1,5 @@
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\Prova Simulado 1.15 (Solução)\MeetTheStartup_v2\MeetTheStartup_v2.Forms\obj\Debug\MeetTheStartup_v2.Forms.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\Prova Simulado 1.15 (Solução)\MeetTheStartup_v2\MeetTheStartup_v2.Forms\obj\Debug\MeetTheStartup_v2.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\Prova Simulado 1.15 (Solução)\MeetTheStartup_v2\MeetTheStartup_v2.Forms\obj\Debug\MeetTheStartup_v2.Forms.Properties.Resources.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\Prova Simulado 1.15 (Solução)\MeetTheStartup_v2\MeetTheStartup_v2.Forms\obj\Debug\MeetTheStartup_v2.Forms.csproj.GenerateResource.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\Prova Simulado 1.15 (Solução)\MeetTheStartup_v2\MeetTheStartup_v2.Forms\obj\Debug\MeetTheStartup_v2.Forms.csproj.CoreCompileInputs.cache

@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MeetTheStartupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+    <Property Name="NomeFantasia" Type="varchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="varchar(max)" Nullable="false" />
+    <Property Name="VisitaId" Type="int" />
+    <Property Name="GaleriaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GaleriaImagens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" />
+    <Property Name="EmpresaId" Type="int" />
+    <Property Name="Imagem" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaEspera">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitaId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaParticipantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisitaId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar(max)" Nullable="false" />
+    <Property Name="NomeLogin" Type="varchar(max)" Nullable="false" />
+    <Property Name="Senha" Type="varchar(max)" Nullable="false" />
+    <Property Name="GaleriaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visita">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DiaHora" Type="datetime" Nullable="false" />
+    <Property Name="Vagas" Type="int" Nullable="false" />
+    <Property Name="ListaEspera" Type="tinyint" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="ListaEsperaId" Type="int" />
+  </EntityType>
+  <Association Name="FK__Empresa__Galeria__2F10007B">
+    <End Role="GaleriaImagens" Type="Self.GaleriaImagens" Multiplicity="1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GaleriaImagens">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="GaleriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Empresa__VisitaI__300424B4">
+    <End Role="Visita" Type="Self.Visita" Multiplicity="0..1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visita">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="VisitaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GaleriaIm__Empre__32E0915F">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="GaleriaImagens" Type="Self.GaleriaImagens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GaleriaImagens">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GaleriaIm__Usuar__31EC6D26">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="GaleriaImagens" Type="Self.GaleriaImagens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GaleriaImagens">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ListaEspe__Usuar__36B12243">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="ListaEspera" Type="Self.ListaEspera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaEspera">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ListaEspe__Visit__35BCFE0A">
+    <End Role="Visita" Type="Self.Visita" Multiplicity="1" />
+    <End Role="ListaEspera" Type="Self.ListaEspera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visita">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaEspera">
+        <PropertyRef Name="VisitaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ListaPart__Usuar__38996AB5">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="ListaParticipantes" Type="Self.ListaParticipantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaParticipantes">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ListaPart__Visit__37A5467C">
+    <End Role="Visita" Type="Self.Visita" Multiplicity="1" />
+    <End Role="ListaParticipantes" Type="Self.ListaParticipantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visita">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListaParticipantes">
+        <PropertyRef Name="VisitaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__Galeria__30F848ED">
+    <End Role="GaleriaImagens" Type="Self.GaleriaImagens" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GaleriaImagens">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="GaleriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visita__EmpresaI__33D4B598">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Visita" Type="Self.Visita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visita">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Visita__ListaEsp__34C8D9D1">
+    <End Role="ListaEspera" Type="Self.ListaEspera" Multiplicity="0..1" />
+    <End Role="Visita" Type="Self.Visita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListaEspera">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visita">
+        <PropertyRef Name="ListaEsperaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MeetTheStartupModelStoreContainer">
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GaleriaImagens" EntityType="Self.GaleriaImagens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListaEspera" EntityType="Self.ListaEspera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListaParticipantes" EntityType="Self.ListaParticipantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visita" EntityType="Self.Visita" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Empresa__Galeria__2F10007B" Association="Self.FK__Empresa__Galeria__2F10007B">
+      <End Role="GaleriaImagens" EntitySet="GaleriaImagens" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Empresa__VisitaI__300424B4" Association="Self.FK__Empresa__VisitaI__300424B4">
+      <End Role="Visita" EntitySet="Visita" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GaleriaIm__Empre__32E0915F" Association="Self.FK__GaleriaIm__Empre__32E0915F">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="GaleriaImagens" EntitySet="GaleriaImagens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GaleriaIm__Usuar__31EC6D26" Association="Self.FK__GaleriaIm__Usuar__31EC6D26">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="GaleriaImagens" EntitySet="GaleriaImagens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ListaEspe__Usuar__36B12243" Association="Self.FK__ListaEspe__Usuar__36B12243">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ListaEspera" EntitySet="ListaEspera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ListaEspe__Visit__35BCFE0A" Association="Self.FK__ListaEspe__Visit__35BCFE0A">
+      <End Role="Visita" EntitySet="Visita" />
+      <End Role="ListaEspera" EntitySet="ListaEspera" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ListaPart__Usuar__38996AB5" Association="Self.FK__ListaPart__Usuar__38996AB5">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="ListaParticipantes" EntitySet="ListaParticipantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ListaPart__Visit__37A5467C" Association="Self.FK__ListaPart__Visit__37A5467C">
+      <End Role="Visita" EntitySet="Visita" />
+      <End Role="ListaParticipantes" EntitySet="ListaParticipantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__Galeria__30F848ED" Association="Self.FK__Usuario__Galeria__30F848ED">
+      <End Role="GaleriaImagens" EntitySet="GaleriaImagens" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visita__EmpresaI__33D4B598" Association="Self.FK__Visita__EmpresaI__33D4B598">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Visita" EntitySet="Visita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Visita__ListaEsp__34C8D9D1" Association="Self.FK__Visita__ListaEsp__34C8D9D1">
+      <End Role="ListaEspera" EntitySet="ListaEspera" />
+      <End Role="Visita" EntitySet="Visita" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
