@@ -1,0 +1,12 @@
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\bin\Debug\PT2023SE_InvestimentoV3.Forms.exe.config
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\bin\Debug\PT2023SE_InvestimentoV3.Forms.exe
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\bin\Debug\PT2023SE_InvestimentoV3.Forms.pdb
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.csproj.AssemblyReference.cache
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.csproj.SuggestedBindingRedirects.cache
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.Properties.Resources.resources
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.Telas.PadraoSistema.resources
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.csproj.GenerateResource.cache
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.csproj.CoreCompileInputs.cache
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.exe
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.pdb
+C:\Users\android\Desktop\PT2023SE_InvestimentoV3\PT2023SE_InvestimentoV3.Forms\obj\Debug\PT2023SE_InvestimentoV3.Forms.Telas.VisualizarRelatorios.resources
