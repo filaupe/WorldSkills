@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdAbuDhabi03ModelStoreContainer" CdmEntityContainer="bdAbuDhabi03Entities">
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="bdAbuDhabi03Model.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="USUCODIGO" ColumnName="USUCODIGO" />
+          <ScalarProperty Name="USUNOME" ColumnName="USUNOME" />
+          <ScalarProperty Name="USULOGIN" ColumnName="USULOGIN" />
+          <ScalarProperty Name="USUSENHA" ColumnName="USUSENHA" />
+          <ScalarProperty Name="USUAMIGOS" ColumnName="USUAMIGOS" />
+          <ScalarProperty Name="USUCONTINENTE" ColumnName="USUCONTINENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
