@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdAbuDhabiTurS2E04Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="SOBRENOME" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="CPF" Type="varchar" MaxLength="15" />
+    <Property Name="CELULAR" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="350" />
+    <Property Name="DATANASCIMENTO" Type="datetime" Nullable="false" />
+    <Property Name="ENDERECO" Type="varchar" MaxLength="50" />
+    <Property Name="CIDADE" Type="varchar" MaxLength="2500" />
+    <Property Name="id_estado" Type="int" />
+    <Property Name="Feedback" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODIGOCLIENTE" Type="int" />
+    <Property Name="VALORBRUTO" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="DESCONTOS" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="VALORLIQUIDO" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ACOMPANHANTES" Type="varchar(max)" />
+    <Property Name="TRANSACAOID" Type="varchar(max)" />
+    <Property Name="DATA" Type="datetime" Nullable="false" />
+    <Property Name="DATAATUALIZACAO" Type="datetime" />
+    <Property Name="STATUS" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="id_estado" />
+    </Key>
+    <Property Name="id_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigo_ibge" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="sigla" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="dtm_lcto" Type="datetime" Nullable="false" />
+    <Property Name="bandeira" Type="image" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODIGOCOMPRA" Type="int" Nullable="false" />
+    <Property Name="CODIGOTIPO" Type="int" Nullable="false" />
+    <Property Name="DATAINICIO" Type="date" Nullable="false" />
+    <Property Name="DATAFIM" Type="date" Nullable="false" />
+    <Property Name="TIPOPENSAO" Type="char" MaxLength="2" />
+    <Property Name="QUANTIDADEADULTOS" Type="int" />
+    <Property Name="QUANTIDADECRIANCAS" Type="int" />
+    <Property Name="VALORRESERVA" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TIPOACOMODACAO">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCRICAO" Type="varchar(max)" />
+    <Property Name="VALOR" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cliente_Estados">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="id_estado" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="id_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacote_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="CODIGOCLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reserva_Compra">
+    <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+    <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="CODIGOCOMPRA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reserva_TIPOACOMODACAO">
+    <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="1" />
+    <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPOACOMODACAO">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="CODIGOTIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bdAbuDhabiTurS2E04ModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPOACOMODACAO" EntityType="Self.TIPOACOMODACAO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cliente_Estados" Association="Self.FK_Cliente_Estados">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacote_Cliente" Association="Self.FK_Pacote_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reserva_Compra" Association="Self.FK_Reserva_Compra">
+      <End Role="Compra" EntitySet="Compra" />
+      <End Role="Reserva" EntitySet="Reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reserva_TIPOACOMODACAO" Association="Self.FK_Reserva_TIPOACOMODACAO">
+      <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+      <End Role="Reserva" EntitySet="Reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

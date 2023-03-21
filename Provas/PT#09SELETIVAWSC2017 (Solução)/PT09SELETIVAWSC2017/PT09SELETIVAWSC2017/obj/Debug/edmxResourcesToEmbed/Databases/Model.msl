@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdAbuDhabiTurS2E04ModelStoreContainer" CdmEntityContainer="bdAbuDhabiTurS2E04Entities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS2E04Model.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="SOBRENOME" ColumnName="SOBRENOME" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DATANASCIMENTO" ColumnName="DATANASCIMENTO" />
+          <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+          <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS2E04Model.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="CODIGOCLIENTE" ColumnName="CODIGOCLIENTE" />
+          <ScalarProperty Name="VALORBRUTO" ColumnName="VALORBRUTO" />
+          <ScalarProperty Name="DESCONTOS" ColumnName="DESCONTOS" />
+          <ScalarProperty Name="VALORLIQUIDO" ColumnName="VALORLIQUIDO" />
+          <ScalarProperty Name="ACOMPANHANTES" ColumnName="ACOMPANHANTES" />
+          <ScalarProperty Name="TRANSACAOID" ColumnName="TRANSACAOID" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="DATAATUALIZACAO" ColumnName="DATAATUALIZACAO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS2E04Model.Estado">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="id_estado" ColumnName="id_estado" />
+          <ScalarProperty Name="codigo_ibge" ColumnName="codigo_ibge" />
+          <ScalarProperty Name="sigla" ColumnName="sigla" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="dtm_lcto" ColumnName="dtm_lcto" />
+          <ScalarProperty Name="bandeira" ColumnName="bandeira" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservas">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS2E04Model.Reserva">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="CODIGOCOMPRA" ColumnName="CODIGOCOMPRA" />
+          <ScalarProperty Name="CODIGOTIPO" ColumnName="CODIGOTIPO" />
+          <ScalarProperty Name="DATAINICIO" ColumnName="DATAINICIO" />
+          <ScalarProperty Name="DATAFIM" ColumnName="DATAFIM" />
+          <ScalarProperty Name="TIPOPENSAO" ColumnName="TIPOPENSAO" />
+          <ScalarProperty Name="QUANTIDADEADULTOS" ColumnName="QUANTIDADEADULTOS" />
+          <ScalarProperty Name="QUANTIDADECRIANCAS" ColumnName="QUANTIDADECRIANCAS" />
+          <ScalarProperty Name="VALORRESERVA" ColumnName="VALORRESERVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOACOMODACAOs">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS2E04Model.TIPOACOMODACAO">
+        <MappingFragment StoreEntitySet="TIPOACOMODACAO">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

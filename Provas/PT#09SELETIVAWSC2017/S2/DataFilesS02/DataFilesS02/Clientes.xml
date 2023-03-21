@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Clientes>
+  <Cliente CODIGO="4456" NOME="Mozart" SOBRENOME="Bino">
+    <CPF>464564446</CPF>
+    <Contatos>
+      <CELULAR ACEITASMS="0">99987899978</CELULAR>
+      <EMAIL>mozartgalego@gmail.com</EMAIL>
+    </Contatos>
+    <SEXO>M</SEXO>
+  </Cliente>
+  <Cliente CODIGO="6666" NOME="Salomina" SOBRENOME="Biblia">
+    <CPF>045.456.456.66</CPF>
+    <Contatos>
+      <CELULAR ACEITASMS="0">82998212125</CELULAR>
+      <EMAIL>fabianeee8002@hotmail.com</EMAIL>
+    </Contatos>
+    <SEXO>F</SEXO>
+  </Cliente>  
+</Clientes>

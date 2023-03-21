@@ -63,9 +63,9 @@ namespace PT09SELETIVAWSC2017.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconeLocalizacao {
+        internal static System.Drawing.Bitmap cavalo {
             get {
-                object obj = ResourceManager.GetObject("iconeLocalizacao", resourceCulture);
+                object obj = ResourceManager.GetObject("cavalo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace PT09SELETIVAWSC2017.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mapa {
+        internal static System.Drawing.Bitmap rainha {
             get {
-                object obj = ResourceManager.GetObject("mapa", resourceCulture);
+                object obj = ResourceManager.GetObject("rainha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
