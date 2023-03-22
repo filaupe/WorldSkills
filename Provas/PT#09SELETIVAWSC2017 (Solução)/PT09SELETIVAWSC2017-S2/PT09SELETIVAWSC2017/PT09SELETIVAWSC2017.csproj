@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bdAbuDhabiTurS2E04DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdAbuDhabiTurS2E04DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Databases\Cliente.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -94,6 +99,12 @@
     <Compile Include="Telas\CadastroCliente.Designer.cs">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Dialogs\BirthdaysWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Dialogs\BirthdaysWindow.Designer.cs">
+      <DependentUpon>BirthdaysWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -107,10 +118,24 @@
     <EmbeddedResource Include="Telas\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Dialogs\BirthdaysWindow.resx">
+      <DependentUpon>BirthdaysWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Databases\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="bdAbuDhabiTurS2E04DataSet.xsc">
+      <DependentUpon>bdAbuDhabiTurS2E04DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bdAbuDhabiTurS2E04DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bdAbuDhabiTurS2E04DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bdAbuDhabiTurS2E04DataSet.xss">
+      <DependentUpon>bdAbuDhabiTurS2E04DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Databases\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>

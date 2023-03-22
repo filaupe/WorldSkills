@@ -32,6 +32,19 @@ namespace PT09SELETIVAWSC2017.Databases
         public Nullable<int> id_estado { get; set; }
         public string Feedback { get; set; }
     
+        public void Update(Cliente model)
+        {
+            NOME = model.NOME;
+            SOBRENOME = model.SOBRENOME;
+            CPF = model.CPF;
+            EMAIL = model.EMAIL;
+            DATANASCIMENTO = model.DATANASCIMENTO;
+            ENDERECO = model.ENDERECO;
+            CIDADE = model.CIDADE;
+            id_estado = model.id_estado;
+            Feedback = model.Feedback;
+        }
+
         public virtual Estado Estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compra> Compras { get; set; }

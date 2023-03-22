@@ -8,6 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 using System.Linq;
+using static System.Windows.Forms.LinkLabel;
 
 namespace ImportacaoExportacao.Telas
 {
@@ -37,28 +38,63 @@ namespace ImportacaoExportacao.Telas
                 var workbook = excelApp.Workbooks.Open(archivePath);
                 var worksheet = workbook.Sheets[1];
                 Range range = worksheet.UsedRange;
+                int linha = 0;
+                var errorColumns = new List<string>();
 
-                
-                for (int row = 2; row <= range.Rows.Count; row++)
+                try
                 {
-                    var dynamicList = new List<dynamic>();
-                    for (int col = 1; col <= range.Columns.Count; col++)
-                        dynamicList.Add(range.Cells[row, col].Value2);
-                    _clientes.Add(new Cliente
+                    for (int row = 2; row <= range.Rows.Count; row++)
                     {
-                        CODIGO = (int)dynamicList[0],
-                        NOME = (string)dynamicList[1],
-                        SOBRENOME = (string)dynamicList[2],
-                        CPF = long.Parse(dynamicList[3].ToString().Replace(".", String.Empty).Replace("-", String.Empty)),
-                        CELULAR = (long)dynamicList[4],
-                        ACEITASMS = ((int)dynamicList[5]) == 1,
-                        EMAIL = (string)dynamicList[6],
-                        SEXO = (string)dynamicList[7],
-                    });
+                        linha = row;
+                        var dynamicList = new List<dynamic>();
+                        for (int col = 1; col <= range.Columns.Count; col++)
+                        {
+                            var value = range.Cells[row, col].Value2;
+                            dynamicList.Add(value);
+                            if (value == null)
+                                errorColumns.Add(range.Cells[1, col].Value2);
+                        }
+                            
+
+                        if (dynamicList.Any(x => x == null))
+                            throw new Exception($"Erro na linha {linha}, os campos {String.Join(", ", errorColumns)} estão vazio");
+
+                        try
+                        {
+                            string sexo = ((string)dynamicList[7]);
+                            _clientes.Add(new Cliente
+                            {
+                                CODIGO = (int)dynamicList[0],
+                                NOME = (string)dynamicList[1],
+                                SOBRENOME = (string)dynamicList[2],
+                                CPF = long.Parse(dynamicList[3].ToString().Replace(".", String.Empty).Replace("-", String.Empty)),
+                                CELULAR = (long)dynamicList[4],
+                                ACEITASMS = ((int)dynamicList[5]) == 1,
+                                EMAIL = (string)dynamicList[6],
+                                SEXO = (sexo == "M" || sexo == "F") ? sexo : throw new ArgumentException($"A coluna sexo está incorreta na linha {linha}. Valor encontrado: {sexo}"),
+                            });
+                        }
+                        catch (ArgumentException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            break;
+                        }
+                    }
                 }
-                workbook.Close();
-                excelApp.Quit();
-                this.UseWaitCursor = false;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    try
+                    {
+                        workbook.Close();
+                    }
+                    catch{ }
+                    excelApp.Quit();
+                    this.UseWaitCursor = false;
+                }
             }
         }
 
