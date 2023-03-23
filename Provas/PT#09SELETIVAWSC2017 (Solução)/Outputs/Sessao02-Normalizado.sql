@@ -2,60 +2,77 @@ use master
 go
 create database AbuDhabiTurS2E01
 go
+use bdAbuDhabiTurS2E01
+go
 create table CLIENTE(
-	CODIGO int,
+	CODIGO int primary key IDENTITY(2,2),
 	NOME varchar(max) not null,
-	CPF varchar(14) not null,
-	EMAIL varchar(max) null,
+	CPF varchar(14) unique,
+	EMAIL varchar(max),
 )
 create table COMPRA(
-	CODIGO int,
+	CODIGO int primary key,
 	CPFDOCLIENTE varchar(14),
-	DATACOMPRA date,
+	DATACOMPRA date check(DATACOMPRA >= convert(date, '2016-01-06')) not null,
 	STATUS varchar(max),
+	foreign key (CPFDOCLIENTE) references CLIENTE(CPF)
 )
 create table ITENSCOMPRA(
-	CODIGO int,
-	TIPOQUARTO int null,
-	VALORITEM decimal null,
-	CODIGOCOMPRA int null,
-	TIPOCOMPRA varchar(12) null,
-	_dataInicio date,
-	_dataFim date,
+	CODIGO int primary key,
+	TIPOQUARTO int not null,
+	VALORITEM decimal,
+	CODIGOCOMPRA int,
+	TIPOCOMPRA varchar(12) check(TIPOCOMPRA in ('individual', 'duplo', 'triplo', null)),
+	foreign key (TIPOQUARTO) references TIPOACOMODACAO(TIPCODIGO),
+	foreign key (CODIGOCOMPRA) references COMPRA(CODIGO)
 );
 go
-CREATE FUNCTION calcular_diferenca(@data1 DATETIME, @data2 DATETIME)
-RETURNS DECIMAL
-AS
-BEGIN
-    DECLARE @diferenca INT = DATEDIFF(DAY, @data1, @data2)
+set identity_insert CLIENTE on
+go
+insert into CLIENTE (CODIGO, NOME, CPF, EMAIL) 
+	select codigoCliente, nome, cpf, email from Normalizacao 
+		where REPLACE(REPLACE(cpf, '.', ''), '-', '') 
+		not in (SELECT REPLACE(REPLACE(cpf, '.', ''), '-', '') FROM Normalizacao GROUP BY cpf HAVING COUNT(*) > 1)
+		and cpf is not null and nome is not null
+go
+insert into COMPRA (CODIGO, CPFDOCLIENTE, DATACOMPRA, STATUS) 
+	select codigoCompra, cpf, data, status from Normalizacao
+		where codigoCompra in (select distinct codigoCompra from Normalizacao where codigoCompra is not null)
+		and data in (select data from Normalizacao where data >= convert(date, '2016-01-06') and data is not null)
+		and cpf in (select CPF from CLIENTE)
+go
+insert into ITENSCOMPRA (CODIGO, TIPOQUARTO, VALORITEM, CODIGOCOMPRA, TIPOCOMPRA)
+	select 
+		codigoReserva, 
+		tipoQuarto, 
+		((SELECT 
+			CASE DATEDIFF(day, dataInicio, dataFim) 
+				WHEN 1 THEN VALOR1 
+				WHEN 2 THEN VALOR2 
+				WHEN 3 THEN VALOR3 
+				WHEN 4 THEN VALOR4 
+				WHEN 5 THEN VALOR5 
+				ELSE null
+			END as resultado
+		FROM ValoresDiarias where DISCODIGO in (select codigoReserva)) * adultos),
+		case when codigoCompra in (select CODIGO from COMPRA) then codigoCompra else null end,
+		CASE adultos WHEN 1 THEN 'individual' WHEN 2 THEN 'duplo' WHEN 3 THEN 'triplo' ELSE null END
+	from Normalizacao 
+		where codigoReserva is not null
+		and tipoQuarto is not null
+go
+delete from ITENSCOMPRA 
+	where CODIGO is null or
+	TIPOQUARTO is null or
+	VALORITEM is null or
+	CODIGOCOMPRA is null or
+	TIPOCOMPRA is null
+go
+alter table ITENSCOMPRA alter column CODIGOCOMPRA int not null
+alter table ITENSCOMPRA alter column VALORITEM decimal not null
+alter table ITENSCOMPRA alter column TIPOCOMPRA varchar(12) not null
 
-    IF (@diferenca <= 30)
-    BEGIN
-        RETURN 'coluna1'
-    END0
-    ELSE IF (@diferenca <= 60)
-    BEGIN
-        RETURN 'coluna2'
-    END
-    ELSE
-    BEGIN
-        RETURN 'coluna3'
-    END
-END
-go
-CREATE TRIGGER CalcValor ON ITENSCOMPRA
-AFTER INSERT
-AS
-BEGIN
-	UPDATE ITENSCOMPRA
-	SET VALORITEM = calcular_diferenca()
-END
-go
-insert into CLIENTE (CODIGO, NOME, CPF, EMAIL) select codigoCliente, nome, cpf, email from Normalizacao
-insert into COMPRA (CODIGO, CPFDOCLIENTE, DATACOMPRA, STATUS) select codigoCompra, cpf, data, status from Normalizacao
-insert into ITENSCOMPRA (CODIGO, TIPOQUARTO, CODIGOCOMPRA, _dataFim, _dataInicio) select codigoReserva, tipoQuarto, codigoCompra, dataFim, dataInicio from Normalizacao
-go
+
 
 
 --select * from Normalizacao
@@ -65,9 +82,6 @@ go
 --select * from COMPRA
 --select * from ITENSCOMPRA
 
---drop table Normalizacao
---drop table TIPOACOMODACAO
---drop table ValoresDiarias
 --drop table CLIENTE
 --drop table COMPRA
 --drop table ITENSCOMPRA
