@@ -89,5 +89,47 @@ END
 --drop table AUDITORIACOMPRA
 --delete from Compras
 --delete from AUDITORIACOMPRA
+go
 
-delete from Compras where COMCODIGO = 98
+--teste
+
+CREATE TRIGGER audit_AUDITORIACOMPRA
+ON Compras
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+DECLARE @tipo_operacao varchar(50), @status_anterior varchar(max), @status_atual varchar(max), @codigo_compra int, @chave varchar(50)
+
+SELECT @tipo_operacao = 
+    CASE 
+        WHEN EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted) THEN 'update'
+        WHEN EXISTS (SELECT * FROM inserted) THEN 'insert'
+        WHEN EXISTS (SELECT * FROM deleted) THEN 'delete'
+    END
+
+IF (@tipo_operacao = 'insert')
+BEGIN
+    SELECT @codigo_compra = COMCODIGO, @status_atual = COMSTATUS FROM inserted
+    SET @chave = CONCAT(@codigo_compra, 'i', DATEPART(minute, GETDATE()))
+END
+ELSE IF (@tipo_operacao = 'update')
+BEGIN
+    SELECT @codigo_compra = COMCODIGO FROM inserted
+    SELECT @status_anterior = COMSTATUS FROM deleted
+    SELECT @status_atual = COMSTATUS FROM inserted
+    SET @chave = CONCAT(@codigo_compra, 'a', DATEPART(minute, GETDATE()))
+END
+ELSE IF (@tipo_operacao = 'delete')
+BEGIN
+    SELECT @codigo_compra = COMCODIGO, @status_anterior = COMSTATUS FROM deleted
+    SET @chave = CONCAT(@codigo_compra, 'd', DATEPART(minute, GETDATE()))
+END
+
+IF (@status_atual = 'Simulação' OR @status_atual = 'Simulação Vendida')
+    SET @status_atual = NULL
+IF (@status_anterior = 'Simulação' OR @status_anterior = 'Simulação Vendida')
+    SET @status_anterior = NULL
+
+INSERT INTO AUDITORIACOMPRA (CODIGOCOMPRA, TIPODEOPERACAO, STATUSANTERIOR, STATUSATUAL, DATAHORA, DIA, MES, CHAVE)
+VALUES (@codigo_compra, @tipo_operacao, @status_anterior, @status_atual, CONVERT(varchar, GETDATE(), 103) + ' ' + CONVERT(varchar, GETDATE(), 108), DATENAME(weekday, GETDATE()), DATENAME(month, GETDATE()), @chave)
+END
