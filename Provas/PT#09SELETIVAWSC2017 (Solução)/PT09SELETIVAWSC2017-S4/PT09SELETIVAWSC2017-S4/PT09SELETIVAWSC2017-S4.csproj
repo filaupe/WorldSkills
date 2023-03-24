@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08364897-0ECB-4E48-814A-08ABB580611B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PT09SELETIVAWSC2017_S4</RootNamespace>
+    <AssemblyName>PT09SELETIVAWSC2017-S4</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bdAbuDhabiTurS04DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdAbuDhabiTurS04DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Agenda.cs" />
+    <Compile Include="Database\Agendum.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Cliente.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DisponibilidadeAcomodacao.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Hotel.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Reserva.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\TIPOACOMODACAO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\Agenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Agenda.Designer.cs">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Dialogs\FormularioGeradorDeCampos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Dialogs\FormularioGeradorDeCampos.Designer.cs">
+      <DependentUpon>FormularioGeradorDeCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ResultadoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\ResultadoPesquisa.Designer.cs">
+      <DependentUpon>ResultadoPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaConfirmacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaConfirmacao.Designer.cs">
+      <DependentUpon>TelaConfirmacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TelaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaInicial.Designer.cs">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Telas\Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Dialogs\FormularioGeradorDeCampos.resx">
+      <DependentUpon>FormularioGeradorDeCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ResultadoPesquisa.resx">
+      <DependentUpon>ResultadoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaConfirmacao.resx">
+      <DependentUpon>TelaConfirmacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaInicial.resx">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Database\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="bdAbuDhabiTurS04DataSet.xsc">
+      <DependentUpon>bdAbuDhabiTurS04DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bdAbuDhabiTurS04DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bdAbuDhabiTurS04DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bdAbuDhabiTurS04DataSet.xss">
+      <DependentUpon>bdAbuDhabiTurS04DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aloft.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arjaan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beachrotana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dusit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\millenniumjpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parkin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radisson.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rosewood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\royal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stregis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viceroy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Database\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

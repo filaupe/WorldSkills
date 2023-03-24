@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Hotel>
+<Cliente id="01"> <qtd>5</qtd> </Cliente>
+<Cliente id="02"> <qtd>1</qtd> </Cliente>
+<Cliente id="03"> <qtd>3</qtd> </Cliente>
+<Cliente id="04"> <qtd>7</qtd> </Cliente>
+<Cliente id="05"> <qtd>2</qtd> </Cliente>
+<Cliente id="06"> <qtd>1</qtd> </Cliente>
+<Cliente id="07"> <qtd>3</qtd> </Cliente>
+</Hotel>

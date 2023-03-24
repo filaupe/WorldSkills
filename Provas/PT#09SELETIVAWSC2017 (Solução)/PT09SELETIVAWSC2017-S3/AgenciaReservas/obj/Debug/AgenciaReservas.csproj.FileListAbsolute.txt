@@ -1,0 +1,11 @@
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\bin\Debug\AgenciaReservas.exe.config
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\bin\Debug\AgenciaReservas.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\bin\Debug\AgenciaReservas.pdb
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.csproj.SuggestedBindingRedirects.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.Adicionar.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.Properties.Resources.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.csproj.GenerateResource.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.csproj.CoreCompileInputs.cache
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.exe
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\AgenciaReservas\obj\Debug\AgenciaReservas.pdb
