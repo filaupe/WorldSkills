@@ -18,3 +18,4 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solu�
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S4\PT09SELETIVAWSC2017-S4\obj\Debug\PT09SELETIVAWSC2017_S4.Telas.Agenda.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S4\PT09SELETIVAWSC2017-S4\obj\Debug\PT09SELETIVAWSC2017-S4.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S4\PT09SELETIVAWSC2017-S4\obj\Debug\PT09SELETIVAWSC2017_S4.Telas.Dialogs.FormularioGeradorDeCampos.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S4\PT09SELETIVAWSC2017-S4\obj\Debug\PT09SELETIVAWSC2017_S4.Controles.Hotel.resources

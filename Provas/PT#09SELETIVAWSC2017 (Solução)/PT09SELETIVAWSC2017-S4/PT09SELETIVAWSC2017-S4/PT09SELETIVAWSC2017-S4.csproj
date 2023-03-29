@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bdAbuDhabiTurS04DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controles\Hotel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\Hotel.Designer.cs">
+      <DependentUpon>Hotel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Agenda.cs" />
     <Compile Include="Database\Agendum.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -126,6 +132,9 @@
     <Compile Include="Telas\TelaInicial.Designer.cs">
       <DependentUpon>TelaInicial.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controles\Hotel.resx">
+      <DependentUpon>Hotel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
