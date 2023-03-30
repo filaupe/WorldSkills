@@ -1,0 +1,11 @@
+<Hotel>
+  <Cliente id="04">
+    <qtd>7</qtd>
+  </Cliente>
+  <Cliente id="07">
+    <qtd>4</qtd>
+  </Cliente>
+  <Cliente id="14">
+    <qtd>12</qtd>
+  </Cliente>
+</Hotel>

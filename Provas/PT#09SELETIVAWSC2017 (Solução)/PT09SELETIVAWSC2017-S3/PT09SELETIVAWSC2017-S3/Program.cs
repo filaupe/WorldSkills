@@ -1,8 +1,5 @@
 ﻿using PT09SELETIVAWSC2017_S3.Telas;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PT09SELETIVAWSC2017_S3
@@ -17,7 +14,7 @@ namespace PT09SELETIVAWSC2017_S3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Apartamentos());
+            Application.Run(new Principal());
         }
     }
 }

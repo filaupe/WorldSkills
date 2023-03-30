@@ -1,0 +1,11 @@
+<Aviao>
+  <Passageiro id="04">
+    <qtd>7</qtd>
+  </Passageiro>
+  <Passageiro id="07">
+    <qtd>4</qtd>
+  </Passageiro>
+  <Passageiro id="14">
+    <qtd>12</qtd>
+  </Passageiro>
+</Aviao>
