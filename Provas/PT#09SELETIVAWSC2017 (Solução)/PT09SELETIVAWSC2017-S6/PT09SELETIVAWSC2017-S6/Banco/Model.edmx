@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdAbuDhabiTurS06Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="AUDCODIGO" />
+          </Key>
+          <Property Name="AUDCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AUDNOMETABELA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AUDTIPO" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="AUDCHAVE" Type="int" Nullable="false" />
+          <Property Name="AUDDATAATUALIZACAO" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="CLICODIGO" />
+          </Key>
+          <Property Name="CLICODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLINOME" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CLISOBRENOME" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CLICPF" Type="varchar" MaxLength="15" />
+          <Property Name="CLICELULAR" Type="varchar" MaxLength="20" />
+          <Property Name="CLICELULARSMS" Type="bit" />
+          <Property Name="CLIEMAIL" Type="varchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="COMCODIGO" />
+          </Key>
+          <Property Name="COMCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLICODIGO" Type="int" />
+          <Property Name="COMVALORBRUTO" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="COMDESCONTOS" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="COMVALORLIQUIDO" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="COMACOMPANHANTES" Type="varchar(max)" />
+          <Property Name="COMTRANSACAO" Type="varchar(max)" />
+          <Property Name="COMDATA" Type="datetime" Nullable="false" />
+          <Property Name="COMDATAATUALIZACAO" Type="datetime" />
+          <Property Name="COMSTATUS" Type="varchar" MaxLength="300" />
+          <Property Name="COMFEEDBACKCLIENTE" Type="varchar" MaxLength="500" />
+          <Property Name="COMVENDIDO" Type="bit" />
+          <Property Name="COMLANCADA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DisponibilidadeAcomodacao">
+          <Key>
+            <PropertyRef Name="DISCODIGO" />
+          </Key>
+          <Property Name="DISCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DISDATA" Type="date" Nullable="false" />
+          <Property Name="DISQUANTIDADE" Type="int" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="int" />
+          <Property Name="VALOR1" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR2" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR3" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR4" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR5" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MINIMO" Type="int" />
+          <Property Name="DISATIVO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacote">
+          <Key>
+            <PropertyRef Name="PACCODIGO" />
+          </Key>
+          <Property Name="PACCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PACNOME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="PACDESCRICAO" Type="varchar(max)" />
+          <Property Name="PACMINIATURA" Type="image" />
+          <Property Name="PACBANNER" Type="image" />
+          <Property Name="PACDATAINICIO" Type="date" Nullable="false" />
+          <Property Name="PACDATATERMINO" Type="date" Nullable="false" />
+          <Property Name="PACVALOR" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PACATIVO" Type="bit" Nullable="false" />
+          <Property Name="PACPRINCIPAL" Type="bit" Nullable="false" />
+          <Property Name="MINCODIGO" Type="int" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="RESCODIGO" />
+          </Key>
+          <Property Name="RESCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COMCODIGO" Type="int" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="int" Nullable="false" />
+          <Property Name="RESDATAINICIO" Type="date" Nullable="false" />
+          <Property Name="RESDATAFIM" Type="date" Nullable="false" />
+          <Property Name="RESTIPOPENSAO" Type="char" MaxLength="2" />
+          <Property Name="RESQUANTIDADEADULTOS" Type="int" />
+          <Property Name="RESQUANTIDADECRIANCAS" Type="int" />
+          <Property Name="RESVALORRESERVA" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TIPOACOMODACAO">
+          <Key>
+            <PropertyRef Name="TIPCODIGO" />
+          </Key>
+          <Property Name="TIPCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPNOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TIPDESCRICAO" Type="varchar(max)" />
+          <Property Name="TIPVALOR" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TIPMAXADULTOS" Type="int" />
+          <Property Name="TIPMAXCRIANCAS" Type="int" />
+          <Property Name="TIPVALORMINIMO" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TIPFOTO01" Type="varchar" MaxLength="250" />
+          <Property Name="TIPFOTO02" Type="varchar" MaxLength="250" />
+          <Property Name="TIPFOTO03" Type="varchar" MaxLength="250" />
+          <Property Name="TIPFOTO04" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <Association Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="0..1" />
+          <End Role="DisponibilidadeAcomodacao" Type="Self.DisponibilidadeAcomodacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="DisponibilidadeAcomodacao">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pacote_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="CLICODIGO" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="CLICODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Compra">
+          <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compra">
+              <PropertyRef Name="COMCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="COMCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdAbuDhabiTurS06ModelStoreContainer">
+          <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DisponibilidadeAcomodacao" EntityType="Self.DisponibilidadeAcomodacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pacote" EntityType="Self.Pacote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPOACOMODACAO" EntityType="Self.TIPOACOMODACAO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" Association="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="DisponibilidadeAcomodacao" EntitySet="DisponibilidadeAcomodacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pacote_Cliente" Association="Self.FK_Pacote_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Compra" Association="Self.FK_Reserva_Compra">
+            <End Role="Compra" EntitySet="Compra" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_TIPOACOMODACAO" Association="Self.FK_Reserva_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdAbuDhabiTurS06Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auditoria">
+          <Key>
+            <PropertyRef Name="AUDCODIGO" />
+          </Key>
+          <Property Name="AUDCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AUDNOMETABELA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AUDTIPO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AUDCHAVE" Type="Int32" Nullable="false" />
+          <Property Name="AUDDATAATUALIZACAO" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="CLICODIGO" />
+          </Key>
+          <Property Name="CLICODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLINOME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLISOBRENOME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLICPF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CLICELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLICELULARSMS" Type="Boolean" />
+          <Property Name="CLIEMAIL" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Pacote_Cliente" FromRole="Cliente" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="COMCODIGO" />
+          </Key>
+          <Property Name="COMCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLICODIGO" Type="Int32" />
+          <Property Name="COMVALORBRUTO" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COMDESCONTOS" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COMVALORLIQUIDO" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COMACOMPANHANTES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="COMTRANSACAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="COMDATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="COMDATAATUALIZACAO" Type="DateTime" Precision="3" />
+          <Property Name="COMSTATUS" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="COMFEEDBACKCLIENTE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="COMVENDIDO" Type="Boolean" />
+          <Property Name="COMLANCADA" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Pacote_Cliente" FromRole="Compra" ToRole="Cliente" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Compra" FromRole="Compra" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="DisponibilidadeAcomodacao">
+          <Key>
+            <PropertyRef Name="DISCODIGO" />
+          </Key>
+          <Property Name="DISCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DISDATA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DISQUANTIDADE" Type="Int32" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="Int32" />
+          <Property Name="VALOR1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR5" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MINIMO" Type="Int32" />
+          <Property Name="DISATIVO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TIPOACOMODACAO" Relationship="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" FromRole="DisponibilidadeAcomodacao" ToRole="TIPOACOMODACAO" />
+        </EntityType>
+        <EntityType Name="Pacote">
+          <Key>
+            <PropertyRef Name="PACCODIGO" />
+          </Key>
+          <Property Name="PACCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PACNOME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PACDESCRICAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PACMINIATURA" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PACBANNER" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PACDATAINICIO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PACDATATERMINO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PACVALOR" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PACATIVO" Type="Boolean" Nullable="false" />
+          <Property Name="PACPRINCIPAL" Type="Boolean" Nullable="false" />
+          <Property Name="MINCODIGO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="RESCODIGO" />
+          </Key>
+          <Property Name="RESCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COMCODIGO" Type="Int32" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="Int32" Nullable="false" />
+          <Property Name="RESDATAINICIO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RESDATAFIM" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RESTIPOPENSAO" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="RESQUANTIDADEADULTOS" Type="Int32" />
+          <Property Name="RESQUANTIDADECRIANCAS" Type="Int32" />
+          <Property Name="RESVALORRESERVA" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Reserva_Compra" FromRole="Reserva" ToRole="Compra" />
+          <NavigationProperty Name="TIPOACOMODACAO" Relationship="Self.FK_Reserva_TIPOACOMODACAO" FromRole="Reserva" ToRole="TIPOACOMODACAO" />
+        </EntityType>
+        <EntityType Name="TIPOACOMODACAO">
+          <Key>
+            <PropertyRef Name="TIPCODIGO" />
+          </Key>
+          <Property Name="TIPCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPNOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPDESCRICAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TIPVALOR" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TIPMAXADULTOS" Type="Int32" />
+          <Property Name="TIPMAXCRIANCAS" Type="Int32" />
+          <Property Name="TIPVALORMINIMO" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TIPFOTO01" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TIPFOTO02" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TIPFOTO03" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TIPFOTO04" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DisponibilidadeAcomodacao" Relationship="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" FromRole="TIPOACOMODACAO" ToRole="DisponibilidadeAcomodacao" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_TIPOACOMODACAO" FromRole="TIPOACOMODACAO" ToRole="Reserva" />
+        </EntityType>
+        <Association Name="FK_Pacote_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="CLICODIGO" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="CLICODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Compra">
+          <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compra">
+              <PropertyRef Name="COMCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="COMCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="0..1" />
+          <End Role="DisponibilidadeAcomodacao" Type="Self.DisponibilidadeAcomodacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="DisponibilidadeAcomodacao">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdAbuDhabiTurS06Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auditoria" EntityType="Self.Auditoria" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" />
+          <EntitySet Name="DisponibilidadeAcomodacao" EntityType="Self.DisponibilidadeAcomodacao" />
+          <EntitySet Name="Pacote" EntityType="Self.Pacote" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" />
+          <EntitySet Name="TIPOACOMODACAO" EntityType="Self.TIPOACOMODACAO" />
+          <AssociationSet Name="FK_Pacote_Cliente" Association="Self.FK_Pacote_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Compra" Association="Self.FK_Reserva_Compra">
+            <End Role="Compra" EntitySet="Compra" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" Association="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="DisponibilidadeAcomodacao" EntitySet="DisponibilidadeAcomodacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_TIPOACOMODACAO" Association="Self.FK_Reserva_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdAbuDhabiTurS06ModelStoreContainer" CdmEntityContainer="bdAbuDhabiTurS06Entities">
+          <EntitySetMapping Name="Auditoria">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Auditoria">
+              <MappingFragment StoreEntitySet="Auditoria">
+                <ScalarProperty Name="AUDCODIGO" ColumnName="AUDCODIGO" />
+                <ScalarProperty Name="AUDNOMETABELA" ColumnName="AUDNOMETABELA" />
+                <ScalarProperty Name="AUDTIPO" ColumnName="AUDTIPO" />
+                <ScalarProperty Name="AUDCHAVE" ColumnName="AUDCHAVE" />
+                <ScalarProperty Name="AUDDATAATUALIZACAO" ColumnName="AUDDATAATUALIZACAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+                <ScalarProperty Name="CLINOME" ColumnName="CLINOME" />
+                <ScalarProperty Name="CLISOBRENOME" ColumnName="CLISOBRENOME" />
+                <ScalarProperty Name="CLICPF" ColumnName="CLICPF" />
+                <ScalarProperty Name="CLICELULAR" ColumnName="CLICELULAR" />
+                <ScalarProperty Name="CLICELULARSMS" ColumnName="CLICELULARSMS" />
+                <ScalarProperty Name="CLIEMAIL" ColumnName="CLIEMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compra">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Compra">
+              <MappingFragment StoreEntitySet="Compra">
+                <ScalarProperty Name="COMCODIGO" ColumnName="COMCODIGO" />
+                <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+                <ScalarProperty Name="COMVALORBRUTO" ColumnName="COMVALORBRUTO" />
+                <ScalarProperty Name="COMDESCONTOS" ColumnName="COMDESCONTOS" />
+                <ScalarProperty Name="COMVALORLIQUIDO" ColumnName="COMVALORLIQUIDO" />
+                <ScalarProperty Name="COMACOMPANHANTES" ColumnName="COMACOMPANHANTES" />
+                <ScalarProperty Name="COMTRANSACAO" ColumnName="COMTRANSACAO" />
+                <ScalarProperty Name="COMDATA" ColumnName="COMDATA" />
+                <ScalarProperty Name="COMDATAATUALIZACAO" ColumnName="COMDATAATUALIZACAO" />
+                <ScalarProperty Name="COMSTATUS" ColumnName="COMSTATUS" />
+                <ScalarProperty Name="COMFEEDBACKCLIENTE" ColumnName="COMFEEDBACKCLIENTE" />
+                <ScalarProperty Name="COMVENDIDO" ColumnName="COMVENDIDO" />
+                <ScalarProperty Name="COMLANCADA" ColumnName="COMLANCADA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DisponibilidadeAcomodacao">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.DisponibilidadeAcomodacao">
+              <MappingFragment StoreEntitySet="DisponibilidadeAcomodacao">
+                <ScalarProperty Name="DISCODIGO" ColumnName="DISCODIGO" />
+                <ScalarProperty Name="DISDATA" ColumnName="DISDATA" />
+                <ScalarProperty Name="DISQUANTIDADE" ColumnName="DISQUANTIDADE" />
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="VALOR1" ColumnName="VALOR1" />
+                <ScalarProperty Name="VALOR2" ColumnName="VALOR2" />
+                <ScalarProperty Name="VALOR3" ColumnName="VALOR3" />
+                <ScalarProperty Name="VALOR4" ColumnName="VALOR4" />
+                <ScalarProperty Name="VALOR5" ColumnName="VALOR5" />
+                <ScalarProperty Name="MINIMO" ColumnName="MINIMO" />
+                <ScalarProperty Name="DISATIVO" ColumnName="DISATIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacote">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Pacote">
+              <MappingFragment StoreEntitySet="Pacote">
+                <ScalarProperty Name="PACCODIGO" ColumnName="PACCODIGO" />
+                <ScalarProperty Name="PACNOME" ColumnName="PACNOME" />
+                <ScalarProperty Name="PACDESCRICAO" ColumnName="PACDESCRICAO" />
+                <ScalarProperty Name="PACMINIATURA" ColumnName="PACMINIATURA" />
+                <ScalarProperty Name="PACBANNER" ColumnName="PACBANNER" />
+                <ScalarProperty Name="PACDATAINICIO" ColumnName="PACDATAINICIO" />
+                <ScalarProperty Name="PACDATATERMINO" ColumnName="PACDATATERMINO" />
+                <ScalarProperty Name="PACVALOR" ColumnName="PACVALOR" />
+                <ScalarProperty Name="PACATIVO" ColumnName="PACATIVO" />
+                <ScalarProperty Name="PACPRINCIPAL" ColumnName="PACPRINCIPAL" />
+                <ScalarProperty Name="MINCODIGO" ColumnName="MINCODIGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reserva">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="RESCODIGO" ColumnName="RESCODIGO" />
+                <ScalarProperty Name="COMCODIGO" ColumnName="COMCODIGO" />
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="RESDATAINICIO" ColumnName="RESDATAINICIO" />
+                <ScalarProperty Name="RESDATAFIM" ColumnName="RESDATAFIM" />
+                <ScalarProperty Name="RESTIPOPENSAO" ColumnName="RESTIPOPENSAO" />
+                <ScalarProperty Name="RESQUANTIDADEADULTOS" ColumnName="RESQUANTIDADEADULTOS" />
+                <ScalarProperty Name="RESQUANTIDADECRIANCAS" ColumnName="RESQUANTIDADECRIANCAS" />
+                <ScalarProperty Name="RESVALORRESERVA" ColumnName="RESVALORRESERVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOACOMODACAO">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.TIPOACOMODACAO">
+              <MappingFragment StoreEntitySet="TIPOACOMODACAO">
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="TIPNOME" ColumnName="TIPNOME" />
+                <ScalarProperty Name="TIPDESCRICAO" ColumnName="TIPDESCRICAO" />
+                <ScalarProperty Name="TIPVALOR" ColumnName="TIPVALOR" />
+                <ScalarProperty Name="TIPMAXADULTOS" ColumnName="TIPMAXADULTOS" />
+                <ScalarProperty Name="TIPMAXCRIANCAS" ColumnName="TIPMAXCRIANCAS" />
+                <ScalarProperty Name="TIPVALORMINIMO" ColumnName="TIPVALORMINIMO" />
+                <ScalarProperty Name="TIPFOTO01" ColumnName="TIPFOTO01" />
+                <ScalarProperty Name="TIPFOTO02" ColumnName="TIPFOTO02" />
+                <ScalarProperty Name="TIPFOTO03" ColumnName="TIPFOTO03" />
+                <ScalarProperty Name="TIPFOTO04" ColumnName="TIPFOTO04" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdAbuDhabiTurS06ModelStoreContainer" CdmEntityContainer="bdAbuDhabiTurS06Entities">
+    <EntitySetMapping Name="Auditoria">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Auditoria">
+        <MappingFragment StoreEntitySet="Auditoria">
+          <ScalarProperty Name="AUDCODIGO" ColumnName="AUDCODIGO" />
+          <ScalarProperty Name="AUDNOMETABELA" ColumnName="AUDNOMETABELA" />
+          <ScalarProperty Name="AUDTIPO" ColumnName="AUDTIPO" />
+          <ScalarProperty Name="AUDCHAVE" ColumnName="AUDCHAVE" />
+          <ScalarProperty Name="AUDDATAATUALIZACAO" ColumnName="AUDDATAATUALIZACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+          <ScalarProperty Name="CLINOME" ColumnName="CLINOME" />
+          <ScalarProperty Name="CLISOBRENOME" ColumnName="CLISOBRENOME" />
+          <ScalarProperty Name="CLICPF" ColumnName="CLICPF" />
+          <ScalarProperty Name="CLICELULAR" ColumnName="CLICELULAR" />
+          <ScalarProperty Name="CLICELULARSMS" ColumnName="CLICELULARSMS" />
+          <ScalarProperty Name="CLIEMAIL" ColumnName="CLIEMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="COMCODIGO" ColumnName="COMCODIGO" />
+          <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+          <ScalarProperty Name="COMVALORBRUTO" ColumnName="COMVALORBRUTO" />
+          <ScalarProperty Name="COMDESCONTOS" ColumnName="COMDESCONTOS" />
+          <ScalarProperty Name="COMVALORLIQUIDO" ColumnName="COMVALORLIQUIDO" />
+          <ScalarProperty Name="COMACOMPANHANTES" ColumnName="COMACOMPANHANTES" />
+          <ScalarProperty Name="COMTRANSACAO" ColumnName="COMTRANSACAO" />
+          <ScalarProperty Name="COMDATA" ColumnName="COMDATA" />
+          <ScalarProperty Name="COMDATAATUALIZACAO" ColumnName="COMDATAATUALIZACAO" />
+          <ScalarProperty Name="COMSTATUS" ColumnName="COMSTATUS" />
+          <ScalarProperty Name="COMFEEDBACKCLIENTE" ColumnName="COMFEEDBACKCLIENTE" />
+          <ScalarProperty Name="COMVENDIDO" ColumnName="COMVENDIDO" />
+          <ScalarProperty Name="COMLANCADA" ColumnName="COMLANCADA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DisponibilidadeAcomodacao">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.DisponibilidadeAcomodacao">
+        <MappingFragment StoreEntitySet="DisponibilidadeAcomodacao">
+          <ScalarProperty Name="DISCODIGO" ColumnName="DISCODIGO" />
+          <ScalarProperty Name="DISDATA" ColumnName="DISDATA" />
+          <ScalarProperty Name="DISQUANTIDADE" ColumnName="DISQUANTIDADE" />
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="VALOR1" ColumnName="VALOR1" />
+          <ScalarProperty Name="VALOR2" ColumnName="VALOR2" />
+          <ScalarProperty Name="VALOR3" ColumnName="VALOR3" />
+          <ScalarProperty Name="VALOR4" ColumnName="VALOR4" />
+          <ScalarProperty Name="VALOR5" ColumnName="VALOR5" />
+          <ScalarProperty Name="MINIMO" ColumnName="MINIMO" />
+          <ScalarProperty Name="DISATIVO" ColumnName="DISATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacote">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Pacote">
+        <MappingFragment StoreEntitySet="Pacote">
+          <ScalarProperty Name="PACCODIGO" ColumnName="PACCODIGO" />
+          <ScalarProperty Name="PACNOME" ColumnName="PACNOME" />
+          <ScalarProperty Name="PACDESCRICAO" ColumnName="PACDESCRICAO" />
+          <ScalarProperty Name="PACMINIATURA" ColumnName="PACMINIATURA" />
+          <ScalarProperty Name="PACBANNER" ColumnName="PACBANNER" />
+          <ScalarProperty Name="PACDATAINICIO" ColumnName="PACDATAINICIO" />
+          <ScalarProperty Name="PACDATATERMINO" ColumnName="PACDATATERMINO" />
+          <ScalarProperty Name="PACVALOR" ColumnName="PACVALOR" />
+          <ScalarProperty Name="PACATIVO" ColumnName="PACATIVO" />
+          <ScalarProperty Name="PACPRINCIPAL" ColumnName="PACPRINCIPAL" />
+          <ScalarProperty Name="MINCODIGO" ColumnName="MINCODIGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserva">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.Reserva">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="RESCODIGO" ColumnName="RESCODIGO" />
+          <ScalarProperty Name="COMCODIGO" ColumnName="COMCODIGO" />
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="RESDATAINICIO" ColumnName="RESDATAINICIO" />
+          <ScalarProperty Name="RESDATAFIM" ColumnName="RESDATAFIM" />
+          <ScalarProperty Name="RESTIPOPENSAO" ColumnName="RESTIPOPENSAO" />
+          <ScalarProperty Name="RESQUANTIDADEADULTOS" ColumnName="RESQUANTIDADEADULTOS" />
+          <ScalarProperty Name="RESQUANTIDADECRIANCAS" ColumnName="RESQUANTIDADECRIANCAS" />
+          <ScalarProperty Name="RESVALORRESERVA" ColumnName="RESVALORRESERVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOACOMODACAO">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS06Model.TIPOACOMODACAO">
+        <MappingFragment StoreEntitySet="TIPOACOMODACAO">
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="TIPNOME" ColumnName="TIPNOME" />
+          <ScalarProperty Name="TIPDESCRICAO" ColumnName="TIPDESCRICAO" />
+          <ScalarProperty Name="TIPVALOR" ColumnName="TIPVALOR" />
+          <ScalarProperty Name="TIPMAXADULTOS" ColumnName="TIPMAXADULTOS" />
+          <ScalarProperty Name="TIPMAXCRIANCAS" ColumnName="TIPMAXCRIANCAS" />
+          <ScalarProperty Name="TIPVALORMINIMO" ColumnName="TIPVALORMINIMO" />
+          <ScalarProperty Name="TIPFOTO01" ColumnName="TIPFOTO01" />
+          <ScalarProperty Name="TIPFOTO02" ColumnName="TIPFOTO02" />
+          <ScalarProperty Name="TIPFOTO03" ColumnName="TIPFOTO03" />
+          <ScalarProperty Name="TIPFOTO04" ColumnName="TIPFOTO04" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
