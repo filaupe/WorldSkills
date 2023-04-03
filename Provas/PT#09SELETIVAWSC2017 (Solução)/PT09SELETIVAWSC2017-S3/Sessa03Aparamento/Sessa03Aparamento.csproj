@@ -94,11 +94,23 @@
     <Compile Include="BancoDeDados\Tipo.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ControleDeUsuario\CheckBoxList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleDeUsuario\CheckBoxList.Designer.cs">
+      <DependentUpon>CheckBoxList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleDeUsuario\Hotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ControleDeUsuario\Hotel.Designer.cs">
       <DependentUpon>Hotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleDeUsuario\ListRadioButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleDeUsuario\ListRadioButtons.Designer.cs">
+      <DependentUpon>ListRadioButtons.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +120,20 @@
     <Compile Include="Telas\Apartamentos.Designer.cs">
       <DependentUpon>Apartamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Cadastrar_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastrar_Editar.Designer.cs">
+      <DependentUpon>Cadastrar_Editar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControleDeUsuario\CheckBoxList.resx">
+      <DependentUpon>CheckBoxList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleDeUsuario\Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleDeUsuario\ListRadioButtons.resx">
+      <DependentUpon>ListRadioButtons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="Telas\Apartamentos.resx">
       <DependentUpon>Apartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastrar_Editar.resx">
+      <DependentUpon>Cadastrar_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="BancoDeDados\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
