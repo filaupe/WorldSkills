@@ -1,3 +1,0 @@
-public void teste(String teste, Inteiro iteste, Boolean bteste)
-{
-}

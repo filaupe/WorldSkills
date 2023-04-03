@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{041AC419-93C3-4CFF-96AC-0DCC17BC806B}</ProjectGuid>
+    <ProjectGuid>{FC73A256-86A0-4795-8BB1-5726205C1481}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AgenciaReservas</RootNamespace>
@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agencia.cs" />
-    <Compile Include="Herdados\Aviao.cs" />
-    <Compile Include="Herdados\Hotel.cs" />
+    <Compile Include="Aviao.cs" />
+    <Compile Include="Hotel.cs" />
+    <Compile Include="Principal\Agencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

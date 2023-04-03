@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbAbuDhabiS03Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Apartamento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoTipo" Type="Int32" Nullable="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="Leitos" Type="Int32" Nullable="false" />
+    <Property Name="QtdQuartos" Type="Int32" Nullable="false" />
+    <Property Name="CodigoResponsavel" Type="Int32" Nullable="false" />
+    <Property Name="CodigoProprietario" Type="Int32" Nullable="false" />
+    <Property Name="Andar" Type="Int32" />
+    <Property Name="Video" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Proprietario" Relationship="Self.FK_Apartamento_Proprietario" FromRole="Apartamento" ToRole="Proprietario" />
+    <NavigationProperty Name="Responsavel" Relationship="Self.FK_Apartamento_Responsavel" FromRole="Apartamento" ToRole="Responsavel" />
+    <NavigationProperty Name="Tipo" Relationship="Self.FK_Apartamento_Tipo" FromRole="Apartamento" ToRole="Tipo" />
+    <NavigationProperty Name="FotosApartamento" Relationship="Self.FK_FotosApartamento_Apartamento" FromRole="Apartamento" ToRole="FotosApartamento" />
+    <NavigationProperty Name="ItensAdicionais" Relationship="Self.FK_ItensAdicionais_Apartamento" FromRole="Apartamento" ToRole="ItensAdicionais" />
+    <NavigationProperty Name="Manutencao" Relationship="Self.FK_Manutencao_Apartamento" FromRole="Apartamento" ToRole="Manutencao" />
+  </EntityType>
+  <EntityType Name="FotosApartamento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoApartamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_FotosApartamento_Apartamento" FromRole="FotosApartamento" ToRole="Apartamento" />
+  </EntityType>
+  <EntityType Name="ItensAdicionais">
+    <Key>
+      <PropertyRef Name="CodigoApartamento" />
+      <PropertyRef Name="CodigoProduto" />
+    </Key>
+    <Property Name="CodigoApartamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoProduto" Type="Int32" Nullable="false" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_ItensAdicionais_Apartamento" FromRole="ItensAdicionais" ToRole="Apartamento" />
+    <NavigationProperty Name="Produtos" Relationship="Self.FK_ItensAdicionais_Produtos" FromRole="ItensAdicionais" ToRole="Produtos" />
+  </EntityType>
+  <EntityType Name="Manutencao">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoApartamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Inicio" Type="DateTime" Precision="3" />
+    <Property Name="Fim" Type="DateTime" Precision="3" />
+    <Property Name="data" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_Manutencao_Apartamento" FromRole="Manutencao" ToRole="Apartamento" />
+  </EntityType>
+  <EntityType Name="Produtos">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="ItensAdicionais" Relationship="Self.FK_ItensAdicionais_Produtos" FromRole="Produtos" ToRole="ItensAdicionais" />
+  </EntityType>
+  <EntityType Name="Proprietario">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_Apartamento_Proprietario" FromRole="Proprietario" ToRole="Apartamento" />
+  </EntityType>
+  <EntityType Name="Responsavel">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CPF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_Apartamento_Responsavel" FromRole="Responsavel" ToRole="Apartamento" />
+  </EntityType>
+  <EntityType Name="Tipo">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Imagem" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <NavigationProperty Name="Apartamento" Relationship="Self.FK_Apartamento_Tipo" FromRole="Tipo" ToRole="Apartamento" />
+  </EntityType>
+  <Association Name="FK_Apartamento_Proprietario">
+    <End Role="Proprietario" Type="Self.Proprietario" Multiplicity="1" />
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proprietario">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apartamento">
+        <PropertyRef Name="CodigoProprietario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartamento_Responsavel">
+    <End Role="Responsavel" Type="Self.Responsavel" Multiplicity="1" />
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsavel">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apartamento">
+        <PropertyRef Name="CodigoResponsavel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartamento_Tipo">
+    <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apartamento">
+        <PropertyRef Name="CodigoTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FotosApartamento_Apartamento">
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="1" />
+    <End Role="FotosApartamento" Type="Self.FotosApartamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="FotosApartamento">
+        <PropertyRef Name="CodigoApartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItensAdicionais_Apartamento">
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="1" />
+    <End Role="ItensAdicionais" Type="Self.ItensAdicionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="ItensAdicionais">
+        <PropertyRef Name="CodigoApartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manutencao_Apartamento">
+    <End Role="Apartamento" Type="Self.Apartamento" Multiplicity="1" />
+    <End Role="Manutencao" Type="Self.Manutencao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartamento">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Manutencao">
+        <PropertyRef Name="CodigoApartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItensAdicionais_Produtos">
+    <End Role="Produtos" Type="Self.Produtos" Multiplicity="1" />
+    <End Role="ItensAdicionais" Type="Self.ItensAdicionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produtos">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="ItensAdicionais">
+        <PropertyRef Name="CodigoProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbAbuDhabiS03Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Apartamento" EntityType="Self.Apartamento" />
+    <EntitySet Name="FotosApartamento" EntityType="Self.FotosApartamento" />
+    <EntitySet Name="ItensAdicionais" EntityType="Self.ItensAdicionais" />
+    <EntitySet Name="Manutencao" EntityType="Self.Manutencao" />
+    <EntitySet Name="Produtos" EntityType="Self.Produtos" />
+    <EntitySet Name="Proprietario" EntityType="Self.Proprietario" />
+    <EntitySet Name="Responsavel" EntityType="Self.Responsavel" />
+    <EntitySet Name="Tipo" EntityType="Self.Tipo" />
+    <AssociationSet Name="FK_Apartamento_Proprietario" Association="Self.FK_Apartamento_Proprietario">
+      <End Role="Proprietario" EntitySet="Proprietario" />
+      <End Role="Apartamento" EntitySet="Apartamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartamento_Responsavel" Association="Self.FK_Apartamento_Responsavel">
+      <End Role="Responsavel" EntitySet="Responsavel" />
+      <End Role="Apartamento" EntitySet="Apartamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartamento_Tipo" Association="Self.FK_Apartamento_Tipo">
+      <End Role="Tipo" EntitySet="Tipo" />
+      <End Role="Apartamento" EntitySet="Apartamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FotosApartamento_Apartamento" Association="Self.FK_FotosApartamento_Apartamento">
+      <End Role="Apartamento" EntitySet="Apartamento" />
+      <End Role="FotosApartamento" EntitySet="FotosApartamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItensAdicionais_Apartamento" Association="Self.FK_ItensAdicionais_Apartamento">
+      <End Role="Apartamento" EntitySet="Apartamento" />
+      <End Role="ItensAdicionais" EntitySet="ItensAdicionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manutencao_Apartamento" Association="Self.FK_Manutencao_Apartamento">
+      <End Role="Apartamento" EntitySet="Apartamento" />
+      <End Role="Manutencao" EntitySet="Manutencao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItensAdicionais_Produtos" Association="Self.FK_ItensAdicionais_Produtos">
+      <End Role="Produtos" EntitySet="Produtos" />
+      <End Role="ItensAdicionais" EntitySet="ItensAdicionais" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

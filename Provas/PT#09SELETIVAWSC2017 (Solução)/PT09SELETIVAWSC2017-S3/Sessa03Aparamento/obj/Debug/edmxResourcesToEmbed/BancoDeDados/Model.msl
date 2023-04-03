@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbAbuDhabiS03ModelStoreContainer" CdmEntityContainer="dbAbuDhabiS03Entities">
+    <EntitySetMapping Name="Apartamento">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Apartamento">
+        <MappingFragment StoreEntitySet="Apartamento">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodigoTipo" ColumnName="CodigoTipo" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Leitos" ColumnName="Leitos" />
+          <ScalarProperty Name="QtdQuartos" ColumnName="QtdQuartos" />
+          <ScalarProperty Name="CodigoResponsavel" ColumnName="CodigoResponsavel" />
+          <ScalarProperty Name="CodigoProprietario" ColumnName="CodigoProprietario" />
+          <ScalarProperty Name="Andar" ColumnName="Andar" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FotosApartamento">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.FotosApartamento">
+        <MappingFragment StoreEntitySet="FotosApartamento">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodigoApartamento" ColumnName="CodigoApartamento" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItensAdicionais">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.ItensAdicionais">
+        <MappingFragment StoreEntitySet="ItensAdicionais">
+          <ScalarProperty Name="CodigoApartamento" ColumnName="CodigoApartamento" />
+          <ScalarProperty Name="CodigoProduto" ColumnName="CodigoProduto" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manutencao">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Manutencao">
+        <MappingFragment StoreEntitySet="Manutencao">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="CodigoApartamento" ColumnName="CodigoApartamento" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Fim" ColumnName="Fim" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produtos">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Produtos">
+        <MappingFragment StoreEntitySet="Produtos">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proprietario">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Proprietario">
+        <MappingFragment StoreEntitySet="Proprietario">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Responsavel">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Responsavel">
+        <MappingFragment StoreEntitySet="Responsavel">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo">
+      <EntityTypeMapping TypeName="dbAbuDhabiS03Model.Tipo">
+        <MappingFragment StoreEntitySet="Tipo">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Imagem" ColumnName="Imagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
