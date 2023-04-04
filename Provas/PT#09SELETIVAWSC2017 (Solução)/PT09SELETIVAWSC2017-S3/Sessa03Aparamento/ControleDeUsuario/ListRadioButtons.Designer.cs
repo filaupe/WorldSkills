@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Name = "ListRadioButtons";
-            this.Size = new System.Drawing.Size(0, 58);
+            this.Size = new System.Drawing.Size(141, 58);
             this.ResumeLayout(false);
 
         }

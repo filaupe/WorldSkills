@@ -19,16 +19,16 @@ namespace Sessa03Aparamento.ControleDeUsuario
 
         public void Add(Image image, int codigo)
         {
-            CheckBox radioButton = new CheckBox();
-            radioButton.Width -= 45;
-            this.Height += 10 + radioButton.Height;
-            radioButton.BackgroundImage = image;
-            radioButton.BackgroundImageLayout = ImageLayout.Zoom;
-            radioButton.Tag = codigo;
-            radioButton.Location = new Point((this.Width / 2) - (radioButton.Width / 2), 10 + radioButton.Height * this.Controls.Count);
-            radioButton.AutoCheck = false;
+            CheckBox checkBox = new CheckBox();
+            checkBox.Width -= 45;
+            this.Height += 10 + checkBox.Height;
+            checkBox.BackgroundImage = image;
+            checkBox.BackgroundImageLayout = ImageLayout.Zoom;
+            checkBox.Tag = codigo;
+            checkBox.Location = new Point((this.Width / 2) - (checkBox.Width / 2), 10 + checkBox.Height * this.Controls.Count);
+            checkBox.AutoCheck = false;
 
-            this.Controls.Add(radioButton);
+            this.Controls.Add(checkBox);
         }
     }
 }

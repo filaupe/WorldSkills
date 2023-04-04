@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdAbuDhabiTurS04ModelStoreContainer" CdmEntityContainer="bdAbuDhabiTurS04Entities">
+    <EntitySetMapping Name="Agenda">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Agenda">
+        <MappingFragment StoreEntitySet="Agenda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="nulo" ColumnName="nulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+          <ScalarProperty Name="CLINOME" ColumnName="CLINOME" />
+          <ScalarProperty Name="CLISOBRENOME" ColumnName="CLISOBRENOME" />
+          <ScalarProperty Name="CLICELULAR" ColumnName="CLICELULAR" />
+          <ScalarProperty Name="CLIEMAIL" ColumnName="CLIEMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DisponibilidadeAcomodacao">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.DisponibilidadeAcomodacao">
+        <MappingFragment StoreEntitySet="DisponibilidadeAcomodacao">
+          <ScalarProperty Name="DISCOD" ColumnName="DISCOD" />
+          <ScalarProperty Name="DISDATA" ColumnName="DISDATA" />
+          <ScalarProperty Name="DISQUANTIDADE" ColumnName="DISQUANTIDADE" />
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="VALOR1" ColumnName="VALOR1" />
+          <ScalarProperty Name="VALOR2" ColumnName="VALOR2" />
+          <ScalarProperty Name="VALOR3" ColumnName="VALOR3" />
+          <ScalarProperty Name="VALOR4" ColumnName="VALOR4" />
+          <ScalarProperty Name="VALOR5" ColumnName="VALOR5" />
+          <ScalarProperty Name="MINIMO" ColumnName="MINIMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="HOTCODIGO" ColumnName="HOTCODIGO" />
+          <ScalarProperty Name="HOTNOME" ColumnName="HOTNOME" />
+          <ScalarProperty Name="HOTENDERECO" ColumnName="HOTENDERECO" />
+          <ScalarProperty Name="HOTFOTO" ColumnName="HOTFOTO" />
+          <ScalarProperty Name="CAFEINCLUSO" ColumnName="CAFEINCLUSO" />
+          <ScalarProperty Name="WIFI" ColumnName="WIFI" />
+          <ScalarProperty Name="ESTACIONAMENTO" ColumnName="ESTACIONAMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserva">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Reserva">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="RESCODIGO" ColumnName="RESCODIGO" />
+          <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="RESDATAINICIO" ColumnName="RESDATAINICIO" />
+          <ScalarProperty Name="RESDATAFIM" ColumnName="RESDATAFIM" />
+          <ScalarProperty Name="RESQUANTIDADEADULTOS" ColumnName="RESQUANTIDADEADULTOS" />
+          <ScalarProperty Name="RESVALORRESERVA" ColumnName="RESVALORRESERVA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPOACOMODACAO">
+      <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.TIPOACOMODACAO">
+        <MappingFragment StoreEntitySet="TIPOACOMODACAO">
+          <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+          <ScalarProperty Name="TIPNOME" ColumnName="TIPNOME" />
+          <ScalarProperty Name="HOTCODIGO" ColumnName="HOTCODIGO" />
+          <ScalarProperty Name="TIPDESCRICAO" ColumnName="TIPDESCRICAO" />
+          <ScalarProperty Name="TIPMAXADULTOS" ColumnName="TIPMAXADULTOS" />
+          <ScalarProperty Name="TIPMAXCRIANCAS" ColumnName="TIPMAXCRIANCAS" />
+          <ScalarProperty Name="TIPVALORMINIMO" ColumnName="TIPVALORMINIMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

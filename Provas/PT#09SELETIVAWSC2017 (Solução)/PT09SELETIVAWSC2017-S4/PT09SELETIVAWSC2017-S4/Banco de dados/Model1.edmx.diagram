@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3ebe4ba4ff064d78bbc8f5b41105f15f" Name="Diagram1">
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.Agenda" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.Cliente" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.DisponibilidadeAcomodacao" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.Hotel" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.Reserva" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdAbuDhabiTurS04Model.TIPOACOMODACAO" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="bdAbuDhabiTurS04Model.FK_Reserva_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAbuDhabiTurS04Model.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAbuDhabiTurS04Model.FK_TIPOACOMODACAO_Hotel" ManuallyRouted="false" />
+        <AssociationConnector Association="bdAbuDhabiTurS04Model.FK_Reserva_TIPOACOMODACAO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

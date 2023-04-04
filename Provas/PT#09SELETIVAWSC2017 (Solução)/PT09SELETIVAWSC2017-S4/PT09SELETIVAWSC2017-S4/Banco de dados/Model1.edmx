@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdAbuDhabiTurS04Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nulo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="CLICODIGO" />
+          </Key>
+          <Property Name="CLICODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLINOME" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CLISOBRENOME" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="CLICELULAR" Type="varchar" MaxLength="20" />
+          <Property Name="CLIEMAIL" Type="varchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="DisponibilidadeAcomodacao">
+          <Key>
+            <PropertyRef Name="DISCOD" />
+          </Key>
+          <Property Name="DISCOD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DISDATA" Type="date" Nullable="false" />
+          <Property Name="DISQUANTIDADE" Type="int" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="int" />
+          <Property Name="VALOR1" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR2" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR3" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR4" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="VALOR5" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MINIMO" Type="int" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="HOTCODIGO" />
+          </Key>
+          <Property Name="HOTCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTNOME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="HOTENDERECO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HOTFOTO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CAFEINCLUSO" Type="bit" Nullable="false" />
+          <Property Name="WIFI" Type="bit" Nullable="false" />
+          <Property Name="ESTACIONAMENTO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="RESCODIGO" />
+          </Key>
+          <Property Name="RESCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLICODIGO" Type="int" />
+          <Property Name="TIPCODIGO" Type="int" Nullable="false" />
+          <Property Name="RESDATAINICIO" Type="date" Nullable="false" />
+          <Property Name="RESDATAFIM" Type="date" Nullable="false" />
+          <Property Name="RESQUANTIDADEADULTOS" Type="int" />
+          <Property Name="RESVALORRESERVA" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TIPOACOMODACAO">
+          <Key>
+            <PropertyRef Name="TIPCODIGO" />
+          </Key>
+          <Property Name="TIPCODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPNOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HOTCODIGO" Type="int" />
+          <Property Name="TIPDESCRICAO" Type="varchar(max)" />
+          <Property Name="TIPMAXADULTOS" Type="int" />
+          <Property Name="TIPMAXCRIANCAS" Type="int" />
+          <Property Name="TIPVALORMINIMO" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <Association Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="0..1" />
+          <End Role="DisponibilidadeAcomodacao" Type="Self.DisponibilidadeAcomodacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="DisponibilidadeAcomodacao">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="CLICODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="CLICODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPOACOMODACAO_Hotel">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="HOTCODIGO" />
+            </Principal>
+            <Dependent Role="TIPOACOMODACAO">
+              <PropertyRef Name="HOTCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdAbuDhabiTurS04ModelStoreContainer">
+          <EntitySet Name="Agenda" EntityType="Self.Agenda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DisponibilidadeAcomodacao" EntityType="Self.DisponibilidadeAcomodacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPOACOMODACAO" EntityType="Self.TIPOACOMODACAO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" Association="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="DisponibilidadeAcomodacao" EntitySet="DisponibilidadeAcomodacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_Cliente" Association="Self.FK_Reserva_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_TIPOACOMODACAO" Association="Self.FK_Reserva_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPOACOMODACAO_Hotel" Association="Self.FK_TIPOACOMODACAO_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdAbuDhabiTurS04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nulo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="CLICODIGO" />
+          </Key>
+          <Property Name="CLICODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLINOME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLISOBRENOME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CLICELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CLIEMAIL" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Cliente" FromRole="Cliente" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="DisponibilidadeAcomodacao">
+          <Key>
+            <PropertyRef Name="DISCOD" />
+          </Key>
+          <Property Name="DISCOD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DISDATA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DISQUANTIDADE" Type="Int32" Nullable="false" />
+          <Property Name="TIPCODIGO" Type="Int32" />
+          <Property Name="VALOR1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VALOR5" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MINIMO" Type="Int32" />
+          <NavigationProperty Name="TIPOACOMODACAO" Relationship="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" FromRole="DisponibilidadeAcomodacao" ToRole="TIPOACOMODACAO" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="HOTCODIGO" />
+          </Key>
+          <Property Name="HOTCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTNOME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HOTENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HOTFOTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CAFEINCLUSO" Type="Boolean" Nullable="false" />
+          <Property Name="WIFI" Type="Boolean" Nullable="false" />
+          <Property Name="ESTACIONAMENTO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TIPOACOMODACAO" Relationship="Self.FK_TIPOACOMODACAO_Hotel" FromRole="Hotel" ToRole="TIPOACOMODACAO" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="RESCODIGO" />
+          </Key>
+          <Property Name="RESCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLICODIGO" Type="Int32" />
+          <Property Name="TIPCODIGO" Type="Int32" Nullable="false" />
+          <Property Name="RESDATAINICIO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RESDATAFIM" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RESQUANTIDADEADULTOS" Type="Int32" />
+          <Property Name="RESVALORRESERVA" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Reserva_Cliente" FromRole="Reserva" ToRole="Cliente" />
+          <NavigationProperty Name="TIPOACOMODACAO" Relationship="Self.FK_Reserva_TIPOACOMODACAO" FromRole="Reserva" ToRole="TIPOACOMODACAO" />
+        </EntityType>
+        <EntityType Name="TIPOACOMODACAO">
+          <Key>
+            <PropertyRef Name="TIPCODIGO" />
+          </Key>
+          <Property Name="TIPCODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPNOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HOTCODIGO" Type="Int32" />
+          <Property Name="TIPDESCRICAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TIPMAXADULTOS" Type="Int32" />
+          <Property Name="TIPMAXCRIANCAS" Type="Int32" />
+          <Property Name="TIPVALORMINIMO" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="DisponibilidadeAcomodacao" Relationship="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" FromRole="TIPOACOMODACAO" ToRole="DisponibilidadeAcomodacao" />
+          <NavigationProperty Name="Hotel" Relationship="Self.FK_TIPOACOMODACAO_Hotel" FromRole="TIPOACOMODACAO" ToRole="Hotel" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_TIPOACOMODACAO" FromRole="TIPOACOMODACAO" ToRole="Reserva" />
+        </EntityType>
+        <Association Name="FK_Reserva_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="CLICODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="CLICODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="0..1" />
+          <End Role="DisponibilidadeAcomodacao" Type="Self.DisponibilidadeAcomodacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="DisponibilidadeAcomodacao">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIPOACOMODACAO_Hotel">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="HOTCODIGO" />
+            </Principal>
+            <Dependent Role="TIPOACOMODACAO">
+              <PropertyRef Name="HOTCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reserva_TIPOACOMODACAO">
+          <End Role="TIPOACOMODACAO" Type="Self.TIPOACOMODACAO" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPOACOMODACAO">
+              <PropertyRef Name="TIPCODIGO" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="TIPCODIGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdAbuDhabiTurS04Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agenda" EntityType="Self.Agenda" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="DisponibilidadeAcomodacao" EntityType="Self.DisponibilidadeAcomodacao" />
+          <EntitySet Name="Hotel" EntityType="Self.Hotel" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" />
+          <EntitySet Name="TIPOACOMODACAO" EntityType="Self.TIPOACOMODACAO" />
+          <AssociationSet Name="FK_Reserva_Cliente" Association="Self.FK_Reserva_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DisponibilidadeAcomodacao_TIPOACOMODACAO" Association="Self.FK_DisponibilidadeAcomodacao_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="DisponibilidadeAcomodacao" EntitySet="DisponibilidadeAcomodacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIPOACOMODACAO_Hotel" Association="Self.FK_TIPOACOMODACAO_Hotel">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reserva_TIPOACOMODACAO" Association="Self.FK_Reserva_TIPOACOMODACAO">
+            <End Role="TIPOACOMODACAO" EntitySet="TIPOACOMODACAO" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdAbuDhabiTurS04ModelStoreContainer" CdmEntityContainer="bdAbuDhabiTurS04Entities">
+          <EntitySetMapping Name="Agenda">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Agenda">
+              <MappingFragment StoreEntitySet="Agenda">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nulo" ColumnName="nulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+                <ScalarProperty Name="CLINOME" ColumnName="CLINOME" />
+                <ScalarProperty Name="CLISOBRENOME" ColumnName="CLISOBRENOME" />
+                <ScalarProperty Name="CLICELULAR" ColumnName="CLICELULAR" />
+                <ScalarProperty Name="CLIEMAIL" ColumnName="CLIEMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DisponibilidadeAcomodacao">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.DisponibilidadeAcomodacao">
+              <MappingFragment StoreEntitySet="DisponibilidadeAcomodacao">
+                <ScalarProperty Name="DISCOD" ColumnName="DISCOD" />
+                <ScalarProperty Name="DISDATA" ColumnName="DISDATA" />
+                <ScalarProperty Name="DISQUANTIDADE" ColumnName="DISQUANTIDADE" />
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="VALOR1" ColumnName="VALOR1" />
+                <ScalarProperty Name="VALOR2" ColumnName="VALOR2" />
+                <ScalarProperty Name="VALOR3" ColumnName="VALOR3" />
+                <ScalarProperty Name="VALOR4" ColumnName="VALOR4" />
+                <ScalarProperty Name="VALOR5" ColumnName="VALOR5" />
+                <ScalarProperty Name="MINIMO" ColumnName="MINIMO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotel">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Hotel">
+              <MappingFragment StoreEntitySet="Hotel">
+                <ScalarProperty Name="HOTCODIGO" ColumnName="HOTCODIGO" />
+                <ScalarProperty Name="HOTNOME" ColumnName="HOTNOME" />
+                <ScalarProperty Name="HOTENDERECO" ColumnName="HOTENDERECO" />
+                <ScalarProperty Name="HOTFOTO" ColumnName="HOTFOTO" />
+                <ScalarProperty Name="CAFEINCLUSO" ColumnName="CAFEINCLUSO" />
+                <ScalarProperty Name="WIFI" ColumnName="WIFI" />
+                <ScalarProperty Name="ESTACIONAMENTO" ColumnName="ESTACIONAMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reserva">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="RESCODIGO" ColumnName="RESCODIGO" />
+                <ScalarProperty Name="CLICODIGO" ColumnName="CLICODIGO" />
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="RESDATAINICIO" ColumnName="RESDATAINICIO" />
+                <ScalarProperty Name="RESDATAFIM" ColumnName="RESDATAFIM" />
+                <ScalarProperty Name="RESQUANTIDADEADULTOS" ColumnName="RESQUANTIDADEADULTOS" />
+                <ScalarProperty Name="RESVALORRESERVA" ColumnName="RESVALORRESERVA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPOACOMODACAO">
+            <EntityTypeMapping TypeName="bdAbuDhabiTurS04Model.TIPOACOMODACAO">
+              <MappingFragment StoreEntitySet="TIPOACOMODACAO">
+                <ScalarProperty Name="TIPCODIGO" ColumnName="TIPCODIGO" />
+                <ScalarProperty Name="TIPNOME" ColumnName="TIPNOME" />
+                <ScalarProperty Name="HOTCODIGO" ColumnName="HOTCODIGO" />
+                <ScalarProperty Name="TIPDESCRICAO" ColumnName="TIPDESCRICAO" />
+                <ScalarProperty Name="TIPMAXADULTOS" ColumnName="TIPMAXADULTOS" />
+                <ScalarProperty Name="TIPMAXCRIANCAS" ColumnName="TIPMAXCRIANCAS" />
+                <ScalarProperty Name="TIPVALORMINIMO" ColumnName="TIPVALORMINIMO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

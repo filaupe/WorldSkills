@@ -100,6 +100,12 @@
     <Compile Include="ControleDeUsuario\CheckBoxList.Designer.cs">
       <DependentUpon>CheckBoxList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControleDeUsuario\GaleriaDeImagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleDeUsuario\GaleriaDeImagem.Designer.cs">
+      <DependentUpon>GaleriaDeImagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleDeUsuario\Hotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="ControleDeUsuario\ListRadioButtons.Designer.cs">
       <DependentUpon>ListRadioButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControleDeUsuario\SubControles\Imagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControleDeUsuario\SubControles\Imagem.Designer.cs">
+      <DependentUpon>Imagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,11 +141,17 @@
     <EmbeddedResource Include="ControleDeUsuario\CheckBoxList.resx">
       <DependentUpon>CheckBoxList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControleDeUsuario\GaleriaDeImagem.resx">
+      <DependentUpon>GaleriaDeImagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleDeUsuario\Hotel.resx">
       <DependentUpon>Hotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControleDeUsuario\ListRadioButtons.resx">
       <DependentUpon>ListRadioButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControleDeUsuario\SubControles\Imagem.resx">
+      <DependentUpon>Imagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

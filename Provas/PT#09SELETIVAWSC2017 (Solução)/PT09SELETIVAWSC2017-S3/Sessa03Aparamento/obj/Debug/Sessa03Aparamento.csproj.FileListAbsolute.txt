@@ -24,3 +24,5 @@ C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solu�
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\Sessa03Aparamento\obj\Debug\Sessa03Aparamento.ControleDeUsuario.ListRadioButtons.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\Sessa03Aparamento\obj\Debug\Sessa03Aparamento.Telas.Cadastrar_Editar.resources
 C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\Sessa03Aparamento\obj\Debug\Sessa03Aparamento.ControleDeUsuario.CheckBoxList.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\Sessa03Aparamento\obj\Debug\Sessa03Aparamento.ControleDeUsuario.GaleriaDeImagem.resources
+C:\Users\android\Documents\GitHub\WorldSkills\Provas\PT#09SELETIVAWSC2017 (Solução)\PT09SELETIVAWSC2017-S3\Sessa03Aparamento\obj\Debug\Sessa03Aparamento.ControleDeUsuario.SubControles.Imagem.resources
